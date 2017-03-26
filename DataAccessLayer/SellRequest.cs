@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-    class SellRequest
+     public class SellRequest
     {
         public const string type = "sell";
         public int commodity;
