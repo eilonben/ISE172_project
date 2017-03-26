@@ -9,7 +9,7 @@ using MarketClient.Utils;
 
 namespace DataAccessLayer
 {
-    class Program:IMarketClient
+    public class RequestManager:IMarketClient
      {
         private const string url="http://ise172.ise.bgu.ac.il";
         private const string user = "user32";

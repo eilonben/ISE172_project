@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Data Access Layer;
+using DataAccessLayer;
 
 namespace Presentation_Layer
 {
-    class Main
+    public class Main
     {
         public static void main(String[] args)
         {
