@@ -81,7 +81,7 @@ namespace DataAccessLayer
             }
         }
 
-           public MarketItemQuery SendQuerySellBuyRequest(int id)
+           public MarketItemQuery SendQueryBuySellRequest(int id)
           {
             SimpleHTTPClient HTTPClient = new SimpleHTTPClient();
             QuerySellBuyRequest request = new QuerySellBuyRequest();
