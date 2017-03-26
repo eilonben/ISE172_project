@@ -23,7 +23,11 @@ namespace Presentation_Layer
                 int ammount = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("What is the price you want to pay?");
                 int price = Convert.ToInt32(Console.ReadLine());
-                rManager.SendBuyRequest(price, commodityID, ammount);
+                int output = rManager.SendBuyRequest(price, commodityID, ammount);
+                if (output == -1)
+                    Console.WriteLine(rManager.error);
+                else
+                    Console.WriteLine("Congratulations! Your request was successful! Your request ID is:" + output);
             }
             if (type == 2) //sell request
             {
@@ -33,7 +37,11 @@ namespace Presentation_Layer
                 int ammount = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("What is the price you would like to receive?");
                 int price = Convert.ToInt32(Console.ReadLine());
-                rManager.SendSellRequest(price, commodityID, ammount);
+                int output = rManager.SendSellRequest(price, commodityID, ammount);
+                if (output == -1)
+                    Console.WriteLine(rManager.error);
+                else
+                    Console.WriteLine("Congratulations! Your request was successful! Your request ID is:" + output);
             }
             if (type == 3) //cancellation request
             {
@@ -45,25 +53,25 @@ namespace Presentation_Layer
                 else
                     Console.WriteLine("Our apologies, your cancellation request did not complete. If the request was yet to be canceled, please make sure that the Buy or the Sell Rrequest ID that you enterd was typed correctly, and try again.");
             }
-            if (type == 4) //query
+            if (type == 4) //query request
             {
-                Console.WriteLine("What would you like? 1-Query sell/buy, 2-Query user, 3-Query market.");
+                Console.WriteLine("What kind of query would you like? Please type the relevant number: 1-Query sell/buy, 2-Query user, 3-Query market.");
                 int queryType = Convert.ToInt32(Console.ReadLine());
                 if (queryType == 1) //query sell/buy
                 {
                     Console.WriteLine("Please enter the Buy or the Sell Rrequest ID.");
                     int requestID = Convert.ToInt32(Console.ReadLine());
-                    rManager.SendQueryBuySellRequest(requestID);
+                    Console.WriteLine(rManager.SendQueryBuySellRequest(requestID));
                 }
                 if (queryType == 2) //query user
                 {
-                    rManager.SendQueryUserRequest();
+                    Console.WriteLine(rManager.SendQueryUserRequest());
                 }
                 if (queryType == 3) //query market
                 {
                     Console.WriteLine("Please enter the Commodity ID.");
                     int commodityID = Convert.ToInt32(Console.ReadLine());
-                    rManager.SendQueryMarketRequest(commodityID);
+                    Console.WriteLine(rManager.SendQueryMarketRequest(commodityID));
                 }
             }
         }
