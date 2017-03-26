@@ -11,11 +11,18 @@ namespace Presentation_Layer
         public static void main(String[] args)
         {
             Console.WriteLine("Hello, please enter your request type number: 1-Buy, 2-Sell, 3-Cancle, 4-Query.");
-            string type = Console.ReadLine();
+            var type = Console.ReadLine();
             if (type == "1")
                 Console.WriteLine("Please enter your bid price, commodity and ammount.");
-            if (type=="2")
+            if (type == "2")
                 Console.WriteLine("Please enter your sell price, commodity and ammount.");
+            if (type == "3")
+                Console.WriteLine();
+            if (type == "4")
+            {
+
+            }
+
 
         }
     }
