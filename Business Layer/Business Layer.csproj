@@ -43,14 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BuyRequest.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QueryBuyRequest.cs" />
-    <Compile Include="QueryMarketRequest.cs" />
-    <Compile Include="QuerySellRequest.cs" />
-    <Compile Include="QueryUserRequest.cs" />
-    <Compile Include="SellRequest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
