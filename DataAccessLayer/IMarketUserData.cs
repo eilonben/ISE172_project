@@ -10,7 +10,7 @@ namespace DataAccessLayer
     public class IMarketUserData : MarketClient.DataEntries.IMarketUserData
     {
         public Dictionary<string, int> commodities;
-        public int funds;
+        public float funds;
         public List<int> requests;
 
         public string toString() {
