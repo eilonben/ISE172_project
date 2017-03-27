@@ -28,6 +28,20 @@ namespace DataAccessLayer
         vI69laTSH7nrr7H/hLxRAkA7YOf9KdlHgHI/fUc0oVGsjFYle7XQMRSdLgQc0nW2
         RBqA5j2CGRy/yTVv6RIDB/aueJc+NaopqxJ4lHCvkxv3
         -----END RSA PRIVATE KEY-----";
+        public string error;
+
+           public bool SendCancelBuySellRequest(int id)
+           {
+            SimpleHTTPClient HTTPClient = new SimpleHTTPClient();
+            CancelRequest request = new CancelRequest();
+            request.id = id;
+            string token = SimpleCryptoLibrary.CreateToken(user, PrivateKey);
+            string response = HTTPClient.SendPostRequest(url, user, token, request);
+            if (response.Equals("Ok"))
+                return true;
+            else
+                return false;
+           }
 
            public int SendBuyRequest(int price, int commodity, int amount) 
            {
@@ -38,11 +52,18 @@ namespace DataAccessLayer
             request.amount = amount;
             string token = SimpleCryptoLibrary.CreateToken(user, PrivateKey);
             string response = HTTPClient.SendPostRequest(url, user, token, request);
-            return Convert.ToInt32(response);
+            bool flag = response.All(Char.IsDigit);
+            if(flag==true)
+                return Convert.ToInt32(response);
+            else
+            {
+                error = response;
+                return -1;
+            }
                
            }
-        public int SendSellRequest(int price, int commodity, int amount)
-        {
+           public int SendSellRequest(int price, int commodity, int amount)
+           {
             SimpleHTTPClient HTTPClient = new SimpleHTTPClient();
             SellRequest request = new SellRequest();
             request.price = price;
@@ -50,7 +71,24 @@ namespace DataAccessLayer
             request.amount = amount;
             string token = SimpleCryptoLibrary.CreateToken(user, PrivateKey);
             string response = HTTPClient.SendPostRequest(url, user, token, request);
-            return Convert.ToInt32(response);
+            bool flag = response.All(Char.IsDigit);
+            if (flag == true)
+                return Convert.ToInt32(response);
+            else
+            {
+                error = response;
+                return -1;
+            }
+        }
+
+           public MarketItemQuery SendQueryBuySellRequest(int id)
+          {
+            SimpleHTTPClient HTTPClient = new SimpleHTTPClient();
+            QuerySellBuyRequest request = new QuerySellBuyRequest();
+            request.id = id;
+            string token = SimpleCryptoLibrary.CreateToken(user, PrivateKey);
+            MarketItemQuery response = HTTPClient.SendPostRequest<QuerySellBuyRequest, MarketItemQuery>(url, user, token, request);
+            return response;
         }
     }
 }

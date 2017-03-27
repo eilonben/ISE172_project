@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-    public class BuyRequest
+    public class QuerySellBuyRequest
     {
-        public const string type = "buy";
-        public int commodity;
-        public int amount;
-        public int price;
+        public int id;
+        public const string type = "queryBuySell";
     }
 }
