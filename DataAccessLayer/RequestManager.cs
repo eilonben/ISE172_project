@@ -4,14 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MarketClient;
+using MarketClient.DataEntries;
 using MarketClient.Utils;
 
 
 namespace DataAccessLayer
 {
-    public class RequestManager:IMarketClient
-     {
-        private const string url="http://ise172.ise.bgu.ac.il";
+    public class RequestManager : IMarketClient
+    {
+        private const string url = "http://ise172.ise.bgu.ac.il";
         private const string user = "user32";
         private const string PrivateKey = @"-----BEGIN RSA PRIVATE KEY-----
         MIICXQIBAAKBgQDkV2AG1vqzPnMv2jjfD9Z3tTwXYRp4Vwdo01IeoHohwU5J2bD1
@@ -30,8 +31,8 @@ namespace DataAccessLayer
         -----END RSA PRIVATE KEY-----";
         public string error;
 
-           public bool SendCancelBuySellRequest(int id)
-           {
+        public bool SendCancelBuySellRequest(int id) // The cancel request function using the CancelRequest class
+        {
             SimpleHTTPClient HTTPClient = new SimpleHTTPClient();
             CancelRequest request = new CancelRequest();
             request.id = id;
@@ -41,10 +42,10 @@ namespace DataAccessLayer
                 return true;
             else
                 return false;
-           }
+        }
 
-           public int SendBuyRequest(int price, int commodity, int amount) 
-           {
+        public int SendBuyRequest(int price, int commodity, int amount)// The buy request function using the BuyRequest class
+        {
             SimpleHTTPClient HTTPClient = new SimpleHTTPClient();
             BuyRequest request = new BuyRequest();
             request.price = price;
@@ -53,17 +54,17 @@ namespace DataAccessLayer
             string token = SimpleCryptoLibrary.CreateToken(user, PrivateKey);
             string response = HTTPClient.SendPostRequest(url, user, token, request);
             bool flag = response.All(Char.IsDigit);
-            if(flag==true)
+            if (flag == true)
                 return Convert.ToInt32(response);
             else
             {
                 error = response;
                 return -1;
             }
-               
-           }
-           public int SendSellRequest(int price, int commodity, int amount)
-           {
+
+        }
+        public int SendSellRequest(int price, int commodity, int amount)// The sell request function using the SellRequest class
+        {
             SimpleHTTPClient HTTPClient = new SimpleHTTPClient();
             SellRequest request = new SellRequest();
             request.price = price;
@@ -81,14 +82,33 @@ namespace DataAccessLayer
             }
         }
 
-           public MarketItemQuery SendQueryBuySellRequest(int id)
-          {
+        public IMarketItemQuery SendQueryBuySellRequest(int id) // The query buy\sell request function using the QuerySellBuyRequest class and returning a IMarketItemQuery object
+        {
             SimpleHTTPClient HTTPClient = new SimpleHTTPClient();
             QuerySellBuyRequest request = new QuerySellBuyRequest();
             request.id = id;
             string token = SimpleCryptoLibrary.CreateToken(user, PrivateKey);
-            MarketItemQuery response = HTTPClient.SendPostRequest<QuerySellBuyRequest, MarketItemQuery>(url, user, token, request);
+            IMarketItemQuery response = HTTPClient.SendPostRequest<QuerySellBuyRequest, IMarketItemQuery>(url, user, token, request);
             return response;
+        }
+        public IMarketUserData SendQueryUserRequest() //The query user request function using the QueryUserRequest class and returning a IMarketUserData object
+        {
+            SimpleHTTPClient HTTPClient = new SimpleHTTPClient();
+            QueryUserRequest request = new QueryUserRequest();
+            string token = SimpleCryptoLibrary.CreateToken(user, PrivateKey);
+            IMarketUserData response = HTTPClient.SendPostRequest<QueryUserRequest, IMarketUserData>(url, user, token, request);
+            return response;
+        }
+
+        public IMarketCommodityOffer SendQueryMarketRequest(int commodity) //The query market request function using the QueryMarketRequest class and returning a IMarketCommodityOffer object
+        {
+            SimpleHTTPClient HTTPClient = new SimpleHTTPClient();
+            QueryMarketRequest request = new QueryMarketRequest();
+            request.commodity = commodity;
+            string token = SimpleCryptoLibrary.CreateToken(user, PrivateKey);
+            IMarketCommodityOffer response = HTTPClient.SendPostRequest<QueryMarketRequest, IMarketCommodityOffer>(url, user, token, request);
+            return response;
+
         }
     }
 }

@@ -7,7 +7,7 @@ using MarketClient.DataEntries;
 
 namespace DataAccessLayer
 {
-    public class MarketItemQuery : IMarketItemQuery
+    public class IMarketItemQuery : MarketClient.DataEntries.IMarketItemQuery
     {
         public int price;
         public int amount;

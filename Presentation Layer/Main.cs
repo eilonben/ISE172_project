@@ -59,7 +59,7 @@ namespace Presentation_Layer
                 int queryType = Convert.ToInt32(Console.ReadLine());
                 if (queryType == 1) //query sell/buy
                 {
-                    Console.WriteLine("Please enter the Buy or the Sell Rrequest ID.");
+                    Console.WriteLine("Please enter the Buy or the Sell Request ID.");
                     int requestID = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine(rManager.SendQueryBuySellRequest(requestID));
                 }

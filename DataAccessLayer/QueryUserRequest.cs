@@ -8,6 +8,6 @@ namespace DataAccessLayer
 {
     public class QueryUserRequest
     {
-        
+        public const string type = "queryUser";
     }
 }
