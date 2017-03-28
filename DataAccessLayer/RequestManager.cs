@@ -88,15 +88,15 @@ namespace DataAccessLayer
             QuerySellBuyRequest request = new QuerySellBuyRequest();
             request.id = id;
             string token = SimpleCryptoLibrary.CreateToken(user, PrivateKey);
-            IMarketItemQuery response = HTTPClient.SendPostRequest<QuerySellBuyRequest, IMarketItemQuery>(url, user, token, request);
+            MarketItemQuery response = HTTPClient.SendPostRequest<QuerySellBuyRequest, MarketItemQuery>(url, user, token, request);
             return response;
         }
-        public IMarketUserData SendQueryUserRequest() //The query user request function using the QueryUserRequest class and returning a IMarketUserData object
+        public MarketUserData SendQueryUserRequest() //The query user request function using the QueryUserRequest class and returning a IMarketUserData object
         {
             SimpleHTTPClient HTTPClient = new SimpleHTTPClient();
             QueryUserRequest request = new QueryUserRequest();
             string token = SimpleCryptoLibrary.CreateToken(user, PrivateKey);
-            IMarketUserData response = HTTPClient.SendPostRequest<QueryUserRequest, IMarketUserData>(url, user, token, request);
+            MarketUserData response = HTTPClient.SendPostRequest<QueryUserRequest, MarketUserData>(url, user, token, request);
             return response;
         }
 

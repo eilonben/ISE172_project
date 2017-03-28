@@ -48,9 +48,9 @@
   <ItemGroup>
     <Compile Include="BuyRequest.cs" />
     <Compile Include="CancelRequest.cs" />
-    <Compile Include="IMarketCommodityOffer.cs" />
-    <Compile Include="IMarketItemQuery.cs" />
-    <Compile Include="IMarketUserData.cs" />
+    <Compile Include="MarketCommodityOffer.cs" />
+    <Compile Include="MarketItemQuery.cs" />
+    <Compile Include="MarketUserData.cs" />
     <Compile Include="QuerySellBuyRequest.cs" />
     <Compile Include="QueryMarketRequest.cs" />
     <Compile Include="QueryUserRequest.cs" />

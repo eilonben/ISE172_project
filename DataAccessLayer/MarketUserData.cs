@@ -7,7 +7,7 @@ using MarketClient.DataEntries;
 
 namespace DataAccessLayer
 {
-    public class IMarketUserData : MarketClient.DataEntries.IMarketUserData
+    public class MarketUserData : MarketClient.DataEntries.IMarketUserData
     {
         public Dictionary<string, int> commodities;
         public float funds;

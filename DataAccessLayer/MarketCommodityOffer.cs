@@ -7,7 +7,7 @@ using MarketClient.DataEntries;
 
 namespace DataAccessLayer
 {
-    public class IMarketCommodityOffer : MarketClient.DataEntries.IMarketCommodityOffer
+    public class MarketCommodityOffer : MarketClient.DataEntries.IMarketCommodityOffer
     {
         public int ask;
         public int bid;
