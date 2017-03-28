@@ -12,7 +12,7 @@ namespace DataAccessLayer
         public int ask;
         public int bid;
 
-        public string toString()
+        public override string ToString()
         {
             string output;
             output = "Commodity Status:" + "\r\n";

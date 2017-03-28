@@ -13,7 +13,8 @@ namespace DataAccessLayer
         public float funds;
         public List<int> requests;
 
-        public string toString() {
+        public override string ToString()
+        {
             string output;
             output = "User Trade Status:" + "\r\n";
             output += "Commodities: {" + commodities + "} Remaining funds:" + funds + " requests id's: {" + requests + "}";
