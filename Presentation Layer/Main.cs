@@ -11,24 +11,41 @@ namespace Presentation_Layer
     {
         public static void main(String[] args)
         {
-            RequestManager rManager = new RequestManager();
+            RequestManager rManager = new RequestManager();//creates an instance of the RequestManager class 
             Console.WriteLine("Hello, please enter your request type number: 1-Buy, 2-Sell, 3-Cancel, 4-Query.");
             String type = Console.ReadLine();
             while (!type.Equals("1") & !type.Equals("2") & !type.Equals("3") & !type.Equals("4"))//checking if input is valid
             {
-                Console.WriteLine("Something went wrong, please enter an integer between 1 to 4");
+                Console.WriteLine("It seems like your input is invalid, please enter an integer between 1 to 4");
                 type = Console.ReadLine();
             }
-            //int choise = Convert.ToInt32(type);--------למחוק את זה, אבל לעשות את זה בתוך כל איף ולשלוח לבדיקת תקינות---------
             if (type.Equals("1")) //buy request
             {
                 Console.WriteLine("You chose to buy commodities. To proceed, please enter the Commodity ID number.");
-                int commodityID = Convert.ToInt32(Console.ReadLine());
+                String commodityID = Console.ReadLine();
+                while (!isDigitsOnly(commodityID)) //checking if input is valid
+                {
+                    Console.WriteLine("The Commodity ID must be a number! Please enter a valid Commodity ID");
+                    commodityID = Console.ReadLine();
+                }
+                int commodityNums = Convert.ToInt32(commodityID); //casting the String to int
                 Console.WriteLine("Now enter the amount of commodities you would like to purchase.");
-                int ammount = Convert.ToInt32(Console.ReadLine());
+                String ammount = Console.ReadLine();
+                while (!isDigitsOnly(ammount)) //checking if input is valid
+                {
+                    Console.WriteLine("The ammount must be a number! Please enter a valid amount");
+                    ammount = Console.ReadLine();
+                }
+                int ammountNums = Convert.ToInt32(ammount); //casting the String to int
                 Console.WriteLine("What is the price you want to pay?");
-                int price = Convert.ToInt32(Console.ReadLine());
-                int output = rManager.SendBuyRequest(price, commodityID, ammount);
+                String price = Console.ReadLine();
+                while (!isDigitsOnly(price)) //checking if input is valid
+                {
+                    Console.WriteLine("The price must be a number! Please enter a valid price");
+                    price = Console.ReadLine();
+                }
+                int priceNums = Convert.ToInt32(price); //casting the String to int
+                int output = rManager.SendBuyRequest(priceNums, commodityNums, ammountNums);
                 if (output == -1)
                     Console.WriteLine(rManager.error);
                 else
@@ -37,12 +54,30 @@ namespace Presentation_Layer
             if (type.Equals("2")) //sell request
             {
                 Console.WriteLine("You chose to sell commodities. Please enter the Commodity ID.");
-                int commodityID = Convert.ToInt32(Console.ReadLine());
+                String commodityID = Console.ReadLine();
+                while (!isDigitsOnly(commodityID)) //checking if input is valid
+                {
+                    Console.WriteLine("The Commodity ID must be a number! Please enter a valid Commodity ID");
+                    commodityID = Console.ReadLine();
+                }
+                int commodityNums = Convert.ToInt32(commodityID); //casting the String to int
                 Console.WriteLine("Now enter the amount of commodities you would like to sell.");
-                int ammount = Convert.ToInt32(Console.ReadLine());
+                String ammount = Console.ReadLine();
+                while (!isDigitsOnly(ammount)) //checking if input is valid
+                {
+                    Console.WriteLine("The ammount must be a number! Please enter a valid amount");
+                    ammount = Console.ReadLine();
+                }
+                int ammountNums = Convert.ToInt32(ammount); //casting the String to int
                 Console.WriteLine("What is the price you would like to receive?");
-                int price = Convert.ToInt32(Console.ReadLine());
-                int output = rManager.SendSellRequest(price, commodityID, ammount);
+                String price = Console.ReadLine();
+                while (!isDigitsOnly(price)) //checking if input is valid
+                {
+                    Console.WriteLine("The price must be a number! Please enter a valid price");
+                    price = Console.ReadLine();
+                }
+                int priceNums = Convert.ToInt32(price); //casting the String to int
+                int output = rManager.SendSellRequest(priceNums, commodityNums, ammountNums);
                 if (output == -1)
                     Console.WriteLine(rManager.error);
                 else
@@ -51,8 +86,14 @@ namespace Presentation_Layer
             if (type.Equals("3")) //cancellation request
             {
                 Console.WriteLine("Please enter the Buy or the Sell Rrequest ID of the request you want to cancel.");
-                int requestID = Convert.ToInt32(Console.ReadLine());
-                bool ans = rManager.SendCancelBuySellRequest(requestID);
+                String requestID = Console.ReadLine();
+                while (!isDigitsOnly(requestID)) //checking if input is valid
+                {
+                    Console.WriteLine("The Rrequest ID must be a number! Please enter a valid Rrequest ID");
+                    requestID = Console.ReadLine();
+                }
+                int requestNums = Convert.ToInt32(requestID); //casting the String to int
+                bool ans = rManager.SendCancelBuySellRequest(requestNums);
                 if (ans)
                     Console.WriteLine("Congratulations! Your cancellation request was successful.");
                 else
@@ -61,27 +102,44 @@ namespace Presentation_Layer
             if (type.Equals("4")) //query request
             {
                 Console.WriteLine("What kind of query would you like? Please type the relevant number: 1-Query sell/buy, 2-Query user, 3-Query market.");
-                int queryType = Convert.ToInt32(Console.ReadLine());
-                if (queryType == 1) //query sell/buy
+                String queryType = Console.ReadLine();
+                while (!queryType.Equals("1") & !queryType.Equals("2") & !queryType.Equals("3") & !queryType.Equals("4"))//checking if input is valid
+                {
+                    Console.WriteLine("It seems like your input is invalid, please enter an integer between 1 to 3");
+                    queryType = Console.ReadLine();
+                }
+                if (queryType.Equals("1")) //query sell/buy
                 {
                     Console.WriteLine("Please enter the Buy or the Sell Request ID.");
-                    int requestID = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine(rManager.SendQueryBuySellRequest(requestID));
+                    String requestID = Console.ReadLine();
+                    while (!isDigitsOnly(requestID)) //checking if input is valid
+                    {
+                        Console.WriteLine("The Rrequest ID must be a number! Please enter a valid Rrequest ID");
+                        requestID = Console.ReadLine();
+                    }
+                    int requestNums = Convert.ToInt32(requestID); //casting the String to int
+                    Console.WriteLine(rManager.SendQueryBuySellRequest(requestNums));
                 }
-                if (queryType == 2) //query user
+                if (queryType.Equals("2")) //query user
                 {
                     Console.WriteLine(rManager.SendQueryUserRequest());
                 }
-                if (queryType == 3) //query market
+                if (queryType.Equals("3")) //query market
                 {
                     Console.WriteLine("Please enter the Commodity ID.");
-                    int commodityID = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine(rManager.SendQueryMarketRequest(commodityID));
+                    String commodityID = Console.ReadLine();
+                    while (!isDigitsOnly(commodityID)) //checking if input is valid
+                    {
+                        Console.WriteLine("The Commodity ID must be a number! Please enter a valid Commodity ID");
+                        commodityID = Console.ReadLine();
+                    }
+                    int commodityNums = Convert.ToInt32(commodityID); //casting the String to int
+                    Console.WriteLine(rManager.SendQueryMarketRequest(commodityNums));
                 }
             }
         }
 
-        private static bool isDigitsOnly(string str)
+        private static bool isDigitsOnly(string str)//a private function that checks if a given string is made only of numbers.
         {
             foreach (char c in str)
             {
