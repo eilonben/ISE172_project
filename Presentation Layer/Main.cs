@@ -52,19 +52,19 @@ namespace Presentation_Layer
                     int priceNums = Convert.ToInt32(price); //casting the String to int
                     int output = rManager.SendBuyRequest(priceNums, commodityNums, ammountNums);
                     if (output == -1)
-                        Console.WriteLine(rManager.error);
+                        Console.WriteLine("An error has occurred:" + rManager.error);
                     else
                         Console.WriteLine("Congratulations! Your request was successful! Your request ID is:" + output);
-                    Console.WriteLine("What would you like to do next? 1-Buy, 2-Sell, 3-Cancel, 4-Query, 0-Quit program");
+                    Console.WriteLine("What would you like to do next? Please type the relevant number: 1-Back to main menu, 0-Quit program");
                     String quitBuy = Console.ReadLine();
-                    while (!quitBuy.Equals("1") & !quitBuy.Equals("2") & !quitBuy.Equals("3") & !quitBuy.Equals("4") & !quitBuy.Equals("0"))//checking if input is valid
+                    while (!quitBuy.Equals("1") & !quitBuy.Equals("0"))//checking if input is valid
                     {
-                        Console.WriteLine("It seems like your input is invalid, please enter an integer between 0 to 4");
+                        Console.WriteLine("It seems like your input is invalid. Type 1 to go back to main menu, or 0 to quit");
                         quitBuy = Console.ReadLine();
                     }
-                    typeInt = Convert.ToInt32(quitBuy);
-                    quit = (typeInt == 0);
-                    
+                    quit = (Convert.ToInt32(quitBuy) == 0);
+
+
                 }
                 if (typeInt==2) //sell request
                 {
@@ -94,18 +94,18 @@ namespace Presentation_Layer
                     int priceNums = Convert.ToInt32(price); //casting the String to int
                     int output = rManager.SendSellRequest(priceNums, commodityNums, ammountNums);
                     if (output == -1)
-                        Console.WriteLine(rManager.error);
+                        Console.WriteLine("An error has occurred:" + rManager.error);
                     else
                         Console.WriteLine("Congratulations! Your request was successful! Your request ID is:" + output);
-                    Console.WriteLine("What would you like to do next? 1-Buy, 2-Sell, 3-Cancel, 4-Query, 0-Quit program");
+                    Console.WriteLine("What would you like to do next? Please type the relevant number: 1-Back to main menu, 0-Quit program");
                     String quitSell = Console.ReadLine();
-                    while (!quitSell.Equals("1") & !quitSell.Equals("2") & !quitSell.Equals("3") & !quitSell.Equals("4") & !quitSell.Equals("0"))//checking if input is valid
+                    while (!quitSell.Equals("1") & !quitSell.Equals("0"))//checking if input is valid
                     {
-                        Console.WriteLine("It seems like your input is invalid, please enter an integer between 0 to 4");
+                        Console.WriteLine("It seems like your input is invalid. Type 1 to go back to main menu, or 0 to quit");
                         quitSell = Console.ReadLine();
                     }
-                    typeInt = Convert.ToInt32(quitSell);
-                    quit = (typeInt == 0);
+                    quit = (Convert.ToInt32(quitSell) == 0);
+
                 }
                 if (typeInt==3) //cancellation request
                 {
@@ -113,7 +113,7 @@ namespace Presentation_Layer
                     String requestID = Console.ReadLine();
                     while (!isDigitsOnly(requestID)) //checking if input is valid
                     {
-                        Console.WriteLine("The Rrequest ID must be a number! Please enter a valid Rrequest ID");
+                        Console.WriteLine("The Request ID must be a number! Please enter a valid Rrequest ID");
                         requestID = Console.ReadLine();
                     }
                     int requestNums = Convert.ToInt32(requestID); //casting the String to int
@@ -122,15 +122,15 @@ namespace Presentation_Layer
                         Console.WriteLine("Congratulations! Your cancellation request was successful.");
                     else
                         Console.WriteLine("Our apologies, your cancellation request did not complete. If the request was yet to be canceled, please make sure that the Buy or the Sell Rrequest ID that you enterd was typed correctly, and try again.");
-                    Console.WriteLine("What would you like to do next? 1-Buy, 2-Sell, 3-Cancel, 4-Query, 0-Quit program");
+                    Console.WriteLine("What would you like to do next? Please type the relevant number: 1-Back to main menu, 0-Quit program");
                     String quitCancel = Console.ReadLine();
-                    while (!quitCancel.Equals("1") & !quitCancel.Equals("2") & !quitCancel.Equals("3") & !quitCancel.Equals("4") & !quitCancel.Equals("0"))//checking if input is valid
+                    while (!quitCancel.Equals("1") & !quitCancel.Equals("0"))//checking if input is valid
                     {
-                        Console.WriteLine("It seems like your input is invalid, please enter an integer between 0 to 4");
+                        Console.WriteLine("It seems like your input is invalid. Type 1 to go back to main menu, or 0 to quit");
                         quitCancel = Console.ReadLine();
                     }
-                    typeInt = Convert.ToInt32(quitCancel);
-                    quit = (typeInt == 0);
+                    quit = (Convert.ToInt32(quitCancel) == 0);
+
                 }
                 if (typeInt==4) //query request
                 {
@@ -147,15 +147,23 @@ namespace Presentation_Layer
                         String requestID = Console.ReadLine();
                         while (!isDigitsOnly(requestID)) //checking if input is valid
                         {
-                            Console.WriteLine("The Rrequest ID must be a number! Please enter a valid Rrequest ID");
+                            Console.WriteLine("The Request ID must be a number! Please enter a valid Request ID");
                             requestID = Console.ReadLine();
                         }
                         int requestNums = Convert.ToInt32(requestID); //casting the String to int
-                        Console.WriteLine(rManager.SendQueryBuySellRequest(requestNums));
+                        var querySB = rManager.SendQueryBuySellRequest(requestNums);
+                        if (querySB == null)
+                            Console.WriteLine("An error has occurred:" + rManager.error);
+                        else
+                            Console.WriteLine(querySB);
                     }
                     if (queryType.Equals("2")) //query user
                     {
-                        Console.WriteLine(rManager.SendQueryUserRequest());
+                        var queryU = rManager.SendQueryUserRequest();
+                        if (queryU == null)
+                            Console.WriteLine("An error has occurred:" + rManager.error);
+                        else
+                            Console.WriteLine(queryU);
                     }
                     if (queryType.Equals("3")) //query market
                     {
@@ -167,17 +175,21 @@ namespace Presentation_Layer
                             commodityID = Console.ReadLine();
                         }
                         int commodityNums = Convert.ToInt32(commodityID); //casting the String to int
-                        Console.WriteLine(rManager.SendQueryMarketRequest(commodityNums));
+                        var queryM = rManager.SendQueryMarketRequest(commodityNums);
+                        if (queryM == null)
+                            Console.WriteLine("An error has occurred:" + rManager.error);
+                        else
+                            Console.WriteLine(queryM);
                     }
-                    Console.WriteLine("What would you like to do next? 1-Buy, 2-Sell, 3-Cancel, 4-Query, 0-Quit program");
+                    Console.WriteLine("What would you like to do next? Please type the relevant number: 1-Back to main menu, 0-Quit program");
                     String quitQuery = Console.ReadLine();
-                    while (!quitQuery.Equals("1") & !quitQuery.Equals("2") & !quitQuery.Equals("3") & !quitQuery.Equals("4") & !quitQuery.Equals("0"))//checking if input is valid
+                    while (!quitQuery.Equals("1") & !quitQuery.Equals("0"))//checking if input is valid
                     {
-                        Console.WriteLine("It seems like your input is invalid, please enter an integer between 0 to 4");
+                        Console.WriteLine("It seems like your input is invalid. Type 1 to go back to main menu, or 0 to quit");
                         quitQuery = Console.ReadLine();
                     }
-                    typeInt = Convert.ToInt32(quitQuery);
-                    quit = (typeInt == 0);
+                    quit = (Convert.ToInt32(quitQuery) == 0);
+                    
                 }
             }
         }
