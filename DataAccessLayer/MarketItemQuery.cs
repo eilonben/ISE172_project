@@ -14,7 +14,7 @@ namespace DataAccessLayer
         public string type;
         public int commodity;
 
-        public string toString()
+        public override string ToString()
         {
             string output;
             output = "Request status:"+ "\r\n";
