@@ -7,9 +7,9 @@ using DataAccessLayer;
 
 namespace Presentation_Layer
 {
-    public class Main
+     class Main1
     {
-        public static void main(String[] args)
+        public static void Main()
         {
             RequestManager rManager = new RequestManager();//creates an instance of the RequestManager class 
             Console.WriteLine("Hello, please enter your request type number: 1-Buy, 2-Sell, 3-Cancel, 4-Query.");

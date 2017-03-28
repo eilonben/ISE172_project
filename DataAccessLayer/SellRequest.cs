@@ -8,7 +8,7 @@ namespace DataAccessLayer
 {
      public class SellRequest
     {
-        public const string type = "sell";
+        public string type;
         public int commodity;
         public int amount;
         public int price;

@@ -35,6 +35,7 @@ namespace DataAccessLayer
         {
             SimpleHTTPClient HTTPClient = new SimpleHTTPClient();
             CancelRequest request = new CancelRequest();
+            request.type = "cancelBuySell";
             request.id = id;
             string token = SimpleCryptoLibrary.CreateToken(user, PrivateKey);
             string response = HTTPClient.SendPostRequest(url, user, token, request);
@@ -48,6 +49,7 @@ namespace DataAccessLayer
         {
             SimpleHTTPClient HTTPClient = new SimpleHTTPClient();
             BuyRequest request = new BuyRequest();
+            request.type = "buy";
             request.price = price;
             request.commodity = commodity;
             request.amount = amount;
@@ -75,6 +77,7 @@ namespace DataAccessLayer
         {
             SimpleHTTPClient HTTPClient = new SimpleHTTPClient();
             SellRequest request = new SellRequest();
+            request.type = "sell";
             request.price = price;
             request.commodity = commodity;
             request.amount = amount;
@@ -102,6 +105,7 @@ namespace DataAccessLayer
         {
             SimpleHTTPClient HTTPClient = new SimpleHTTPClient();
             QuerySellBuyRequest request = new QuerySellBuyRequest();
+            request.type = "queryBuySell";
             request.id = id;
             string token = SimpleCryptoLibrary.CreateToken(user, PrivateKey);
             bool eflag = false;
@@ -127,6 +131,7 @@ namespace DataAccessLayer
         {
             SimpleHTTPClient HTTPClient = new SimpleHTTPClient();
             QueryUserRequest request = new QueryUserRequest();
+            request.type = "queryUser";
             string token = SimpleCryptoLibrary.CreateToken(user, PrivateKey);
             MarketUserData response = null;
             bool eflag = false; 
@@ -151,6 +156,7 @@ namespace DataAccessLayer
         {
             SimpleHTTPClient HTTPClient = new SimpleHTTPClient();
             QueryMarketRequest request = new QueryMarketRequest();
+            request.type = "queryMarket";
             request.commodity = commodity;
             string token = SimpleCryptoLibrary.CreateToken(user, PrivateKey);
             MarketCommodityOffer response = null;

@@ -9,6 +9,6 @@ namespace DataAccessLayer
     public class QueryMarketRequest
     {
         public int commodity;
-        public const string type = "queryMarket";
+        public string type;
     }
 }

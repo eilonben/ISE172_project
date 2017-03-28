@@ -9,6 +9,6 @@ namespace DataAccessLayer
     public class CancelRequest
     {
         public int id;
-        public const string type = "cancelBuySell";
+        public string type;
     }
 }
