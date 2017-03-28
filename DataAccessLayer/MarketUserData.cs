@@ -17,7 +17,19 @@ namespace DataAccessLayer
         {
             string output;
             output = "User Trade Status:" + "\r\n";
-            output += "Commodities: {" + commodities + "} Remaining funds:" + funds + " requests id's: {" + requests + "}";
+            output += "Commodities: { ";
+            foreach (KeyValuePair<string, int> kvp in commodities)
+            {
+                output+= (kvp.Key)+ " ,";
+            }
+            output = output.Substring(0, output.Length - 1);
+            output += " } Remaining funds:" + funds + " requests id's: { ";
+            foreach ( int r in requests)
+            {
+                output += (r) + " ,";
+            }
+            output = output.Substring(0, output.Length - 1);
+            output+= " }";
             return output;
         }
     }

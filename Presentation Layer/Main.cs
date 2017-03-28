@@ -13,9 +13,10 @@ namespace Presentation_Layer
         {
             RequestManager rManager = new RequestManager();//creates an instance of the RequestManager class 
             bool quit = false;
+            Console.WriteLine("Hello, please enter your request type number: 1-Buy, 2-Sell, 3-Cancel, 4-Query, 0-Quit program.");
             while (!quit)
             {
-                Console.WriteLine("Hello, please enter your request type number: 1-Buy, 2-Sell, 3-Cancel, 4-Query, 0-Quit program.");
+                
                 String type = Console.ReadLine();
                 while (!type.Equals("1") & !type.Equals("2") & !type.Equals("3") & !type.Equals("4") & !type.Equals("0"))//checking if input is valid
                 {
