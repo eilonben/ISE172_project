@@ -3,7 +3,6 @@ using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MarketClient;
 using MarketClient.Utils;
-
 namespace MarketClientTest
 {
     [TestClass]
