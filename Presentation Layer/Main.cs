@@ -13,10 +13,9 @@ namespace Presentation_Layer
         {
             RequestManager rManager = new RequestManager();//creates an instance of the RequestManager class 
             bool quit = false;
-            Console.WriteLine("Hello, please enter your request type number: 1-Buy, 2-Sell, 3-Cancel, 4-Query, 0-Quit program.");
             while (!quit)
             {
-                
+                Console.WriteLine("Hello, please enter your request type number: 1-Buy, 2-Sell, 3-Cancel, 4-Query, 0-Quit program.");
                 String type = Console.ReadLine();
                 while (!type.Equals("1") & !type.Equals("2") & !type.Equals("3") & !type.Equals("4") & !type.Equals("0"))//checking if input is valid
                 {
@@ -53,9 +52,9 @@ namespace Presentation_Layer
                     int priceNums = Convert.ToInt32(price); //casting the String to int
                     int output = rManager.SendBuyRequest(priceNums, commodityNums, ammountNums);
                     if (output == -1)
-                        Console.WriteLine("An error has occurred:" + rManager.error);
+                        Console.WriteLine("An error has occurred: " + rManager.error);
                     else
-                        Console.WriteLine("Congratulations! Your request was successful! Your request ID is:" + output);
+                        Console.WriteLine("Congratulations! Your request was successful! Your request ID is: " + output);
                     Console.WriteLine("What would you like to do next? Please type the relevant number: 1-Back to main menu, 0-Quit program");
                     String quitBuy = Console.ReadLine();
                     while (!quitBuy.Equals("1") & !quitBuy.Equals("0"))//checking if input is valid
@@ -95,9 +94,9 @@ namespace Presentation_Layer
                     int priceNums = Convert.ToInt32(price); //casting the String to int
                     int output = rManager.SendSellRequest(priceNums, commodityNums, ammountNums);
                     if (output == -1)
-                        Console.WriteLine("An error has occurred:" + rManager.error);
+                        Console.WriteLine("An error has occurred: " + rManager.error);
                     else
-                        Console.WriteLine("Congratulations! Your request was successful! Your request ID is:" + output);
+                        Console.WriteLine("Congratulations! Your request was successful! Your request ID is: " + output);
                     Console.WriteLine("What would you like to do next? Please type the relevant number: 1-Back to main menu, 0-Quit program");
                     String quitSell = Console.ReadLine();
                     while (!quitSell.Equals("1") & !quitSell.Equals("0"))//checking if input is valid
@@ -154,7 +153,7 @@ namespace Presentation_Layer
                         int requestNums = Convert.ToInt32(requestID); //casting the String to int
                         var querySB = rManager.SendQueryBuySellRequest(requestNums);
                         if (querySB == null)
-                            Console.WriteLine("An error has occurred:" + rManager.error);
+                            Console.WriteLine("An error has occurred: " + rManager.error);
                         else
                             Console.WriteLine(querySB);
                     }
@@ -162,7 +161,7 @@ namespace Presentation_Layer
                     {
                         var queryU = rManager.SendQueryUserRequest();
                         if (queryU == null)
-                            Console.WriteLine("An error has occurred:" + rManager.error);
+                            Console.WriteLine("An error has occurred: " + rManager.error);
                         else
                             Console.WriteLine(queryU);
                     }
@@ -178,7 +177,7 @@ namespace Presentation_Layer
                         int commodityNums = Convert.ToInt32(commodityID); //casting the String to int
                         var queryM = rManager.SendQueryMarketRequest(commodityNums);
                         if (queryM == null)
-                            Console.WriteLine("An error has occurred:" + rManager.error);
+                            Console.WriteLine("An error has occurred: " + rManager.error);
                         else
                             Console.WriteLine(queryM);
                     }
