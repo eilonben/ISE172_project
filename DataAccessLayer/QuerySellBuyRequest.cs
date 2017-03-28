@@ -9,6 +9,6 @@ namespace DataAccessLayer
     public class QuerySellBuyRequest
     {
         public int id;
-        public const string type = "queryBuySell";
+        public string type;
     }
 }
