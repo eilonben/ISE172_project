@@ -59,10 +59,11 @@ namespace DataAccessLayer
             try
             {
                response = HTTPClient.SendPostRequest(url, user, token, request);
+                Convert.ToInt32(response);
             }
             catch (Exception e)
             {
-                error = e.Message;
+                error = response;
                 eflag = true;
             }
             if (!eflag)
@@ -87,6 +88,7 @@ namespace DataAccessLayer
             try
             {
                 response = HTTPClient.SendPostRequest(url, user, token, request);
+                Convert.ToInt32(response);
             }
             catch (Exception e)
             {
