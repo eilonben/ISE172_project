@@ -90,9 +90,9 @@ namespace DataAccessLayer
                 response = HTTPClient.SendPostRequest(url, user, token, request);
                 Convert.ToInt32(response);
             }
-            catch (Exception e)
-            {
-                error = e.Message;
+            catch (Exception e)// catching the exception, and sending back the response
+                {
+                error = response;
                 eflag = true;
             }
             if (!eflag)
@@ -142,7 +142,7 @@ namespace DataAccessLayer
                 response = HTTPClient.SendPostRequest<QueryUserRequest, MarketUserData>(url, user, token, request);
             }
             catch (Exception e)
-            {
+            { 
                 error = e.Message;
                 eflag = true;
             }
