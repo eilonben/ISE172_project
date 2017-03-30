@@ -121,7 +121,11 @@ namespace Presentation_Layer
                     if (ans)
                         Console.WriteLine("Congratulations! Your cancellation request was successful.");
                     else
-                        Console.WriteLine("Our apologies, your cancellation request was declined. If the request was yet to be canceled, please make sure that the Buy or the Sell Rrequest ID that you enterd was typed correctly, and try again.");
+                    {
+                        Console.WriteLine("Our apologies, your cancellation request was declined. If the request was yet to be canceled, please make sure that the Buy or the Sell Request ID that you enterd was typed correctly, and try again.");
+                        Console.WriteLine("More information:");
+                        Console.WriteLine(rManager.error);
+                    }
                     Console.WriteLine("What would you like to do next? Please type the relevant number: 1-Back to main menu, 0-Quit program");
                     String quitCancel = Console.ReadLine();
                     while (!quitCancel.Equals("1") & !quitCancel.Equals("0"))//checking if input is valid

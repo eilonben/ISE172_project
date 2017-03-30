@@ -42,7 +42,11 @@ namespace DataAccessLayer
             if (response.Equals("Ok"))
                 return true;
             else
+            {
+                error = response;
+
                 return false;
+            }
         }
 
         public int SendBuyRequest(int price, int commodity, int amount)// The buy request function using the BuyRequest class
