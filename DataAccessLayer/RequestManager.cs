@@ -92,7 +92,7 @@ namespace DataAccessLayer
             }
             catch (Exception e)
             {
-                error = e.Message;
+                error = response;
                 eflag = true;
             }
             if (!eflag)
