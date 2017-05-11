@@ -44,7 +44,6 @@ namespace DataAccessLayer
             else
             {
                 error = response;
-
                 return false;
             }
         }
@@ -63,7 +62,7 @@ namespace DataAccessLayer
             try
             {
                response = HTTPClient.SendPostRequest(url, user, token, request);
-                Convert.ToInt32(response);
+               Convert.ToInt32(response);
             }
             catch (Exception e)
             {
@@ -95,7 +94,7 @@ namespace DataAccessLayer
                 Convert.ToInt32(response);
             }
             catch (Exception e)// catching the exception, and sending back the response
-                {
+            {
                 error = response;
                 eflag = true;
             }

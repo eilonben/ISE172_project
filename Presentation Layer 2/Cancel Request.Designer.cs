@@ -99,7 +99,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.maskedTextBox1);
             this.Name = "Cancel_Request";
-            this.Text = "Cancel_Request";
+            this.Text = "Cancel Request";
             this.ResumeLayout(false);
             this.PerformLayout();
 
