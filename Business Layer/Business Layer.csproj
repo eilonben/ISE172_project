@@ -46,16 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Autonomous Market Agent.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccessLayer\Data Access Layer.csproj">
       <Project>{5aae3034-3cfe-45df-94c0-472d30c98593}</Project>
       <Name>Data Access Layer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\marketClient-master\MarketClientTest\MarketClientTest.csproj">
+      <Project>{a8c39e49-de50-4efd-a248-fe168dd031a6}</Project>
+      <Name>MarketClientTest</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketClient\MarketClient.csproj">
+      <Project>{371e8ea8-ce7a-4ab2-85e5-eac135df4a26}</Project>
+      <Name>MarketClient</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
