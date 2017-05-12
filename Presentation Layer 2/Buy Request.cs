@@ -24,7 +24,25 @@ namespace Presentation_Layer_2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String ID = this.maskedTextBox1.Text;
+            try
+            {
+                int id = Int32.Parse(this.maskedTextBox1.Text);
+                int amount = Int32.Parse(this.maskedTextBox1.Text);
+                int price = Int32.Parse(this.maskedTextBox1.Text);
+             }
+             catch(Exception er) {
+             }
+
+        }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

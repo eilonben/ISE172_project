@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Presentation_Layer_;
 
 namespace Presentation_Layer_2
 {
@@ -24,15 +25,25 @@ namespace Presentation_Layer_2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Buy_Request br = new Buy_Request();
-            br.Show();
+            
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
             Presentation_Layer_.HelpWindow hr = new Presentation_Layer_.HelpWindow();
             hr.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Buy_Request br = new Buy_Request();
+            br.Show();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Cancel_Request cr = new Cancel_Request();
+            cr.Show();
         }
     }
 }

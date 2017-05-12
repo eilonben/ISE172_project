@@ -36,8 +36,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label2
@@ -62,6 +62,7 @@
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.UseWaitCursor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -78,7 +79,7 @@
             // 
             this.maskedTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.maskedTextBox2.Font = new System.Drawing.Font("Cooper Black", 10.8F);
-            this.maskedTextBox2.Location = new System.Drawing.Point(565, 173);
+            this.maskedTextBox2.Location = new System.Drawing.Point(570, 170);
             this.maskedTextBox2.Name = "maskedTextBox2";
             this.maskedTextBox2.Size = new System.Drawing.Size(185, 28);
             this.maskedTextBox2.TabIndex = 20;
@@ -89,9 +90,9 @@
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Cooper Black", 12F);
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(459, 174);
+            this.label3.Location = new System.Drawing.Point(448, 173);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 26);
+            this.label3.Size = new System.Drawing.Size(116, 26);
             this.label3.TabIndex = 19;
             this.label3.Text = "Amount:";
             this.label3.UseWaitCursor = true;
@@ -110,21 +111,12 @@
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Cooper Black", 12F);
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(220, 254);
+            this.label6.Location = new System.Drawing.Point(191, 255);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(109, 26);
+            this.label6.Size = new System.Drawing.Size(119, 26);
             this.label6.TabIndex = 23;
             this.label6.Text = "Bid Price:";
             this.label6.UseWaitCursor = true;
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.maskedTextBox1.Font = new System.Drawing.Font("Cooper Black", 10.8F);
-            this.maskedTextBox1.Location = new System.Drawing.Point(204, 171);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(185, 28);
-            this.maskedTextBox1.TabIndex = 26;
             // 
             // label1
             // 
@@ -133,10 +125,23 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label1.Location = new System.Drawing.Point(29, 172);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 26);
+            this.label1.Size = new System.Drawing.Size(189, 26);
             this.label1.TabIndex = 25;
             this.label1.Text = "Commodity ID:";
             this.label1.UseWaitCursor = true;
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.maskedTextBox1.Font = new System.Drawing.Font("Cooper Black", 10.8F);
+            this.maskedTextBox1.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Insert;
+            this.maskedTextBox1.Location = new System.Drawing.Point(233, 172);
+            this.maskedTextBox1.Mask = "0";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.PromptChar = ' ';
+            this.maskedTextBox1.ResetOnPrompt = false;
+            this.maskedTextBox1.Size = new System.Drawing.Size(185, 28);
+            this.maskedTextBox1.TabIndex = 26;
             // 
             // Buy_Request
             // 
@@ -144,7 +149,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(762, 422);
+            this.ClientSize = new System.Drawing.Size(784, 422);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.maskedTextBox4);
@@ -172,7 +177,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MaskedTextBox maskedTextBox4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
     }
 }

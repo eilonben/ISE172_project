@@ -1,6 +1,6 @@
 ﻿namespace Presentation_Layer_
 {
-    partial class Commodity_Query
+    partial class Query
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Commodity_Query));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Query));
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
@@ -42,50 +42,52 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Cooper Black", 20.8F);
             this.label2.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label2.Location = new System.Drawing.Point(98, -1);
+            this.label2.Location = new System.Drawing.Point(90, 37);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(447, 40);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Query Buy/Sell Request";
+            this.label2.Size = new System.Drawing.Size(456, 40);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Buy/Sell Query  Request";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(149, 209);
+            this.button2.Location = new System.Drawing.Point(163, 252);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(124, 44);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Cancel";
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Exit";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(408, 209);
+            this.button1.Location = new System.Drawing.Point(422, 252);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(124, 44);
-            this.button1.TabIndex = 7;
+            this.button1.TabIndex = 12;
             this.button1.Text = "Apply";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label1
+            // label3
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Cooper Black", 10.8F);
-            this.label1.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label1.Location = new System.Drawing.Point(64, 102);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(182, 30);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Enter Request ID:";
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Cooper Black", 10.8F);
+            this.label3.ForeColor = System.Drawing.Color.Cornsilk;
+            this.label3.Location = new System.Drawing.Point(78, 145);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(182, 30);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Enter Request ID:";
             // 
             // maskedTextBox1
             // 
             this.maskedTextBox1.Font = new System.Drawing.Font("Cooper Black", 10.8F);
-            this.maskedTextBox1.Location = new System.Drawing.Point(252, 102);
+            this.maskedTextBox1.Location = new System.Drawing.Point(266, 145);
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(185, 28);
-            this.maskedTextBox1.TabIndex = 5;
+            this.maskedTextBox1.TabIndex = 10;
             // 
-            // Commodity_Query
+            // Query
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -95,10 +97,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.maskedTextBox1);
-            this.Name = "Commodity_Query";
-            this.Text = "Commodity_Query";
+            this.Name = "Query";
+            this.Text = "BuySellQuery Request";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,7 +111,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
     }
 }

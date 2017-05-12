@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace Presentation_Layer_
 {
-    public partial class Commodity_Query : Form
+    public partial class Query : Form
     {
-        public Commodity_Query()
+        public Query()
         {
             InitializeComponent();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

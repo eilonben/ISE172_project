@@ -47,6 +47,7 @@
             this.label2.Size = new System.Drawing.Size(298, 40);
             this.label2.TabIndex = 9;
             this.label2.Text = "Cancel  Request";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // button2
             // 
@@ -66,6 +67,7 @@
             this.button1.TabIndex = 7;
             this.button1.Text = "Apply";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -77,6 +79,7 @@
             this.label3.Size = new System.Drawing.Size(182, 30);
             this.label3.TabIndex = 6;
             this.label3.Text = "Enter Request ID:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // maskedTextBox1
             // 
@@ -85,6 +88,7 @@
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(185, 28);
             this.maskedTextBox1.TabIndex = 5;
+            this.maskedTextBox1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
             // 
             // Cancel_Request
             // 

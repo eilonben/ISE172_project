@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllCommodityOffer.cs" />
+    <Compile Include="AllMarketRequest.cs" />
     <Compile Include="BuyRequest.cs" />
     <Compile Include="CancelRequest.cs" />
     <Compile Include="MarketCommodityOffer.cs" />

@@ -135,6 +135,7 @@
             this.button7.TabIndex = 9;
             this.button7.Text = "Buy Commodities";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // label2
             // 
@@ -160,6 +161,7 @@
             this.button8.TabIndex = 12;
             this.button8.Text = "Cancel Request";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button3
             // 

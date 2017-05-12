@@ -21,5 +21,10 @@ namespace Presentation_Layer_
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
