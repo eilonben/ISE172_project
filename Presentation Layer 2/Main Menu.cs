@@ -33,31 +33,31 @@ namespace Presentation_Layer_2
         private void button10_Click(object sender, EventArgs e)
         {
             HelpWindow hr = new HelpWindow();
-            hr.Show();
+            hr.ShowDialog();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             Buy_Request br = new Buy_Request();
-            br.Show();
+            br.ShowDialog();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             Cancel_Request cr = new Cancel_Request();
-            cr.Show();
+            cr.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             SellRequest sr = new SellRequest();
-            sr.Show();
+            sr.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             Query bsq = new Query();
-            bsq.Show();
+            bsq.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)

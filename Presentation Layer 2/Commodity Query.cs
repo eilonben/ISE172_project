@@ -27,8 +27,9 @@ namespace Presentation_Layer_
         private void button1_Click(object sender, EventArgs e)
         {
 
-            int id = Int32.Parse(maskedTextBox1.Text);
-            String msg = ra.CommodityQuery(id);
+            int id = (int)numericUpDown1.Value;
+            string msg = ra.CommodityQuery(id);
+            MessageBox.Show(msg);
             this.Close();
             
         }
