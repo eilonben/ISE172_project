@@ -40,7 +40,6 @@ namespace DataAccessLayer
         public static void SetTimer(Rule rule)
         {
             Rule tmp =requests.Dequeue();
-            string
             rManager.SendQueryBuySellRequest(rManager.SendBuyRequest(rule.price, rule.commodity, 1));
         }
     }

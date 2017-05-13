@@ -30,7 +30,7 @@ namespace Presentation_Layer_2
 
         private void button10_Click(object sender, EventArgs e)
         {
-            Presentation_Layer_.HelpWindow hr = new Presentation_Layer_.HelpWindow();
+            HelpWindow hr = new HelpWindow();
             hr.Show();
         }
 
@@ -44,6 +44,18 @@ namespace Presentation_Layer_2
         {
             Cancel_Request cr = new Cancel_Request();
             cr.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            SellRequest sr = new SellRequest();
+            sr.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Query bsq = new Query();
+            bsq.Show();
         }
     }
 }

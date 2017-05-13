@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-    class AllCommodityOffer
+    public class AllCommodityOffer
     {
-        MarketCommodityOffer info;
-        int id;
+        public MarketCommodityOffer info;
+        public int id;
 
         public override string ToString()
         {

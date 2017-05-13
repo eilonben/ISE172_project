@@ -44,5 +44,10 @@ namespace Presentation_Layer_2
         {
             this.Close();
         }
+
+        private void maskedTextBox1_MaskInputRejected_1(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
 }

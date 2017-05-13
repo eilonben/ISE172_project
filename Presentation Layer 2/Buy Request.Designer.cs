@@ -142,6 +142,7 @@
             this.maskedTextBox1.ResetOnPrompt = false;
             this.maskedTextBox1.Size = new System.Drawing.Size(185, 28);
             this.maskedTextBox1.TabIndex = 26;
+            this.maskedTextBox1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected_1);
             // 
             // Buy_Request
             // 

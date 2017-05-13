@@ -96,6 +96,7 @@
             this.button4.TabIndex = 6;
             this.button4.Text = "Buy / Sell Query";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -175,6 +176,7 @@
             this.button3.TabIndex = 13;
             this.button3.Text = "Sell Commodities";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button9
             // 

@@ -183,5 +183,55 @@ namespace DataAccessLayer
             }
 
         }
+        public List<AllCommodityOffer> SendAllMarketQuery()
+        {
+            SimpleHTTPClient HTTPClient = new SimpleHTTPClient();
+            AllMarketRequest request = new AllMarketRequest();
+            request.type = "queryAllMarket";
+            string token = SimpleCryptoLibrary.CreateToken(user, PrivateKey);
+            List<AllCommodityOffer> response = new List<AllCommodityOffer>();
+            bool eflag = false;
+            try
+            {
+                response = HTTPClient.SendPostRequest<AllMarketRequest, List<AllCommodityOffer>>(url, user, token, request);
+            }
+            catch (Exception e)
+            {
+                error = e.Message;
+                eflag = true;
+            }
+            if (eflag)
+                return null;
+            else
+            {
+                return response;
+            }
+
+        }
+        public List<MarketUserRequests> SendUserRequestsQuery()
+        {
+            SimpleHTTPClient HTTPClient = new SimpleHTTPClient();
+            UserRequestsQuery request = new UserRequestsQuery();
+            request.type = "queryAllMarket";
+            string token = SimpleCryptoLibrary.CreateToken(user, PrivateKey);
+            List<MarketUserRequests> response = new List<MarketUserRequests>();
+            bool eflag = false;
+            try
+            {
+                response = HTTPClient.SendPostRequest<UserRequestsQuery, List<MarketUserRequests>>(url, user, token, request);
+            }
+            catch (Exception e)
+            {
+                error = e.Message;
+                eflag = true;
+            }
+            if (eflag)
+                return null;
+            else
+            {
+                return response;
+            }
+
+        }
     }
 }

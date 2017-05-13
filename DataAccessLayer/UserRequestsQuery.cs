@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-    class AllMarketRequest
+    public class UserRequestsQuery
     {
         public string type;
-
     }
 }
