@@ -67,6 +67,12 @@
     <Compile Include="Cancel Request.Designer.cs">
       <DependentUpon>Cancel Request.cs</DependentUpon>
     </Compile>
+    <Compile Include="Commodity Query.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Commodity Query.Designer.cs">
+      <DependentUpon>Commodity Query.cs</DependentUpon>
+    </Compile>
     <Compile Include="HelpWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cancel Request.resx">
       <DependentUpon>Cancel Request.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Commodity Query.resx">
+      <DependentUpon>Commodity Query.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HelpWindow.resx">
       <DependentUpon>HelpWindow.cs</DependentUpon>

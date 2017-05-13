@@ -51,7 +51,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Lavender;
-            this.label1.Location = new System.Drawing.Point(70, 82);
+            this.label1.Location = new System.Drawing.Point(68, 76);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(238, 32);
             this.label1.TabIndex = 0;
@@ -63,7 +63,7 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Cooper Black", 8.2F);
             this.button1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.button1.Location = new System.Drawing.Point(-2, 145);
+            this.button1.Location = new System.Drawing.Point(196, 228);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(149, 52);
             this.button1.TabIndex = 4;
@@ -77,7 +77,7 @@
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Font = new System.Drawing.Font("Cooper Black", 8.2F);
             this.button2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.button2.Location = new System.Drawing.Point(215, 145);
+            this.button2.Location = new System.Drawing.Point(99, 307);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(149, 52);
             this.button2.TabIndex = 5;
@@ -90,7 +90,7 @@
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.Font = new System.Drawing.Font("Cooper Black", 8.2F);
             this.button4.ForeColor = System.Drawing.Color.SteelBlue;
-            this.button4.Location = new System.Drawing.Point(-2, 234);
+            this.button4.Location = new System.Drawing.Point(2, 143);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(149, 52);
             this.button4.TabIndex = 6;
@@ -104,12 +104,13 @@
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.Font = new System.Drawing.Font("Cooper Black", 8.2F);
             this.button5.ForeColor = System.Drawing.Color.SteelBlue;
-            this.button5.Location = new System.Drawing.Point(217, 234);
+            this.button5.Location = new System.Drawing.Point(2, 228);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(149, 52);
             this.button5.TabIndex = 7;
             this.button5.Text = "User Query";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -117,12 +118,13 @@
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.Font = new System.Drawing.Font("Cooper Black", 8.2F);
             this.button6.ForeColor = System.Drawing.Color.SteelBlue;
-            this.button6.Location = new System.Drawing.Point(102, 318);
+            this.button6.Location = new System.Drawing.Point(196, 143);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(149, 52);
             this.button6.TabIndex = 8;
             this.button6.Text = "Commodity Query";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -190,6 +192,7 @@
             this.button9.TabIndex = 14;
             this.button9.Text = "Set User Rules";
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 

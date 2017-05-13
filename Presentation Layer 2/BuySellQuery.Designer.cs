@@ -101,6 +101,7 @@
             this.Controls.Add(this.maskedTextBox1);
             this.Name = "Query";
             this.Text = "BuySellQuery Request";
+            this.Load += new System.EventHandler(this.Query_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

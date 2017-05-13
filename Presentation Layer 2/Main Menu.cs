@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Presentation_Layer_;
+using Business_Layer;
+
 
 namespace Presentation_Layer_2
 {
@@ -56,6 +58,22 @@ namespace Presentation_Layer_2
         {
             Query bsq = new Query();
             bsq.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Commodity_Query cq = new Commodity_Query();
+            cq.Show();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

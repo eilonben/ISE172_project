@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Business_Layer;
+
 
 namespace Presentation_Layer_2
 {
@@ -46,6 +48,11 @@ namespace Presentation_Layer_2
         }
 
         private void maskedTextBox1_MaskInputRejected_1(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void Buy_Request_Load(object sender, EventArgs e)
         {
 
         }

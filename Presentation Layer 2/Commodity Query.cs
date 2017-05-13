@@ -11,12 +11,31 @@ using Business_Layer;
 
 namespace Presentation_Layer_
 {
-    public partial class Query : Form
+    public partial class Commodity_Query : Form
     {
         RequestAgent ra = new RequestAgent();
-        public Query()
+        public Commodity_Query()
         {
             InitializeComponent();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            int id = Int32.Parse(maskedTextBox1.Text);
+            String msg = ra.CommodityQuery(id);
+            this.Close();
+            
+        }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -24,14 +43,7 @@ namespace Presentation_Layer_
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            int id = Int32.Parse(maskedTextBox1.Text);
-            String msg = ra.QueryBuySell(id);
-            this.Close();
-        }
-
-        private void Query_Load(object sender, EventArgs e)
+        private void Commodity_Query_Load(object sender, EventArgs e)
         {
 
         }

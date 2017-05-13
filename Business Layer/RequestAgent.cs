@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccessLayer;
+using MarketClient;
+using MarketClient.DataEntries;
 
 namespace Business_Layer
 {
@@ -33,7 +35,44 @@ namespace Business_Layer
                 return ("Request was canceled successfuly");
             return ("An Error has occured. more info:" + rm.error);       
         }
-        
 
+        public string QueryBuySell(int id) 
+        {
+            var response = rm.SendQueryBuySellRequest(id);
+            if (response == null)
+                return ("An error has occured. more info:" + rm.error);
+            return response.ToString();
+        }
+
+        public string CommodityQuery(int id)
+        {
+            var response = rm.SendQueryMarketRequest(id);
+            if (response == null)
+                return ("An error has occured. more info:" + rm.error);
+            return response.ToString();
+        }
+
+        public string UserQuery()
+        {
+            var response = rm.SendQueryUserRequest();
+            if (response == null)
+                return ("An error has occured. more info:" + rm.error);
+            return response.ToString();
+        }
+        public string AllMarketQuery()
+        {
+            var response = rm.SendAllMarketQuery();
+            if (response == null)
+                return ("An error has occured. more info:" + rm.error);
+            return response.ToString();
+        }
+
+        public string UserRequestsQuery()
+        {
+            var response = rm.SendUserRequestsQuery();
+            if (response == null)
+                return ("An error has occured. more info:" + rm.error);
+            return response.ToString();
+        }
     }
 }

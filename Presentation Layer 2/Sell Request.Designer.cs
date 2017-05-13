@@ -136,6 +136,7 @@
             this.button1.Text = "Apply";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.UseWaitCursor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // SellRequest
             // 

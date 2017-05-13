@@ -164,6 +164,7 @@
             this.Name = "Buy_Request";
             this.RightToLeftLayout = true;
             this.Text = "Buy Request";
+            this.Load += new System.EventHandler(this.Buy_Request_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

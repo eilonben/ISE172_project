@@ -52,5 +52,10 @@ namespace Presentation_Layer_
         {
 
         }
+
+        private void Cancel_Request_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
