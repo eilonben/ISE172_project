@@ -53,9 +53,9 @@
             this.label4.ForeColor = System.Drawing.Color.FloralWhite;
             this.label4.Location = new System.Drawing.Point(177, 31);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(382, 49);
+            this.label4.Size = new System.Drawing.Size(377, 49);
             this.label4.TabIndex = 32;
-            this.label4.Text = "Buy Commodites";
+            this.label4.Text = "Sell Commodites";
             this.label4.UseWaitCursor = true;
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
@@ -173,7 +173,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(119, 26);
             this.label6.TabIndex = 34;
-            this.label6.Text = "Bid Price:";
+            this.label6.Text = "Ask Price";
             // 
             // label3
             // 
