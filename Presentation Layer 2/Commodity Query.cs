@@ -30,7 +30,6 @@ namespace Presentation_Layer_
             int id = (int)numericUpDown1.Value;
             string msg = ra.CommodityQuery(id);
             MessageBox.Show(msg);
-            this.Close();
             
         }
 

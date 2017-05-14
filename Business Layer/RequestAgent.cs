@@ -64,15 +64,29 @@ namespace Business_Layer
             var response = rm.SendAllMarketQuery();
             if (response == null)
                 return ("An error has occured. more info:" + rm.error);
-            return response.ToString();
+            string output = "Status of all commodities: \n";
+            foreach (AllCommodityOffer e in response)
+            {
+                output += e.ToString();
+                output += "\n";
+            }
+            return output;
         }
 
         public string UserRequestsQuery()
         {
-            var response = rm.SendUserRequestsQuery();
+            List<MarketUserRequests> response = rm.SendUserRequestsQuery();
             if (response == null)
                 return ("An error has occured. more info:" + rm.error);
-            return response.ToString();
+            string output = "";
+            if (response.Count == 0)
+                return "You have no active requests.";
+            foreach (MarketUserRequests e in response) {
+                output += "All The requests of user32: \n";
+                output += e.ToString();
+                output += "\n";
+            }
+            return output;
         }
     }
 }

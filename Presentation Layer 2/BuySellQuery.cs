@@ -29,7 +29,6 @@ namespace Presentation_Layer_
             int id = (int)numericUpDown1.Value;
             String msg = ra.QueryBuySell(id);
             MessageBox.Show(msg);
-            this.Close();
         }
 
         private void Query_Load(object sender, EventArgs e)

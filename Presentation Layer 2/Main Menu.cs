@@ -15,6 +15,7 @@ namespace Presentation_Layer_2
 {
     public partial class UserInterface : Form
     {
+        RequestAgent ra = new RequestAgent();
         public UserInterface()
         {
             InitializeComponent();
@@ -62,7 +63,8 @@ namespace Presentation_Layer_2
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            string msg = ra.UserQuery();
+            MessageBox.Show(msg);
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -74,6 +76,18 @@ namespace Presentation_Layer_2
         private void button9_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string msg = ra.AllMarketQuery();
+            MessageBox.Show(msg);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string msg = ra.UserRequestsQuery();
+            MessageBox.Show(msg);
         }
     }
 }
