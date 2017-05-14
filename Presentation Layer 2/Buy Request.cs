@@ -14,6 +14,7 @@ namespace Presentation_Layer_2
 {
     public partial class Buy_Request : Form
     {
+        RequestAgent ra = new RequestAgent();
         public Buy_Request()
         {
             InitializeComponent();
@@ -26,15 +27,11 @@ namespace Presentation_Layer_2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                int id = Int32.Parse(this.maskedTextBox1.Text);
-                int amount = Int32.Parse(this.maskedTextBox1.Text);
-                int price = Int32.Parse(this.maskedTextBox1.Text);
-             }
-             catch(Exception er) {
-             }
-
+            int id = (int)numericUpDown1.Value;
+            int amount = (int)numericUpDown2.Value;
+            int price = (int)numericUpDown4.Value;
+            string response = ra.buyCommodities(price, id, amount);
+            MessageBox.Show(response);
         }
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -53,6 +50,16 @@ namespace Presentation_Layer_2
         }
 
         private void Buy_Request_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox4_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
 
         }

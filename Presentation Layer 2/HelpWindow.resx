@@ -202,8 +202,8 @@ May the odds be ever in your favor.</value>
   <data name="label12.Text" xml:space="preserve">
     <value>Besides the Buy/Sell Query and Commodity Query there are 3 other Queries you are able to request:
 
-1. All Market Query - After pressing this button you will get info about all the commodities in the market - their ask and bid prices,
- and their id's.
+1. All Market Query - After pressing this button you will get info about all the commodities in the market - their ask 
+and bid prices, and their id's.
 
 2. User Query - After pressing this button you will get info about your actions: 
 
@@ -219,4 +219,7 @@ May the odds be ever in your favor.</value>
 
 </value>
   </data>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

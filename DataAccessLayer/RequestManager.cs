@@ -213,7 +213,7 @@ namespace DataAccessLayer
         {
             SimpleHTTPClient HTTPClient = new SimpleHTTPClient();
             UserRequestsQuery request = new UserRequestsQuery();
-            request.type = "queryAllMarket";
+            request.type = "queryUserRequests";
             string token = SimpleCryptoLibrary.CreateToken(user, PrivateKey);
             List<MarketUserRequests> response = new List<MarketUserRequests>();
             bool eflag = false;

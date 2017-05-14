@@ -31,15 +31,9 @@ namespace Presentation_Layer_
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try {
-                Int32.Parse(maskedTextBox1.Text);
-            }
-            catch(Exception er)
-             {
-                return; 
-            }
-            int id = Int32.Parse(maskedTextBox1.Text);
+            int id = (int)numericUpDown1.Value;
             string msg = rs.cancelRequest(id);
+            MessageBox.Show(msg);
             this.Close();
         }
 
@@ -54,6 +48,11 @@ namespace Presentation_Layer_
         }
 
         private void Cancel_Request_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
 
         }

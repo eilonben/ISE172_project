@@ -17,7 +17,7 @@ namespace Presentation_Layer_
         {
             InitializeComponent();
         }
-
+        RequestAgent ra = new RequestAgent();
         private void SellRequest_Load(object sender, EventArgs e)
         {
 
@@ -30,15 +30,26 @@ namespace Presentation_Layer_
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                int id = Int32.Parse(this.maskedTextBox1.Text);
-                int amount = Int32.Parse(this.maskedTextBox1.Text);
-                int price = Int32.Parse(this.maskedTextBox1.Text);
-            }
-            catch (Exception er)
-            {
-            }
+           
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            int id = (int)numericUpDown1.Value;
+            int amount = (int)numericUpDown2.Value;
+            int price = (int)numericUpDown4.Value;
+            string response = ra.buyCommodities(price, id, amount);
+            MessageBox.Show(response);
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
