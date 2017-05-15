@@ -94,13 +94,18 @@ namespace Business_Layer
         {
             var response = rm.SendAllMarketQuery();
             if (response == null)
+            {
+                myLogger.Error("An error has occured. more info:" + rm.error);
                 return ("An error has occured. more info:" + rm.error);
+            }
+                
             string output = "Status of all commodities: \n";
             foreach (AllCommodityOffer e in response)
             {
                 output += e.ToString();
                 output += "\n";
             }
+            myLogger.Info(output);
             return output;
         }
 
@@ -108,7 +113,11 @@ namespace Business_Layer
         {
             List<MarketUserRequests> response = rm.SendUserRequestsQuery();
             if (response == null)
+            {
+                myLogger.Error("An error has occured. more info:" + rm.error);
                 return ("An error has occured. more info:" + rm.error);
+            }
+                
             string output = "";
             if (response.Count == 0)
                 return "You have no active requests.";
@@ -117,6 +126,7 @@ namespace Business_Layer
                 output += e.ToString();
                 output += "\n";
             }
+            myLogger.Info(output);
             return output;
         }
     }
