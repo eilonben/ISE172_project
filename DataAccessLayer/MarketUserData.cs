@@ -20,7 +20,7 @@ namespace DataAccessLayer
             output += "Commodities: { ";
             foreach (KeyValuePair<string, int> kvp in commodities)
             {
-                output+= (kvp.Key)+ " ,";
+                output+= (kvp.Key)+": " +(kvp.Value)+ " ,";
             }
             output = output.Substring(0, output.Length - 1);
             output += " } Remaining funds:" + funds + " requests id's: { ";

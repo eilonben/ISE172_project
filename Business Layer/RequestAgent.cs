@@ -81,8 +81,8 @@ namespace Business_Layer
             string output = "";
             if (response.Count == 0)
                 return "You have no active requests.";
+            output += "All The requests of user32: \n";
             foreach (MarketUserRequests e in response) {
-                output += "All The requests of user32: \n";
                 output += e.ToString();
                 output += "\n";
             }
