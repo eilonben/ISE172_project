@@ -80,25 +80,25 @@ namespace Business_Layer
 
         public string UserQuery()
         {
-            var response = rm.SendQueryUserRequest();
+  
             if (response == null)
             {
                 myLogger.Error("You requested User Query. An error has occured. More info: "+rm.error);
                 return ("An error has occured. more info:" + rm.error);
             }
-            myLogger.Info("You requested User Query. "+response.ToString());   
-            return response.ToString();
+            myLogger.Info("You requested User Query. ");   
+            
         }
         public string AllMarketQuery()
         {
-            var response = rm.SendAllMarketQuery();
-            if (response == null)
+           
+            if ((response == null)
             {
                 myLogger.Error("You requested user All Market Query. An error has occured. more info:" + rm.error);
                 return ("An error has occured. more info:" + rm.error);
             }
-            myLogger.Info("You requested All Market Query. " + response.ToString());   
-            return response.ToString();
+            myLogger.Info("You requested All Market Query. ");   
+            
         }
 
         public string UserRequestsQuery()
