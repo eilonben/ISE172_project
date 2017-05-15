@@ -53,7 +53,7 @@
             this.label1.ForeColor = System.Drawing.Color.Lavender;
             this.label1.Location = new System.Drawing.Point(70, 82);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(238, 32);
+            this.label1.Size = new System.Drawing.Size(281, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "Query Requests";
             // 
@@ -144,7 +144,7 @@
             this.label2.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.label2.Location = new System.Drawing.Point(285, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(230, 44);
+            this.label2.Size = new System.Drawing.Size(269, 51);
             this.label2.TabIndex = 10;
             this.label2.Text = "Main Menu";
             // 
@@ -160,6 +160,7 @@
             this.button8.TabIndex = 12;
             this.button8.Text = "Cancel Request";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click_1);
             // 
             // button3
             // 

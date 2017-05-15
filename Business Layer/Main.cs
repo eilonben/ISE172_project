@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccessLayer;
+using System.Timers;
 
 namespace Business_Layer
 {
-   public class Program
-    {
-        public static void Main(String[] args)
-        {
-        }
-    }
+
 }
