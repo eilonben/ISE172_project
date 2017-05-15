@@ -37,6 +37,10 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,17 +54,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AllMarketQuery.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AllMarketQuery.Designer.cs">
-      <DependentUpon>AllMarketQuery.cs</DependentUpon>
-    </Compile>
     <Compile Include="Buy Request.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Buy Request.Designer.cs">
       <DependentUpon>Buy Request.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BuySellQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuySellQuery.Designer.cs">
+      <DependentUpon>BuySellQuery.cs</DependentUpon>
     </Compile>
     <Compile Include="Cancel Request.cs">
       <SubType>Form</SubType>
@@ -88,20 +92,17 @@
     </Compile>
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SellBuy Query.cs">
+    <Compile Include="Sell Request.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SellBuy Query.Designer.cs">
-      <DependentUpon>SellBuy Query.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SellRequest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SellRequest.Designer.cs">
-      <DependentUpon>SellRequest.cs</DependentUpon>
+    <Compile Include="Sell Request.Designer.cs">
+      <DependentUpon>Sell Request.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Buy Request.resx">
       <DependentUpon>Buy Request.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuySellQuery.resx">
+      <DependentUpon>BuySellQuery.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cancel Request.resx">
       <DependentUpon>Cancel Request.cs</DependentUpon>
@@ -125,12 +126,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SellBuy Query.resx">
-      <DependentUpon>SellBuy Query.cs</DependentUpon>
+    <EmbeddedResource Include="Sell Request.resx">
+      <DependentUpon>Sell Request.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SellRequest.resx">
-      <DependentUpon>SellRequest.cs</DependentUpon>
-    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

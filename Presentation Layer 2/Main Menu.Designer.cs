@@ -51,9 +51,9 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Lavender;
-            this.label1.Location = new System.Drawing.Point(70, 82);
+            this.label1.Location = new System.Drawing.Point(68, 76);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(281, 38);
+            this.label1.Size = new System.Drawing.Size(238, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Query Requests";
             // 
@@ -63,12 +63,13 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Cooper Black", 8.2F);
             this.button1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.button1.Location = new System.Drawing.Point(-2, 145);
+            this.button1.Location = new System.Drawing.Point(196, 228);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(149, 52);
             this.button1.TabIndex = 4;
             this.button1.Text = "All Market Query";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // button2
             // 
@@ -77,12 +78,13 @@
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Font = new System.Drawing.Font("Cooper Black", 8.2F);
             this.button2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.button2.Location = new System.Drawing.Point(215, 145);
+            this.button2.Location = new System.Drawing.Point(99, 307);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(149, 52);
             this.button2.TabIndex = 5;
             this.button2.Text = "User Requests Query";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button4
             // 
@@ -90,12 +92,13 @@
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.Font = new System.Drawing.Font("Cooper Black", 8.2F);
             this.button4.ForeColor = System.Drawing.Color.SteelBlue;
-            this.button4.Location = new System.Drawing.Point(-2, 234);
+            this.button4.Location = new System.Drawing.Point(2, 143);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(149, 52);
             this.button4.TabIndex = 6;
             this.button4.Text = "Buy / Sell Query";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -103,12 +106,13 @@
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.Font = new System.Drawing.Font("Cooper Black", 8.2F);
             this.button5.ForeColor = System.Drawing.Color.SteelBlue;
-            this.button5.Location = new System.Drawing.Point(217, 234);
+            this.button5.Location = new System.Drawing.Point(2, 228);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(149, 52);
             this.button5.TabIndex = 7;
             this.button5.Text = "User Query";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -116,12 +120,13 @@
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.Font = new System.Drawing.Font("Cooper Black", 8.2F);
             this.button6.ForeColor = System.Drawing.Color.SteelBlue;
-            this.button6.Location = new System.Drawing.Point(102, 318);
+            this.button6.Location = new System.Drawing.Point(196, 143);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(149, 52);
             this.button6.TabIndex = 8;
             this.button6.Text = "Commodity Query";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -135,6 +140,7 @@
             this.button7.TabIndex = 9;
             this.button7.Text = "Buy Commodities";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // label2
             // 
@@ -144,7 +150,7 @@
             this.label2.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.label2.Location = new System.Drawing.Point(285, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(269, 51);
+            this.label2.Size = new System.Drawing.Size(230, 44);
             this.label2.TabIndex = 10;
             this.label2.Text = "Main Menu";
             // 
@@ -160,7 +166,7 @@
             this.button8.TabIndex = 12;
             this.button8.Text = "Cancel Request";
             this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click_1);
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button3
             // 
@@ -174,6 +180,7 @@
             this.button3.TabIndex = 13;
             this.button3.Text = "Sell Commodities";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button9
             // 
@@ -187,6 +194,7 @@
             this.button9.TabIndex = 14;
             this.button9.Text = "Set User Rules";
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 

@@ -7,11 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Business_Layer;
 namespace Presentation_Layer_
 {
     public partial class Cancel_Request : Form
     {
+        RequestAgent rs = new RequestAgent();
         public Cancel_Request()
         {
             InitializeComponent();
@@ -20,6 +21,40 @@ namespace Presentation_Layer_
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+            
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int id = (int)numericUpDown1.Value;
+            string msg = rs.cancelRequest(id);
+            MessageBox.Show(msg);
+            this.Close();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void Cancel_Request_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

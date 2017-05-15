@@ -1,6 +1,6 @@
 ﻿namespace Presentation_Layer_
 {
-    partial class Commodity_Query
+    partial class Query
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Commodity_Query));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Query));
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -43,19 +43,19 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Cooper Black", 20.8F);
             this.label2.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label2.Location = new System.Drawing.Point(136, 40);
+            this.label2.Location = new System.Drawing.Point(156, 37);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(345, 40);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "Commodity Query";
+            this.label2.Size = new System.Drawing.Size(293, 40);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Buy/Sell Query";
             // 
             // button2
             // 
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Location = new System.Drawing.Point(163, 255);
+            this.button2.Location = new System.Drawing.Point(163, 252);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(124, 44);
-            this.button2.TabIndex = 18;
+            this.button2.TabIndex = 13;
             this.button2.Text = "Exit";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -63,10 +63,10 @@
             // button1
             // 
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Location = new System.Drawing.Point(422, 255);
+            this.button1.Location = new System.Drawing.Point(422, 252);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(124, 44);
-            this.button1.TabIndex = 17;
+            this.button1.TabIndex = 12;
             this.button1.Text = "Apply";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -76,27 +76,37 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Cooper Black", 10.8F);
             this.label3.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label3.Location = new System.Drawing.Point(108, 148);
+            this.label3.Location = new System.Drawing.Point(78, 145);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(230, 30);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Enter Commodity ID:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.label3.Size = new System.Drawing.Size(199, 30);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Enter Request ID:";
             // 
             // numericUpDown1
             // 
+            this.numericUpDown1.Cursor = System.Windows.Forms.Cursors.Default;
             this.numericUpDown1.Font = new System.Drawing.Font("Cooper Black", 12F);
-            this.numericUpDown1.Location = new System.Drawing.Point(355, 145);
+            this.numericUpDown1.Location = new System.Drawing.Point(283, 142);
             this.numericUpDown1.Maximum = new decimal(new int[] {
-            9,
+            10000000,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(47, 30);
-            this.numericUpDown1.TabIndex = 28;
+            this.numericUpDown1.Size = new System.Drawing.Size(200, 30);
+            this.numericUpDown1.TabIndex = 15;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
-            // Commodity_Query
+            // Query
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -108,9 +118,10 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
-            this.Name = "Commodity_Query";
-            this.Text = "Commodity_Query";
-            this.Load += new System.EventHandler(this.Commodity_Query_Load);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Name = "Query";
+            this.Text = "BuySellQuery Request";
+            this.Load += new System.EventHandler(this.Query_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

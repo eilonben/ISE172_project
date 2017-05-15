@@ -33,7 +33,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -47,9 +48,11 @@
             this.label2.Size = new System.Drawing.Size(298, 40);
             this.label2.TabIndex = 9;
             this.label2.Text = "Cancel  Request";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // button2
             // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Location = new System.Drawing.Point(127, 239);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(124, 44);
@@ -60,12 +63,14 @@
             // 
             // button1
             // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Location = new System.Drawing.Point(386, 239);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(124, 44);
             this.button1.TabIndex = 7;
             this.button1.Text = "Apply";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -74,17 +79,34 @@
             this.label3.ForeColor = System.Drawing.Color.Cornsilk;
             this.label3.Location = new System.Drawing.Point(42, 132);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(182, 30);
+            this.label3.Size = new System.Drawing.Size(198, 30);
             this.label3.TabIndex = 6;
             this.label3.Text = "Enter Request ID:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // maskedTextBox1
+            // numericUpDown1
             // 
-            this.maskedTextBox1.Font = new System.Drawing.Font("Cooper Black", 10.8F);
-            this.maskedTextBox1.Location = new System.Drawing.Point(230, 132);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(185, 28);
-            this.maskedTextBox1.TabIndex = 5;
+            this.numericUpDown1.Font = new System.Drawing.Font("Cooper Black", 12F);
+            this.numericUpDown1.Location = new System.Drawing.Point(246, 129);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(200, 30);
+            this.numericUpDown1.TabIndex = 10;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // Cancel_Request
             // 
@@ -93,13 +115,16 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(625, 338);
+            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "Cancel_Request";
-            this.Text = "Cancel_Request";
+            this.Text = "Cancel Request";
+            this.Load += new System.EventHandler(this.Cancel_Request_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,6 +136,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }
