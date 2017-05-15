@@ -84,7 +84,7 @@ namespace Business_Layer
             if (response == null)
             {
                 myLogger.Error("You requested User Query. An error has occured. More info: "+rm.error);
-                return ("An error has occured. more info: " + rm.error);
+                return ("An error has occured. more info:" + rm.error);
             }
             myLogger.Info("You requested User Query. "+response.ToString());   
             return response.ToString();
