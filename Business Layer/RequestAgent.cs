@@ -50,7 +50,7 @@ namespace Business_Layer
                 return ("Request was canceled successfuly");
             }
             myLogger.Error("You asked to cancel the Request " + id + ". An Error has occured. more info:" + rm.error);    
-            return ("An Error has occured. More info:" + rm.error);       
+            return ("An Error has occured. more info:" + rm.error);       
         }
 
         public string QueryBuySell(int id) 
@@ -59,7 +59,7 @@ namespace Business_Layer
             if (response == null)
             {
                 myLogger.Error("You requested Query Buy/Sell " + id + ". An error has occured. more info:" + rm.error);
-                return ("An error has occured. More info:" + rm.error);
+                return ("An error has occured. more info:" + rm.error);
             }
             myLogger.Info("You requested Query Buy/Sell "+id+". " + response.ToString());
             return response.ToString();
@@ -84,7 +84,7 @@ namespace Business_Layer
             if (response == null)
             {
                 myLogger.Error("You requested User Query. An error has occured. More info: "+rm.error);
-                return ("An error has occured. More info: " + rm.error);
+                return ("An error has occured. more info: " + rm.error);
             }
             myLogger.Info("You requested User Query. "+response.ToString());   
             return response.ToString();
