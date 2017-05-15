@@ -69,6 +69,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "All Market Query";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // button2
             // 
@@ -83,6 +84,7 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "User Requests Query";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button4
             // 

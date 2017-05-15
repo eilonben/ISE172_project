@@ -41,5 +41,10 @@ namespace Presentation_Layer_
         {
 
         }
+
+        private void HelpWindow_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -13,7 +13,8 @@ namespace DataAccessLayer
 
         public override string ToString()
         {
-            return ("{request: {price: " + request.price + ", amount: " + request.amount + ", type: " + request.type + ", user: user32, commodity: " + request.commodity + "}, id:" + id + "}");
+            string output = "{request: {price: " + request.price + ", amount: " + request.amount + ", type: " + request.type + ", user: user32, commodity: " + request.commodity + "}, id:" + id + "}";
+            return output;
         }
     }
 }
