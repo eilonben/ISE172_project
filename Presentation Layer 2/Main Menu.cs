@@ -19,6 +19,7 @@ namespace Presentation_Layer_2
         public UserInterface()
         {
             InitializeComponent();
+            new RequestAgent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
