@@ -120,7 +120,11 @@ namespace Business_Layer
                 
             string output = "";
             if (response.Count == 0)
+            {
+                myLogger.Info("User Request Query has been applied. You had no active requests.");
                 return "You have no active requests.";
+            }
+                
             foreach (MarketUserRequests e in response) {
                 output += "All The requests of user32: \n";
                 output += e.ToString();
