@@ -41,9 +41,9 @@ namespace Presentation_Layer_
         private void button1_Click_1(object sender, EventArgs e)
         {
             int id = (int)numericUpDown1.Value;
-            int amount = (int)numericUpDown2.Value;
-            int price = (int)numericUpDown4.Value;
-            string response = ra.buyCommodities(price, id, amount);
+            int amount = (int)numericUpDown4.Value;
+            int price = (int)numericUpDown2.Value;
+            string response = ra.sellCommodities(price, id, amount);
             MessageBox.Show(response);
         }
 

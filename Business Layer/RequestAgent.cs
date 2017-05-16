@@ -13,7 +13,7 @@ namespace Business_Layer
     public class RequestAgent
     {
         RequestManager rm = new RequestManager();
-        ILog myLogger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        ILog myLogger = LogManager.GetLogger("History");
 
 
 

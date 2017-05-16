@@ -19,7 +19,6 @@ namespace Presentation_Layer_2
         public UserInterface()
         {
             InitializeComponent();
-            new RequestAgent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -89,6 +88,17 @@ namespace Presentation_Layer_2
         {
             string msg = ra.UserRequestsQuery();
             MessageBox.Show(msg);
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            //updateHistory()
+            //read from file bla bla 
         }
     }
 }
