@@ -13,7 +13,7 @@ namespace Business_Layer
     public class RequestAgent
     {
         RequestManager rm = new RequestManager();
-        ILog myLogger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        ILog myLogger = LogManager.GetLogger("History");
 
 
 
@@ -120,9 +120,13 @@ namespace Business_Layer
                 
             string output = "";
             if (response.Count == 0)
+            {
+                myLogger.Info("User Request Query has been applied. You had no active requests.");
                 return "You have no active requests.";
-            output += "All The requests of user32: \n";
+            }
+                
             foreach (MarketUserRequests e in response) {
+                output += "All The requests of user32: \n";
                 output += e.ToString();
                 output += "\n";
             }
