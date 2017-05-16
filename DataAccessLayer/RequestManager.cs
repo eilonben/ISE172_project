@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MarketClient;
 using MarketClient.DataEntries;
 using MarketClient.Utils;
+using log4net;
 
 
 namespace DataAccessLayer
@@ -30,7 +31,9 @@ namespace DataAccessLayer
         RBqA5j2CGRy/yTVv6RIDB/aueJc+NaopqxJ4lHCvkxv3
         -----END RSA PRIVATE KEY-----";
         public string error;
-        
+        ILog logger = LogManager.GetLogger("Logger");
+
+
         public bool SendCancelBuySellRequest(int id) // The cancel request function using the CancelRequest class
         {
             SimpleHTTPClient HTTPClient = new SimpleHTTPClient();
@@ -40,10 +43,15 @@ namespace DataAccessLayer
             string token = SimpleCryptoLibrary.CreateToken(user, PrivateKey);
             string response = HTTPClient.SendPostRequest(url, user, token, request);
             if (response.Equals("Ok"))
+            {
+                logger.Info("A cancel request was sent to the server for ID "+id+ ". Successfully canceled.");
                 return true;
+            }
+                
             else
             {
                 error = response;
+                logger.Error("A cancel request was sent to the server for ID " + id + ". An error occurred: "+error);
                 return false;
             }
         }
@@ -70,9 +78,15 @@ namespace DataAccessLayer
                 eflag = true;
             }
             if (!eflag)
-                return Convert.ToInt32(response);
+            {
+                int output = Convert.ToInt32(response);
+                logger.Info("A buy request was sent to the server for commodity id " + commodity + ", amount " + amount + ", in the price of " + price + ". The buy was succesful, the request ID was " + output);
+                return output;
+            }
+                
             else
             {
+                logger.Error("A buy request was sent to the server for commodity id " + commodity + ", amount " + amount + ", in the price of " + price + ". An error occurred: " + error);
                 return -1;
             }
 
@@ -99,14 +113,20 @@ namespace DataAccessLayer
                 eflag = true;
             }
             if (!eflag)
-                return Convert.ToInt32(response);
+            {
+                int output = Convert.ToInt32(response);
+                logger.Info("A sell request was sent to the server for commodity ID " + commodity + ", amount " + amount + ", in the price of" + price + ". The sell was succesful, the sell ID was " + output);
+                return output;
+            }
+                
             else
             {
+                logger.Error("A sell request was sent to the server for commodity ID " + commodity + ", amount " + amount + ", in the price of" + price + ". An error occurred.");
                 return -1;
             }
         }
 
-        public IMarketItemQuery SendQueryBuySellRequest(int id) // The query buy\sell request function using the QuerySellBuyRequest class and returning a IMarketItemQuery object
+        public IMarketItemQuery SendQueryBuySellRequest(int id) // The query buy/sell request function using the QuerySellBuyRequest class and returning a IMarketItemQuery object
         {
             SimpleHTTPClient HTTPClient = new SimpleHTTPClient();
             QuerySellBuyRequest request = new QuerySellBuyRequest();
@@ -126,9 +146,14 @@ namespace DataAccessLayer
                 eflag = true;
             }
             if (eflag)
+            {
+                logger.Error("A query buy/sell request was sent to the server for commodity ID " + id + ". An error occurred: "+error);
                 return null;
+            }
+                
             else
             {
+                logger.Info("A query buy/sell request was sent to the server for commodity ID " + id + ". The response from the server was: "+response);
                 return response;
             }
         }
@@ -150,9 +175,14 @@ namespace DataAccessLayer
                 eflag = true;
             }
             if (eflag)
+            {
+                logger.Error("A query user request was sent to the server. An error occurred: " + error);
                 return null;
+            }
+                
             else
             {
+                logger.Info("A query user request was sent to the server. The response from the server was: " + response);
                 return response;
             }
         }
@@ -176,13 +206,19 @@ namespace DataAccessLayer
                 eflag = true;
             }
             if (eflag)
+            {
+                logger.Error("A query market request was sent to the server for commodity ID " + commodity + ". An error occurred: " + error);
                 return null;
+            }
+                
             else
             {
+                logger.Info("A query market request was sent to the server for commodity ID " + commodity + ". The response from the server was: " + response);
                 return response;
             }
 
         }
+
         public List<AllCommodityOffer> SendAllMarketQuery()
         {
             SimpleHTTPClient HTTPClient = new SimpleHTTPClient();
@@ -201,13 +237,19 @@ namespace DataAccessLayer
                 eflag = true;
             }
             if (eflag)
+            {
+                logger.Error("The server received a SendAllMarketQuery request. An error occurred: "+error);
                 return null;
+            }
+                
             else
             {
+                logger.Info("The server received a SendAllMarketQuery request. The response was: "+response);
                 return response;
             }
 
         }
+
         public List<MarketUserRequests> SendUserRequestsQuery()
         {
             SimpleHTTPClient HTTPClient = new SimpleHTTPClient();
@@ -226,9 +268,14 @@ namespace DataAccessLayer
                 eflag = true;
             }
             if (eflag)
+            {
+                logger.Error("The server received a SendUserRequestsQuery request. An error occurred: " + error);
                 return null;
+            }
+                
             else
             {
+                logger.Info("The server received a SendUserRequestsQuery request. The response was: " + response);
                 return response;
             }
 
