@@ -100,8 +100,7 @@ namespace Presentation_Layer_2
         private void button11_Click(object sender, EventArgs e)
         {
             History hs = new History();
-            string[] output = File.ReadAllLines("../../../history/history.log");
-            //hs = output;
+            hs.ShowDialog();
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
