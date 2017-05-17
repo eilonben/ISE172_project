@@ -244,7 +244,7 @@ namespace DataAccessLayer
                 
             else
             {
-                logger.Info("The server received a SendAllMarketQuery request. The response was: "+response);
+                logger.Info("The server received a SendAllMarketQuery request.");
                 return response;
             }
 
@@ -275,7 +275,7 @@ namespace DataAccessLayer
                 
             else
             {
-                logger.Info("The server received a SendUserRequestsQuery request. The response was: " + response);
+                logger.Info("The server received a SendUserRequestsQuery request.");
                 return response;
             }
 
