@@ -105,6 +105,7 @@ namespace Business_Layer
                 output += e.ToString();
                 output += "\n";
             }
+            history.Info("An AllMarketQuery was applied. result: \n");
             history.Info(output);
             return output;
         }
@@ -130,6 +131,7 @@ namespace Business_Layer
                 output += e.ToString();
                 output += "\n";
             }
+            history.Info("A UserRequestQuery was applied. result: \n");
             history.Info(output);
             return output;
         }
