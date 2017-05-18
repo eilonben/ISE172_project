@@ -27,7 +27,6 @@ namespace Business_Layer
         public void start()
         {
             aTimer.Enabled = true;
-
         }
 
         public void stop()
@@ -35,22 +34,22 @@ namespace Business_Layer
             aTimer.Enabled = false;
         }
 
-        public static void OnTimedEvent(Object source, ElapsedEventArgs e)
+        public void OnTimedEvent(Object source, ElapsedEventArgs e)
         {
 
             int actionCount = 0;
-            while (actionCount < 4)
+            while (actionCount < 20)
             {
 
                 MarketUserData userInfo = (MarketUserData)market.SendQueryUserRequest();
                 actionCount++;
                 foreach (KeyValuePair<string, int> entry in userInfo.commodities)
                 {
-                    if (actionCount < 4)
+                    if (actionCount < 20)
                     {
                         MarketCommodityOffer offer = (MarketCommodityOffer)market.SendQueryMarketRequest(Convert.ToInt32(entry.Key));
                         actionCount++;
-                        if (offer.ask < 12 && actionCount < 4)
+                        if (offer.ask < 12 && actionCount < 20)
                         {
                             float spendable = userInfo.funds / 10;
                             int count = 1;
@@ -64,7 +63,7 @@ namespace Business_Layer
                                 market.SendBuyRequest(offer.ask, Convert.ToInt32(entry.Key), count);
                             }
                         }
-                        if (offer.bid > 7 && entry.Value > 0 && actionCount < 4)
+                        if (offer.bid > 7 && entry.Value > 0 && actionCount < 20)
                         {
                             int count = 1;
                             if ((offer.bid > 14) && (count + 1 >= entry.Value))

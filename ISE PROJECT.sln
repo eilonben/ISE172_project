@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data Access Layer", "DataAc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation Layer", "Presentation Layer 2\Presentation Layer.csproj", "{F38A0031-9628-46FF-A772-9594E4565F17}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestISE_Project", "UnitTestISE_Project\UnitTestISE_Project.csproj", "{5A0E4D5E-1C9B-433B-BF1D-B980472BE6AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{F38A0031-9628-46FF-A772-9594E4565F17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F38A0031-9628-46FF-A772-9594E4565F17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F38A0031-9628-46FF-A772-9594E4565F17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A0E4D5E-1C9B-433B-BF1D-B980472BE6AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A0E4D5E-1C9B-433B-BF1D-B980472BE6AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A0E4D5E-1C9B-433B-BF1D-B980472BE6AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A0E4D5E-1C9B-433B-BF1D-B980472BE6AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
