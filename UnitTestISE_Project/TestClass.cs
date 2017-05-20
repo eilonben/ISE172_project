@@ -15,6 +15,7 @@ namespace UnitTestISE_Project
     public class TestClass
     {
         private static RequestManager market;
+        private static RequestAgent rq;
         private int[] testing;
         private static MarketUserData userInfo;
         ILog history = LogManager.GetLogger("History");
@@ -24,6 +25,7 @@ namespace UnitTestISE_Project
         public void initial()
         {
             market = new RequestManager();
+            rq = new RequestAgent();
             userInfo = (MarketUserData)market.SendQueryUserRequest();
         }
 
@@ -65,66 +67,26 @@ namespace UnitTestISE_Project
             market.SendCancelBuySellRequest(testing[2]);
         }
 
-        public List<string> fileReading(bool file)//the function helps to connect with the history file and log file
-        {
-            String filePath;
-            if (file == true)
-                filePath = @"C:\Users\seifa\Desktop\לימודים\סמסטר ב'\ISE-Project-SSE-.git\history\history.log";
-            else
-                filePath = @"../../../Log/application.log";
-            List<string> lines = File.ReadLines(filePath).ToList();
-            return lines;
-        }
-
         [TestMethod]
-        public void TestSellRequestAndQuerySell()
+        public void TestBuySellRequest()
         {
-            testing = new int[2];
-            market.SendBuyRequest(1, 1, 1);
-            testing[0] = market.SendSellRequest(1, 1, 1);
-            List<string> logcheck1 = fileReading(false);
-            Assert.AreEqual(true, logcheck1.Last().Contains("sell"));
-            List<string> historycheck1 = fileReading(true);
-            Assert.AreEqual(true, historycheck1.Last().Contains("Your Request has been successful"));
-            testing[1] = market.SendSellRequest(2147483647, 1, 1);
-            List<string> historycheck2 = fileReading(true);
-            Assert.AreEqual(true, historycheck2.Last().Contains(". An error has occured and your Request was incomplete. more info:"));
-            Assert.AreEqual(null, market.SendQueryBuySellRequest(testing[1]).ToString().Contains((testing[1]).ToString()));
-            market.SendCancelBuySellRequest(testing[0]);
-            market.SendCancelBuySellRequest(testing[1]);
-        }
-
-        [TestMethod]
-        public void TestBuyRequestAndQueryBuy()
-        {
-            testing = new int[2];
+            testing = new int[3];
             testing[0] = market.SendBuyRequest(1, 1, 1);
-            //List<string> logcheck1 = fileReading(false);
-            //Assert.AreEqual(true, logcheck1.Last().Contains("successful"));
-            List <string> historycheck1 = fileReading(true);
-            Assert.AreEqual(true, historycheck1.Last().Contains("successful"));
-            testing[1] = market.SendBuyRequest(2147483647, 1, 1);
-            List<string> historycheck2 = fileReading(true);
-            Assert.AreEqual(true, historycheck2.Last().Contains("An error"));
-            Assert.AreEqual(true, market.SendQueryBuySellRequest(testing[0]).ToString().Contains((testing[0]).ToString()));
+            testing[1] = market.SendSellRequest(1, 1, 0);
+            Assert.AreEqual(true, testing[1] == -1);
+            testing[2] = market.SendSellRequest(10, 1, 1);
+            Assert.AreEqual(true, testing[2] == -1);
             market.SendCancelBuySellRequest(testing[0]);
             market.SendCancelBuySellRequest(testing[1]);
+            market.SendCancelBuySellRequest(testing[2]);
         }
-
+ 
         [TestMethod]
         public void TestCancelRequest()
         {
-            testing = new int[4];
-            for(int i = 0; i < testing.Length; i++)
-            {
-                testing[i] = market.SendBuyRequest(1, 1, 1);
-            }
-            for(int j = 0; j < testing.Length; j++)
-            {
-                market.SendCancelBuySellRequest(testing[j]);
-                List<string> historycheck1 = fileReading(true);
-                Assert.AreEqual(true, historycheck1.Last().Contains("Request was canceled successfuly"));
-            }
+            int ans = market.SendBuyRequest(1, 1, 1);
+            market.SendCancelBuySellRequest(ans);
+            Assert.IsTrue(ans > 0);   
         }
 
         [TestMethod]
@@ -132,8 +94,6 @@ namespace UnitTestISE_Project
         {
             MarketUserData info = (MarketUserData)market.SendQueryUserRequest();
             Assert.IsNotNull(info);
-            //List<string> historycheck1 = fileReading(true);
-           // Assert.AreEqual(true, historycheck1.Last().Contains("A query user request was sent to the server. The response from the server was: "));
         }
 
         [TestMethod]
