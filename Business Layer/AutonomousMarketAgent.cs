@@ -16,7 +16,7 @@ namespace Business_Layer
         private static RequestManager market = new RequestManager();
         private static Timer aTimer;
 
-        public AutonomousMarketAgent()
+        public AutonomousMarketAgent()//This function responsible on the timer, to restart him and call the necessary function
         {
             aTimer = new Timer();
             aTimer.Interval = 10000;
@@ -34,7 +34,7 @@ namespace Business_Layer
             aTimer.Enabled = false;
         }
 
-        public void OnTimedEvent(Object source, ElapsedEventArgs e)
+        public void OnTimedEvent(Object source, ElapsedEventArgs e)//this function is responsible on the connection with the server,with rules when to buy or sell stocks
         {
 
             int actionCount = 0;
@@ -43,7 +43,7 @@ namespace Business_Layer
 
                 MarketUserData userInfo = (MarketUserData)market.SendQueryUserRequest();
                 actionCount++;
-                foreach (KeyValuePair<string, int> entry in userInfo.commodities)
+                foreach (KeyValuePair<string, int> entry in userInfo.commodities)//the loop run on all the commodities we have to sell/buy any of them
                 {
                     if (actionCount < 20)
                     {

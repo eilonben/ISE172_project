@@ -28,7 +28,7 @@ namespace MarketClientTest
         -----END RSA PRIVATE KEY-----";
 
 
-        [TestMethod]
+        
         public void TestSimpleHTTPPost()
         {
             // Attantion!, this code is not good practice! this was made for the sole purpose of being an example.
@@ -41,7 +41,7 @@ namespace MarketClientTest
             Trace.Write($"Server response is: {response}");
         }
 
-        [TestMethod]
+        
         public void TestObjectBasedHTTPPost()
         {
             // This test query a diffrent site (not the MarketServer)! it's only for demostration.
