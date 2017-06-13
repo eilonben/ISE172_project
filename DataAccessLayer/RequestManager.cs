@@ -31,6 +31,7 @@ namespace DataAccessLayer
         RBqA5j2CGRy/yTVv6RIDB/aueJc+NaopqxJ4lHCvkxv3
         -----END RSA PRIVATE KEY-----";
         public string error;
+        private int nonce = 0;
         ILog logger = LogManager.GetLogger("Logger");
 
 
@@ -40,8 +41,11 @@ namespace DataAccessLayer
             CancelRequest request = new CancelRequest();
             request.type = "cancelBuySell";
             request.id = id;
-            string token = SimpleCryptoLibrary.CreateToken(user, PrivateKey);
-            string response = HTTPClient.SendPostRequest(url, user, token, request);
+            int uniqeNonce = (nonce * 2) + 1;//uniqe way to represent the specific nonce
+            String myNonce = "" + uniqeNonce;
+            nonce++;
+            string token = SimpleCryptoLibrary.CreateToken(user + "_" + myNonce, PrivateKey);
+            string response = HTTPClient.SendPostRequest(url, user, token, myNonce, PrivateKey, request);
             if (response.Equals("Ok"))
             {
                 logger.Info("A cancel request was sent to the server for ID "+id+ ". Successfully canceled.");
@@ -64,12 +68,15 @@ namespace DataAccessLayer
             request.price = price;
             request.commodity = commodity;
             request.amount = amount;
-            string token = SimpleCryptoLibrary.CreateToken(user, PrivateKey);
+            int uniqeNonce = (nonce * 2) + 1;//uniqe way to represent the specific nonce
+            String myNonce = "" + uniqeNonce;
+            nonce++;
+            string token = SimpleCryptoLibrary.CreateToken(user + "_" + myNonce, PrivateKey);
             bool eflag=false;
             string response = "";
             try
             {
-               response = HTTPClient.SendPostRequest(url, user, token, request);
+               response = HTTPClient.SendPostRequest(url, user, token, myNonce, PrivateKey, request);
                Convert.ToInt32(response);
             }
             catch (Exception e)
@@ -99,12 +106,15 @@ namespace DataAccessLayer
             request.price = price;
             request.commodity = commodity;
             request.amount = amount;
-            string token = SimpleCryptoLibrary.CreateToken(user, PrivateKey);
+            int uniqeNonce = (nonce * 2) + 1;//uniqe way to represent the specific nonce
+            String myNonce = "" + uniqeNonce;
+            nonce++;
+            string token = SimpleCryptoLibrary.CreateToken(user + "_" + myNonce, PrivateKey);
             bool eflag = false;
             string response = "";
             try
             {
-                response = HTTPClient.SendPostRequest(url, user, token, request);
+                response = HTTPClient.SendPostRequest(url, user, token, myNonce, PrivateKey, request);
                 Convert.ToInt32(response);
             }
             catch (Exception e)// catching the exception, and sending back the response
@@ -132,12 +142,15 @@ namespace DataAccessLayer
             QuerySellBuyRequest request = new QuerySellBuyRequest();
             request.type = "queryBuySell";
             request.id = id;
-            string token = SimpleCryptoLibrary.CreateToken(user, PrivateKey);
+            int uniqeNonce = (nonce * 2) + 1;//uniqe way to represent the specific nonce
+            String myNonce = "" + uniqeNonce;
+            nonce++;
+            string token = SimpleCryptoLibrary.CreateToken(user + "_" + myNonce, PrivateKey);
             bool eflag = false;
             MarketItemQuery response = null;
             try
             {
-               response = HTTPClient.SendPostRequest<QuerySellBuyRequest, MarketItemQuery>(url, user, token, request);
+               response = HTTPClient.SendPostRequest<QuerySellBuyRequest, MarketItemQuery>(url, user, token, myNonce,PrivateKey, request);
                 
             }
             catch(Exception e)
@@ -162,12 +175,15 @@ namespace DataAccessLayer
             SimpleHTTPClient HTTPClient = new SimpleHTTPClient();
             QueryUserRequest request = new QueryUserRequest();
             request.type = "queryUser";
-            string token = SimpleCryptoLibrary.CreateToken(user, PrivateKey);
+            int uniqeNonce = (nonce * 2) + 1;//uniqe way to represent the specific nonce
+            String myNonce = "" + uniqeNonce;
+            nonce++;
+            string token = SimpleCryptoLibrary.CreateToken(user + "_" + myNonce, PrivateKey);
             MarketUserData response = null;
-            bool eflag = false; 
+            bool eflag = false;
             try
             {
-                response = HTTPClient.SendPostRequest<QueryUserRequest, MarketUserData>(url, user, token, request);
+                response = HTTPClient.SendPostRequest<QueryUserRequest, MarketUserData>(url, user, token, myNonce, PrivateKey, request);
             }
             catch (Exception e)
             { 
@@ -193,12 +209,16 @@ namespace DataAccessLayer
             QueryMarketRequest request = new QueryMarketRequest();
             request.type = "queryMarket";
             request.commodity = commodity;
-            string token = SimpleCryptoLibrary.CreateToken(user, PrivateKey);
+            int uniqeNonce = (nonce * 2) + 1;//uniqe way to represent the specific nonce
+            String myNonce = "" + uniqeNonce;
+            nonce++;
+            string token = SimpleCryptoLibrary.CreateToken(user + "_" + myNonce, PrivateKey);
             MarketCommodityOffer response = null;
             bool eflag = false;
+            
             try
             {
-                response = HTTPClient.SendPostRequest<QueryMarketRequest, MarketCommodityOffer>(url, user, token, request);
+                response = HTTPClient.SendPostRequest<QueryMarketRequest, MarketCommodityOffer>(url, user, token, myNonce, PrivateKey, request);
             }
             catch (Exception e)
             {
@@ -224,12 +244,16 @@ namespace DataAccessLayer
             SimpleHTTPClient HTTPClient = new SimpleHTTPClient();
             AllMarketRequest request = new AllMarketRequest();
             request.type = "queryAllMarket";
-            string token = SimpleCryptoLibrary.CreateToken(user, PrivateKey);
+            int uniqeNonce = (nonce * 2) + 1;//uniqe way to represent the specific nonce
+            String myNonce = "" + uniqeNonce;
+            nonce++;
+            string token = SimpleCryptoLibrary.CreateToken(user + "_" + myNonce, PrivateKey);
             List<AllCommodityOffer> response = new List<AllCommodityOffer>();
             bool eflag = false;
+            
             try
             {
-                response = HTTPClient.SendPostRequest<AllMarketRequest, List<AllCommodityOffer>>(url, user, token, request);
+                response = HTTPClient.SendPostRequest<AllMarketRequest, List<AllCommodityOffer>>(url, user, token, myNonce, PrivateKey, request);
             }
             catch (Exception e)
             {
@@ -255,12 +279,16 @@ namespace DataAccessLayer
             SimpleHTTPClient HTTPClient = new SimpleHTTPClient();
             UserRequestsQuery request = new UserRequestsQuery();
             request.type = "queryUserRequests";
-            string token = SimpleCryptoLibrary.CreateToken(user, PrivateKey);
+            int uniqeNonce = (nonce * 2) + 1;//uniqe way to represent the specific nonce
+            String myNonce = "" + uniqeNonce;
+            nonce++;
+            string token = SimpleCryptoLibrary.CreateToken(user + "_" + myNonce, PrivateKey);
             List<MarketUserRequests> response = new List<MarketUserRequests>();
             bool eflag = false;
+
             try
             {
-                response = HTTPClient.SendPostRequest<UserRequestsQuery, List<MarketUserRequests>>(url, user, token, request);
+                response = HTTPClient.SendPostRequest<UserRequestsQuery, List<MarketUserRequests>>(url, user, token, myNonce, PrivateKey, request);
             }
             catch (Exception e)
             {
@@ -278,7 +306,6 @@ namespace DataAccessLayer
                 logger.Info("The server received a SendUserRequestsQuery request.");
                 return response;
             }
-
         }
     }
 }

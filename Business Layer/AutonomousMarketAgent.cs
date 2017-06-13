@@ -38,18 +38,18 @@ namespace Business_Layer
         {
 
             int actionCount = 0;
-            while (actionCount < 20)
+            while (actionCount < 19)
             {
 
                 MarketUserData userInfo = (MarketUserData)market.SendQueryUserRequest();
                 actionCount++;
                 foreach (KeyValuePair<string, int> entry in userInfo.commodities)//the loop run on all the commodities we have to sell/buy any of them
                 {
-                    if (actionCount < 20)
+                    if (actionCount < 19)
                     {
                         MarketCommodityOffer offer = (MarketCommodityOffer)market.SendQueryMarketRequest(Convert.ToInt32(entry.Key));
                         actionCount++;
-                        if (offer.ask < 12 && actionCount < 20)
+                        if (offer.ask < 12 && actionCount < 19)
                         {
                             float spendable = userInfo.funds / 10;
                             int count = 1;
@@ -63,7 +63,7 @@ namespace Business_Layer
                                 market.SendBuyRequest(offer.ask, Convert.ToInt32(entry.Key), count);
                             }
                         }
-                        if (offer.bid > 7 && entry.Value > 0 && actionCount < 20)
+                        if (offer.bid > 7 && entry.Value > 0 && actionCount < 19)
                         {
                             int count = 1;
                             if ((offer.bid > 14) && (count + 1 >= entry.Value))

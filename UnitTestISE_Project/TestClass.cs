@@ -18,8 +18,6 @@ namespace UnitTestISE_Project
         private static RequestAgent rq;
         private int[] testing;
         private static MarketUserData userInfo;
-        ILog history = LogManager.GetLogger("History");
-        ILog logger = LogManager.GetLogger("Logger");
 
         [TestMethod]
         public void initial()
