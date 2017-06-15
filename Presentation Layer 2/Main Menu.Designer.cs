@@ -45,6 +45,7 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,7 +82,7 @@
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Font = new System.Drawing.Font("Cooper Black", 8.2F);
             this.button2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.button2.Location = new System.Drawing.Point(99, 307);
+            this.button2.Location = new System.Drawing.Point(2, 302);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(149, 52);
             this.button2.TabIndex = 5;
@@ -163,7 +164,7 @@
             this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button8.Font = new System.Drawing.Font("Cooper Black", 12.2F);
             this.button8.ForeColor = System.Drawing.Color.SteelBlue;
-            this.button8.Location = new System.Drawing.Point(544, 246);
+            this.button8.Location = new System.Drawing.Point(446, 250);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(169, 72);
             this.button8.TabIndex = 12;
@@ -251,6 +252,20 @@
             this.panel1.Size = new System.Drawing.Size(115, 72);
             this.panel1.TabIndex = 19;
             // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button9.Font = new System.Drawing.Font("Cooper Black", 8.2F);
+            this.button9.ForeColor = System.Drawing.Color.SteelBlue;
+            this.button9.Location = new System.Drawing.Point(196, 302);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(149, 52);
+            this.button9.TabIndex = 20;
+            this.button9.Text = "Statistics";
+            this.button9.UseVisualStyleBackColor = false;
+            // 
             // UserInterface
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -258,6 +273,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(837, 432);
+            this.Controls.Add(this.button9);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
@@ -303,6 +319,7 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button9;
     }
 }
 
