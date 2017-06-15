@@ -1,0 +1,2009 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{1CD4404E-A3FD-4890-BACE-B7375CAAB829}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>ConsoleApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Live_Charts</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
+    <Content Include="Core40\Core40.csproj" />
+    <Content Include="Core\Core.csproj" />
+    <Content Include="Core\docs.xml" />
+    <Content Include="Core\readme.txt" />
+    <Content Include="Examples\UWP\Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Examples\UWP\Assets\SplashScreen.scale-200.png" />
+    <Content Include="Examples\UWP\Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Examples\UWP\Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Examples\UWP\Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Examples\UWP\Assets\StoreLogo.png" />
+    <Content Include="Examples\UWP\Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Examples\UWP\CartesianChart\Funnel Chart\resources\fingerprint.png" />
+    <Content Include="Examples\UWP\CartesianChart\Funnel Chart\resources\user.png" />
+    <Content Include="Examples\UWP\CartesianChart\Funnel Chart\resources\view.png" />
+    <Content Include="Examples\UWP\CartesianChart\UIElements\warning.png" />
+    <Content Include="Examples\UWP\Properties\Default.rd.xml" />
+    <Content Include="Examples\UWP\Uwp.csproj" />
+    <Content Include="Examples\WinForms\Cartesian\FunnelChart\Resources\fingerprint.png" />
+    <Content Include="Examples\WinForms\Cartesian\FunnelChart\Resources\user.png" />
+    <Content Include="Examples\WinForms\Cartesian\FunnelChart\Resources\view.png" />
+    <Content Include="Examples\WinForms\Cartesian\UielementsExample\warning.png" />
+    <Content Include="Examples\WinForms\Maps\World.xml" />
+    <Content Include="Examples\WinForms\Winforms.csproj" />
+    <Content Include="Examples\Wpf\CartesianChart\Funnel Chart\resources\fingerprint.png" />
+    <Content Include="Examples\Wpf\CartesianChart\Funnel Chart\resources\user.png" />
+    <Content Include="Examples\Wpf\CartesianChart\Funnel Chart\resources\view.png" />
+    <Content Include="Examples\Wpf\Left.png" />
+    <Content Include="Examples\Wpf\lvlogo.png" />
+    <Content Include="Examples\Wpf\Maps\World.xml" />
+    <Content Include="Examples\Wpf\Resources\LiveChartsLogo.png" />
+    <Content Include="Examples\Wpf\Right.png" />
+    <Content Include="Examples\Wpf\Wpf.csproj" />
+    <Content Include="LICENSE.TXT" />
+    <Content Include="UwpView\nuget.exe" />
+    <Content Include="UwpView\Properties\UwpView.rd.xml" />
+    <Content Include="UwpView\UwpView.csproj" />
+    <Content Include="WinFormsView\nuget.exe" />
+    <Content Include="WinFormsView\WinFormsView.csproj" />
+    <Content Include="WpfView\docs.xml" />
+    <Content Include="WpfView\nuget.exe" />
+    <Content Include="WpfView\WpfView.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".github\CONTRIBUTING.md" />
+    <None Include=".github\ISSUE_TEMPLATE.md" />
+    <None Include=".github\PULL_REQUEST_TEMPLATE.md" />
+    <None Include="build.cake" />
+    <None Include="build.ps1" />
+    <None Include="Charts.sln.DotSettings" />
+    <None Include="Core40\Core40.csproj.DotSettings" />
+    <None Include="Core\Core.csproj.DotSettings" />
+    <None Include="Core\core.docs" />
+    <None Include="Core\Core.nuspec" />
+    <None Include="Core\PortableCore.csproj.DotSettings" />
+    <None Include="Examples\UWP\cities.csv" />
+    <None Include="Examples\UWP\Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Examples\UWP\project.json" />
+    <None Include="Examples\UWP\UWP_TemporaryKey.pfx" />
+    <None Include="Examples\WinForms\App.config" />
+    <None Include="Examples\WinForms\cities.csv" />
+    <None Include="Examples\WinForms\Properties\Settings.settings" />
+    <None Include="Examples\WinForms\Winforms.csproj.DotSettings" />
+    <None Include="Examples\Wpf\App.config" />
+    <None Include="Examples\Wpf\cities.csv" />
+    <None Include="Examples\Wpf\packages.config" />
+    <None Include="Examples\Wpf\Properties\Settings.settings" />
+    <None Include="Examples\Wpf\Wpf.csproj.DotSettings" />
+    <None Include="LiveCharts.sln.DotSettings" />
+    <None Include="LVCSign.snk" />
+    <None Include="README.md" />
+    <None Include="tools\packages.config" />
+    <None Include="UwpView\install.ps1" />
+    <None Include="UwpView\project.json" />
+    <None Include="UwpView\UwpView.nuspec" />
+    <None Include="WinFormsView\app.config" />
+    <None Include="WinFormsView\install.ps1" />
+    <None Include="WinFormsView\winforms.docs" />
+    <None Include="WinFormsView\WinFormsView.csproj.DotSettings" />
+    <None Include="WinFormsView\WinFormsView.nuspec" />
+    <None Include="WpfView\Desktop.csproj.DotSettings" />
+    <None Include="WpfView\install.ps1" />
+    <None Include="WpfView\LiveChartsDesktop.csproj.DotSettings" />
+    <None Include="WpfView\LiveChartsWPF.csproj.DotSettings" />
+    <None Include="WpfView\Properties\Settings.settings" />
+    <None Include="WpfView\wpf.docs" />
+    <None Include="WpfView\WpfView.csproj.DotSettings" />
+    <None Include="WpfView\WpfView.nuspec" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core40\AxisCore.cs" />
+    <Compile Include="Core40\AxisOrientation.cs" />
+    <Compile Include="Core40\AxisPosition.cs" />
+    <Compile Include="Core40\AxisSectionCore.cs" />
+    <Compile Include="Core40\AxisWindow.cs" />
+    <Compile Include="Core40\AxisWindows.cs" />
+    <Compile Include="Core40\BarLabelPosition.cs" />
+    <Compile Include="Core40\ChartFunctions.cs" />
+    <Compile Include="Core40\Charting.cs" />
+    <Compile Include="Core40\ChartPoint.cs" />
+    <Compile Include="Core40\Charts\CartesianChartCore.cs" />
+    <Compile Include="Core40\Charts\ChartCore.cs" />
+    <Compile Include="Core40\Charts\PieChartCore.cs" />
+    <Compile Include="Core40\ChartUpdater.cs" />
+    <Compile Include="Core40\ChartValues.cs" />
+    <Compile Include="Core40\Configurations\CartesianMapper.cs" />
+    <Compile Include="Core40\Configurations\FinancialMapper.cs" />
+    <Compile Include="Core40\Configurations\GanttMapper.cs" />
+    <Compile Include="Core40\Configurations\IPointEvaluator.cs" />
+    <Compile Include="Core40\Configurations\Mappers.cs" />
+    <Compile Include="Core40\Configurations\PieMapper.cs" />
+    <Compile Include="Core40\Configurations\PolarMapper.cs" />
+    <Compile Include="Core40\Configurations\WeightedMapper.cs" />
+    <Compile Include="Core40\DataLabelViewModel.cs" />
+    <Compile Include="Core40\DateAxisCore.cs" />
+    <Compile Include="Core40\DateAxisWindow.cs" />
+    <Compile Include="Core40\DateAxisWindows.cs" />
+    <Compile Include="Core40\DateSeparatorElementCore.cs" />
+    <Compile Include="Core40\Defaults\AxisLimits.cs" />
+    <Compile Include="Core40\Defaults\DateTimePoint.cs" />
+    <Compile Include="Core40\Defaults\GanttPoint.cs" />
+    <Compile Include="Core40\Defaults\HeatPoint.cs" />
+    <Compile Include="Core40\Defaults\ObservablePoint.cs" />
+    <Compile Include="Core40\Defaults\ObservableValue.cs" />
+    <Compile Include="Core40\Defaults\OHLCPoint.cs" />
+    <Compile Include="Core40\Defaults\PolarPoint.cs" />
+    <Compile Include="Core40\Defaults\ScatterPoint.cs" />
+    <Compile Include="Core40\Definitions\Charts\IAxisSectionView.cs" />
+    <Compile Include="Core40\Definitions\Charts\IAxisView.cs" />
+    <Compile Include="Core40\Definitions\Charts\IAxisWindow.cs" />
+    <Compile Include="Core40\Definitions\Charts\ICartesianChart.cs" />
+    <Compile Include="Core40\Definitions\Charts\ICartesianVisualElement.cs" />
+    <Compile Include="Core40\Definitions\Charts\IChartView.cs" />
+    <Compile Include="Core40\Definitions\Charts\IDateAxisView.cs" />
+    <Compile Include="Core40\Definitions\Charts\ILogarithmicAxisView.cs" />
+    <Compile Include="Core40\Definitions\Charts\IPieChart.cs" />
+    <Compile Include="Core40\Definitions\Charts\ISeparatorElementView.cs" />
+    <Compile Include="Core40\Definitions\Charts\ISeparatorView.cs" />
+    <Compile Include="Core40\Definitions\Charts\IWindowAxisView.cs" />
+    <Compile Include="Core40\Definitions\Points\IBezierPointView.cs" />
+    <Compile Include="Core40\Definitions\Points\IChartPointView.cs" />
+    <Compile Include="Core40\Definitions\Points\IHeatPointView.cs" />
+    <Compile Include="Core40\Definitions\Points\IOhlcPointView.cs" />
+    <Compile Include="Core40\Definitions\Points\IPieSlicePointView.cs" />
+    <Compile Include="Core40\Definitions\Points\IRectanglePointView.cs" />
+    <Compile Include="Core40\Definitions\Points\IScatterPointView.cs" />
+    <Compile Include="Core40\Definitions\Points\IStepPointView.cs" />
+    <Compile Include="Core40\Definitions\Series\IAreaPoint.cs" />
+    <Compile Include="Core40\Definitions\Series\ICartesianSeries.cs" />
+    <Compile Include="Core40\Definitions\Series\IColumnSeriesView.cs" />
+    <Compile Include="Core40\Definitions\Series\IFinancialSeriesView.cs" />
+    <Compile Include="Core40\Definitions\Series\IHeatSeriesView.cs" />
+    <Compile Include="Core40\Definitions\Series\ILineSeriesView.cs" />
+    <Compile Include="Core40\Definitions\Series\IPieSeries.cs" />
+    <Compile Include="Core40\Definitions\Series\IPieSeriesView.cs" />
+    <Compile Include="Core40\Definitions\Series\IRowSeriesView.cs" />
+    <Compile Include="Core40\Definitions\Series\IScatterSeriesView.cs" />
+    <Compile Include="Core40\Definitions\Series\ISeriesView.cs" />
+    <Compile Include="Core40\Definitions\Series\IStackedAreaSeriesView.cs" />
+    <Compile Include="Core40\Definitions\Series\IStackedColumnSeriesView.cs" />
+    <Compile Include="Core40\Definitions\Series\IStackedRowSeriesView.cs" />
+    <Compile Include="Core40\Definitions\Series\IStackModelableSeriesView.cs" />
+    <Compile Include="Core40\Definitions\Series\IVerticalStackedAreaSeriesView.cs" />
+    <Compile Include="Core40\Delegates.cs" />
+    <Compile Include="Core40\Dtos\BezierData.cs" />
+    <Compile Include="Core40\Dtos\CoreColor.cs" />
+    <Compile Include="Core40\Dtos\CoreGradientStop.cs" />
+    <Compile Include="Core40\Dtos\CoreLimit.cs" />
+    <Compile Include="Core40\Dtos\CoreMargin.cs" />
+    <Compile Include="Core40\Dtos\CorePoint.cs" />
+    <Compile Include="Core40\Dtos\CoreRectangle.cs" />
+    <Compile Include="Core40\Dtos\CoreSize.cs" />
+    <Compile Include="Core40\Dtos\LabelEvaluation.cs" />
+    <Compile Include="Core40\Dtos\StackedSum.cs" />
+    <Compile Include="Core40\Dtos\TooltipDataViewModel.cs" />
+    <Compile Include="Core40\Events\Delegates.cs" />
+    <Compile Include="Core40\Events\PreviewRangeChangedEventArgs.cs" />
+    <Compile Include="Core40\Events\RangeChangedEventArgs.cs" />
+    <Compile Include="Core40\Helpers\Extentions.cs" />
+    <Compile Include="Core40\Helpers\LiveChartsException.cs" />
+    <Compile Include="Core40\Helpers\NoisyCollection.cs" />
+    <Compile Include="Core40\IChartValues.cs" />
+    <Compile Include="Core40\IObservableChartPoint.cs" />
+    <Compile Include="Core40\LegendLocation.cs" />
+    <Compile Include="Core40\LogarithmicAxisCore.cs" />
+    <Compile Include="Core40\Maps\MapData.cs" />
+    <Compile Include="Core40\PanningOptions.cs" />
+    <Compile Include="Core40\PeriodUnits.cs" />
+    <Compile Include="Core40\PieLabelPosition.cs" />
+    <Compile Include="Core40\PointTracker.cs" />
+    <Compile Include="Core40\Properties\AssemblyInfo.cs" />
+    <Compile Include="Core40\ScrollMode.cs" />
+    <Compile Include="Core40\SeparationState.cs" />
+    <Compile Include="Core40\SeparatorConfigurationCore.cs" />
+    <Compile Include="Core40\SeparatorElementCore.cs" />
+    <Compile Include="Core40\Seriesalgorithm.cs" />
+    <Compile Include="Core40\SeriesAlgorithms\CandleAlgorithm.cs" />
+    <Compile Include="Core40\SeriesAlgorithms\ColumnAlgorithm.cs" />
+    <Compile Include="Core40\SeriesAlgorithms\HeatAlgorithm.cs" />
+    <Compile Include="Core40\SeriesAlgorithms\LineAlgorithm.cs" />
+    <Compile Include="Core40\SeriesAlgorithms\OhlcAlgorithm.cs" />
+    <Compile Include="Core40\SeriesAlgorithms\PieAlgorithm.cs" />
+    <Compile Include="Core40\SeriesAlgorithms\RowAlgorithm.cs" />
+    <Compile Include="Core40\SeriesAlgorithms\ScatterAlgorithm.cs" />
+    <Compile Include="Core40\SeriesAlgorithms\StackedAreaAlgorithm.cs" />
+    <Compile Include="Core40\SeriesAlgorithms\StackedColumnAlgorithm.cs" />
+    <Compile Include="Core40\SeriesAlgorithms\StackedRowAlgorithm.cs" />
+    <Compile Include="Core40\SeriesAlgorithms\StepLineAlgorithm.cs" />
+    <Compile Include="Core40\SeriesAlgorithms\VerticalLineAlgorithm.cs" />
+    <Compile Include="Core40\SeriesAlgorithms\VerticalStackedAreaAlgorithm.cs" />
+    <Compile Include="Core40\SeriesCollection.cs" />
+    <Compile Include="Core40\SeriesOrientation.cs" />
+    <Compile Include="Core40\StackMode.cs" />
+    <Compile Include="Core40\TooltipSelectionMode.cs" />
+    <Compile Include="Core40\UpdaterState.cs" />
+    <Compile Include="Core40\VisualElementsCollection.cs" />
+    <Compile Include="Core40\WindowAxisCore.cs" />
+    <Compile Include="Core40\ZoomingOptions.cs" />
+    <Compile Include="Core\AxisCore.cs" />
+    <Compile Include="Core\AxisOrientation.cs" />
+    <Compile Include="Core\AxisPosition.cs" />
+    <Compile Include="Core\AxisSectionCore.cs" />
+    <Compile Include="Core\BarLabelPosition.cs" />
+    <Compile Include="Core\BezierData.cs" />
+    <Compile Include="Core\ChartFunctions.cs" />
+    <Compile Include="Core\Charting.cs" />
+    <Compile Include="Core\ChartPoint.cs" />
+    <Compile Include="Core\Charts\CartesianChartCore.cs" />
+    <Compile Include="Core\Charts\ChartCore.cs" />
+    <Compile Include="Core\Charts\PieChartCore.cs" />
+    <Compile Include="Core\ChartUpdater.cs" />
+    <Compile Include="Core\ChartValues.cs" />
+    <Compile Include="Core\Configurations\CartesianMapper.cs" />
+    <Compile Include="Core\Configurations\FinancialMapper.cs" />
+    <Compile Include="Core\Configurations\GanttMapper.cs" />
+    <Compile Include="Core\Configurations\IPointEvaluator.cs" />
+    <Compile Include="Core\Configurations\Mappers.cs" />
+    <Compile Include="Core\Configurations\PieMapper.cs" />
+    <Compile Include="Core\Configurations\PolarMapper.cs" />
+    <Compile Include="Core\Configurations\WeightedMapper.cs" />
+    <Compile Include="Core\DataLabelViewModel.cs" />
+    <Compile Include="Core\Defaults\AxisLimits.cs" />
+    <Compile Include="Core\Defaults\DateTimePoint.cs" />
+    <Compile Include="Core\Defaults\GanttPoint.cs" />
+    <Compile Include="Core\Defaults\HeatPoint.cs" />
+    <Compile Include="Core\Defaults\ObservablePoint.cs" />
+    <Compile Include="Core\Defaults\ObservableValue.cs" />
+    <Compile Include="Core\Defaults\OHLCPoint.cs" />
+    <Compile Include="Core\Defaults\PolarPoint.cs" />
+    <Compile Include="Core\Defaults\ScatterPoint.cs" />
+    <Compile Include="Core\Definitions\Charts\IAxisSectionView.cs" />
+    <Compile Include="Core\Definitions\Charts\IAxisView.cs" />
+    <Compile Include="Core\Definitions\Charts\ICartesianChart.cs" />
+    <Compile Include="Core\Definitions\Charts\ICartesianVisualElement.cs" />
+    <Compile Include="Core\Definitions\Charts\IChartView.cs" />
+    <Compile Include="Core\Definitions\Charts\ILogarithmicAxisView.cs" />
+    <Compile Include="Core\Definitions\Charts\IPieChart.cs" />
+    <Compile Include="Core\Definitions\Charts\ISeparatorElementView.cs" />
+    <Compile Include="Core\Definitions\Charts\ISeparatorView.cs" />
+    <Compile Include="Core\Definitions\Points\IBezierPointView.cs" />
+    <Compile Include="Core\Definitions\Points\IChartPointView.cs" />
+    <Compile Include="Core\Definitions\Points\IHeatPointView.cs" />
+    <Compile Include="Core\Definitions\Points\IOhlcPointView.cs" />
+    <Compile Include="Core\Definitions\Points\IPieSlicePointView.cs" />
+    <Compile Include="Core\Definitions\Points\IRectanglePointView.cs" />
+    <Compile Include="Core\Definitions\Points\IScatterPointView.cs" />
+    <Compile Include="Core\Definitions\Points\IStepPointView.cs" />
+    <Compile Include="Core\Definitions\Series\IAreaPoint.cs" />
+    <Compile Include="Core\Definitions\Series\ICartesianSeries.cs" />
+    <Compile Include="Core\Definitions\Series\IColumnSeriesView.cs" />
+    <Compile Include="Core\Definitions\Series\IFinancialSeriesView.cs" />
+    <Compile Include="Core\Definitions\Series\IHeatSeriesView.cs" />
+    <Compile Include="Core\Definitions\Series\ILineSeriesView.cs" />
+    <Compile Include="Core\Definitions\Series\IPieSeries.cs" />
+    <Compile Include="Core\Definitions\Series\IPieSeriesView.cs" />
+    <Compile Include="Core\Definitions\Series\IRowSeriesView.cs" />
+    <Compile Include="Core\Definitions\Series\IScatterSeriesView.cs" />
+    <Compile Include="Core\Definitions\Series\ISeriesView.cs" />
+    <Compile Include="Core\Definitions\Series\IStackedAreaSeriesView.cs" />
+    <Compile Include="Core\Definitions\Series\IStackedColumnSeriesView.cs" />
+    <Compile Include="Core\Definitions\Series\IStackedRowSeriesView.cs" />
+    <Compile Include="Core\Definitions\Series\IStackModelableSeriesView.cs" />
+    <Compile Include="Core\Definitions\Series\IVerticalStackedAreaSeriesView.cs" />
+    <Compile Include="Core\Dtos\BezierData.cs" />
+    <Compile Include="Core\Dtos\CoreColor.cs" />
+    <Compile Include="Core\Dtos\CoreGradientStop.cs" />
+    <Compile Include="Core\Dtos\CoreLimit.cs" />
+    <Compile Include="Core\Dtos\CoreMargin.cs" />
+    <Compile Include="Core\Dtos\CorePoint.cs" />
+    <Compile Include="Core\Dtos\CoreRectangle.cs" />
+    <Compile Include="Core\Dtos\CoreSize.cs" />
+    <Compile Include="Core\Dtos\LabelEvaluation.cs" />
+    <Compile Include="Core\Dtos\StackedSum.cs" />
+    <Compile Include="Core\Dtos\TooltipDataViewModel.cs" />
+    <Compile Include="Core\Events\Delegates.cs" />
+    <Compile Include="Core\Events\PreviewRangeChangedEventArgs.cs" />
+    <Compile Include="Core\Events\RangeChangedEventArgs.cs" />
+    <Compile Include="Core\Helpers\Extentions.cs" />
+    <Compile Include="Core\Helpers\LiveChartsException.cs" />
+    <Compile Include="Core\Helpers\NoisyCollection.cs" />
+    <Compile Include="Core\IBezierData.cs" />
+    <Compile Include="Core\IChartValues.cs" />
+    <Compile Include="Core\IObservableChartPoint.cs" />
+    <Compile Include="Core\LegendLocation.cs" />
+    <Compile Include="Core\LogarithmicAxisCore.cs" />
+    <Compile Include="Core\Maps\MapData.cs" />
+    <Compile Include="Core\PanningOptions.cs" />
+    <Compile Include="Core\PieLabelPosition.cs" />
+    <Compile Include="Core\PointTracker.cs" />
+    <Compile Include="Core\Properties\AssemblyInfo.cs" />
+    <Compile Include="Core\ScrollMode.cs" />
+    <Compile Include="Core\SeparationState.cs" />
+    <Compile Include="Core\SeparatorConfigurationCore.cs" />
+    <Compile Include="Core\SeparatorElementCore.cs" />
+    <Compile Include="Core\Seriesalgorithm.cs" />
+    <Compile Include="Core\SeriesAlgorithms\CandleAlgorithm.cs" />
+    <Compile Include="Core\SeriesAlgorithms\ColumnAlgorithm.cs" />
+    <Compile Include="Core\SeriesAlgorithms\HeatAlgorithm.cs" />
+    <Compile Include="Core\SeriesAlgorithms\LineAlgorithm.cs" />
+    <Compile Include="Core\SeriesAlgorithms\OhlcAlgorithm.cs" />
+    <Compile Include="Core\SeriesAlgorithms\PieAlgorithm.cs" />
+    <Compile Include="Core\SeriesAlgorithms\RowAlgorithm.cs" />
+    <Compile Include="Core\SeriesAlgorithms\ScatterAlgorithm.cs" />
+    <Compile Include="Core\SeriesAlgorithms\StackedAreaAlgorithm.cs" />
+    <Compile Include="Core\SeriesAlgorithms\StackedColumnAlgorithm.cs" />
+    <Compile Include="Core\SeriesAlgorithms\StackedRowAlgorithm.cs" />
+    <Compile Include="Core\SeriesAlgorithms\StepLineAlgorithm.cs" />
+    <Compile Include="Core\SeriesAlgorithms\VerticalLineAlgorithm.cs" />
+    <Compile Include="Core\SeriesAlgorithms\VerticalStackedAreaAlgorithm.cs" />
+    <Compile Include="Core\SeriesCollection.cs" />
+    <Compile Include="Core\SeriesOrientation.cs" />
+    <Compile Include="Core\StackMode.cs" />
+    <Compile Include="Core\TooltipSelectionMode.cs" />
+    <Compile Include="Core\UpdaterState.cs" />
+    <Compile Include="Core\VisualElementsCollection.cs" />
+    <Compile Include="Core\ZoomingOptions.cs" />
+    <Compile Include="Examples\UWP\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\AppShell.xaml.cs">
+      <DependentUpon>AppShell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\Basic Bars\BasicColumn.xaml.cs">
+      <DependentUpon>BasicColumn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\Basic Bars\BasicRowExample.xaml.cs">
+      <DependentUpon>BasicRowExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\Basic Stacked Bar\BasicStackedColumnExample.xaml.cs">
+      <DependentUpon>BasicStackedColumnExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\Basic Stacked Bar\BasicStackedRowPercentageExample.xaml.cs">
+      <DependentUpon>BasicStackedRowPercentageExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\BasicLine\BasicLineExample.xaml.cs">
+      <DependentUpon>BasicLineExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\Bubbles\BubblesExample.xaml.cs">
+      <DependentUpon>BubblesExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\Chart to Image\ChartToImageSample.xaml.cs">
+      <DependentUpon>ChartToImageSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\ConstantChanges\ConstantChangesChart.xaml.cs">
+      <DependentUpon>ConstantChangesChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\ConstantChanges\MeasureModel.cs" />
+    <Compile Include="Examples\UWP\CartesianChart\Customized Series\CustomizedLineSeries.xaml.cs">
+      <DependentUpon>CustomizedLineSeries.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\CustomTooltipAndLegend\CustomersLegend.xaml.cs">
+      <DependentUpon>CustomersLegend.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\CustomTooltipAndLegend\CustomersTooltip.xaml.cs">
+      <DependentUpon>CustomersTooltip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\CustomTooltipAndLegend\CustomerVm.cs" />
+    <Compile Include="Examples\UWP\CartesianChart\CustomTooltipAndLegend\CustomTooltipAndLegendExample.xaml.cs">
+      <DependentUpon>CustomTooltipAndLegendExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\DynamicVisibility\DynamicVisibilityExample.xaml.cs">
+      <DependentUpon>DynamicVisibilityExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\Energy Predictions\EnergyPredictionExample.xaml.cs">
+      <DependentUpon>EnergyPredictionExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\Energy Predictions\OpacityConverter.cs" />
+    <Compile Include="Examples\UWP\CartesianChart\Energy Predictions\ReverseConverter.cs" />
+    <Compile Include="Examples\UWP\CartesianChart\Events\ChartPointCommandHandler.cs" />
+    <Compile Include="Examples\UWP\CartesianChart\Events\EventsExample.xaml.cs">
+      <DependentUpon>EventsExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\Events\ViewModel.cs" />
+    <Compile Include="Examples\UWP\CartesianChart\Financial\CandleStickExample.xaml.cs">
+      <DependentUpon>CandleStickExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\Financial\OhclExample.xaml.cs">
+      <DependentUpon>OhclExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\FullyResponsive\FullyResponsiveExample.xaml.cs">
+      <DependentUpon>FullyResponsiveExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\Funnel Chart\FunnelExample.xaml.cs">
+      <DependentUpon>FunnelExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\GanttChart\GanttExample.xaml.cs">
+      <DependentUpon>GanttExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\HeatChart\HeatSeriesExample.xaml.cs">
+      <DependentUpon>HeatSeriesExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\InLineSyntax\InLineSyntaxTest.xaml.cs">
+      <DependentUpon>InLineSyntaxTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\Inverted Series\InvertedExample.xaml.cs">
+      <DependentUpon>InvertedExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\Irregular Intervals\IrregularIntervalsExample.xaml.cs">
+      <DependentUpon>IrregularIntervalsExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\Labels\LabelsExample.xaml.cs">
+      <DependentUpon>LabelsExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\Labels\LabelsHorizontalExample.xaml.cs">
+      <DependentUpon>LabelsHorizontalExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\LineExample\LineExample.xaml.cs">
+      <DependentUpon>LineExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\Linq\City.cs" />
+    <Compile Include="Examples\UWP\CartesianChart\Linq\DataBase.cs" />
+    <Compile Include="Examples\UWP\CartesianChart\Linq\LinqExample.xaml.cs">
+      <DependentUpon>LinqExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\LogarithmScale\LogarithmScaleExample.xaml.cs">
+      <DependentUpon>LogarithmScaleExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\ManualZAndP\ManualZAndPExample.xaml.cs">
+      <DependentUpon>ManualZAndPExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\MaterialCards\MaterialCards.xaml.cs">
+      <DependentUpon>MaterialCards.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\Missing Line Points\MissingPointsExample.xaml.cs">
+      <DependentUpon>MissingPointsExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\MixingSeries\MixingSeries.xaml.cs">
+      <DependentUpon>MixingSeries.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\MultiAxes\MultiAxesChart.xaml.cs">
+      <DependentUpon>MultiAxesChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\NegativeStackedRow\NegativeStackedRowExample.xaml.cs">
+      <DependentUpon>NegativeStackedRowExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\PointShapeLine\PointShapeLineExample.xaml.cs">
+      <DependentUpon>PointShapeLineExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\PointState\PointStateExample.xaml.cs">
+      <DependentUpon>PointStateExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\ScatterPlot\ScatterExample.xaml.cs">
+      <DependentUpon>ScatterExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\SectionsDragable\DragableSections.xaml.cs">
+      <DependentUpon>DragableSections.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\Sections\SectionsExample.xaml.cs">
+      <DependentUpon>SectionsExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\SharedTooltip\SharedTooltipExample.xaml.cs">
+      <DependentUpon>SharedTooltipExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\SolidColorChart\SolidColorExample.xaml.cs">
+      <DependentUpon>SolidColorExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\StackedArea\StackedAreaExample.xaml.cs">
+      <DependentUpon>StackedAreaExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\StackedArea\VerticalStackedAreaExample.xaml.cs">
+      <DependentUpon>VerticalStackedAreaExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\StackedBar\StackedColumnExample.xaml.cs">
+      <DependentUpon>StackedColumnExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\StackedBar\StackedRowExample.xaml.cs">
+      <DependentUpon>StackedRowExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\StepLine\StepLineExample.xaml.cs">
+      <DependentUpon>StepLineExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\TypesSupport\TypesPlotting.xaml.cs">
+      <DependentUpon>TypesPlotting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\UIElements\UIElementsExample.xaml.cs">
+      <DependentUpon>UIElementsExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\Using DateTime\DateModel.cs" />
+    <Compile Include="Examples\UWP\CartesianChart\Using DateTime\DateTime.xaml.cs">
+      <DependentUpon>DateTime.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\ZoomingAndPanning\ZoomingAndPanning.xaml.cs">
+      <DependentUpon>ZoomingAndPanning.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\CartesianChart\zzIssues\Issue179.xaml.cs">
+      <DependentUpon>Issue179.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\Commons\SampleCategory.cs" />
+    <Compile Include="Examples\UWP\Commons\SampleDefinition.cs" />
+    <Compile Include="Examples\UWP\Commons\SampleDefinitions.cs" />
+    <Compile Include="Examples\UWP\Converters\BoolToObjectConverter.cs" />
+    <Compile Include="Examples\UWP\Gauges\AngularGaugeExmple.xaml.cs">
+      <DependentUpon>AngularGaugeExmple.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\Gauges\Gauge360.xaml.cs">
+      <DependentUpon>Gauge360.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\PieChart\DoughnutChartExample.xaml.cs">
+      <DependentUpon>DoughnutChartExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\PieChart\PieChartExample.xaml.cs">
+      <DependentUpon>PieChartExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\UWP\Properties\AssemblyInfo.cs" />
+    <Compile Include="Examples\UWP\Views\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\Basic Stacked Bar\BasicsStackedRowExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\Basic Stacked Bar\BasicsStackedRowExample.Designer.cs">
+      <DependentUpon>BasicsStackedRowExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\Basic Stacked Bar\BasicStackedColumnExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\Basic Stacked Bar\BasicStackedColumnExample.Designer.cs">
+      <DependentUpon>BasicStackedColumnExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\BasicBar\BasicColumnExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\BasicBar\BasicColumnExample.Designer.cs">
+      <DependentUpon>BasicColumnExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\BasicBar\BasicRowExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\BasicBar\BasicRowExample.Designer.cs">
+      <DependentUpon>BasicRowExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\BasicBubbles\BasicBubblesExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\BasicBubbles\BasicBubblesExample.Designer.cs">
+      <DependentUpon>BasicBubblesExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\BasicLine\BasicLineExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\BasicLine\BasicLineExample.Designer.cs">
+      <DependentUpon>BasicLineExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\ConstantChanges\ConstantChanges.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\ConstantChanges\ConstantChanges.Designer.cs">
+      <DependentUpon>ConstantChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\ConstantChanges\MeasureModel.cs" />
+    <Compile Include="Examples\WinForms\Cartesian\Customized Series\Customized Line Series.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\Customized Series\Customized Line Series.Designer.cs">
+      <DependentUpon>Customized Line Series.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\DataPagination\DataPaginationExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\DataPagination\DataPaginationExample.Designer.cs">
+      <DependentUpon>DataPaginationExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\DateTime\DateTimeExample.cs" />
+    <Compile Include="Examples\WinForms\Cartesian\DateTime\DateTimeExample.Designer.cs">
+      <DependentUpon>DateTimeExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\DynamicVisibility\DynamicVisibiltyExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\DynamicVisibility\DynamicVisibiltyExample.Designer.cs">
+      <DependentUpon>DynamicVisibiltyExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\Events\EventsExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\Events\EventsExample.Designer.cs">
+      <DependentUpon>EventsExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\Financial\FinancialExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\Financial\FinancialExample.Designer.cs">
+      <DependentUpon>FinancialExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\FullyResponsive\FullyResponsive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\FullyResponsive\FullyResponsive.Designer.cs">
+      <DependentUpon>FullyResponsive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\FunnelChart\FunnelExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\FunnelChart\FunnelExample.Designer.cs">
+      <DependentUpon>FunnelExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\GanttChart\GanttExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\GanttChart\GanttExample.Designer.cs">
+      <DependentUpon>GanttExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\HeatSeriesExample\HeatSeriesExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\HeatSeriesExample\HeatSeriesExample.Designer.cs">
+      <DependentUpon>HeatSeriesExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\Inverted Series\InvertedSeries.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\Inverted Series\InvertedSeries.Designer.cs">
+      <DependentUpon>InvertedSeries.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\Irregular Intervals\IrregularIntervalsExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\Irregular Intervals\IrregularIntervalsExample.Designer.cs">
+      <DependentUpon>IrregularIntervalsExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\Labels\Labels.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\Labels\Labels.Designer.cs">
+      <DependentUpon>Labels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\Linq\City.cs" />
+    <Compile Include="Examples\WinForms\Cartesian\Linq\DataBase.cs" />
+    <Compile Include="Examples\WinForms\Cartesian\Linq\LinqExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\Linq\LinqExample.Designer.cs">
+      <DependentUpon>LinqExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\LogarithmScale\LogarithmSacale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\LogarithmScale\LogarithmSacale.Designer.cs">
+      <DependentUpon>LogarithmSacale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\MissingPoints\MissingPoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\MissingPoints\MissingPoint.Designer.cs">
+      <DependentUpon>MissingPoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\MultiAxes\MultipleAxesExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\MultiAxes\MultipleAxesExample.Designer.cs">
+      <DependentUpon>MultipleAxesExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\NegativeStackedRow\NegativeStackedRow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\NegativeStackedRow\NegativeStackedRow.Designer.cs">
+      <DependentUpon>NegativeStackedRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\PointState\PointState.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\PointState\PointState.Designer.cs">
+      <DependentUpon>PointState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\ScatterExample\ScatterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\ScatterExample\ScatterForm.Designer.cs">
+      <DependentUpon>ScatterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\Sections\SectionsExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\Sections\SectionsExample.Designer.cs">
+      <DependentUpon>SectionsExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\StackedArea\StackedAreaExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\StackedArea\StackedAreaExample.Designer.cs">
+      <DependentUpon>StackedAreaExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\StepLine\StepLineExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\StepLine\StepLineExample.Designer.cs">
+      <DependentUpon>StepLineExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\UielementsExample\UielementsExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\UielementsExample\UielementsExample.Designer.cs">
+      <DependentUpon>UielementsExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\Zooming and Panning\ZomingAndPanningExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Cartesian\Zooming and Panning\ZomingAndPanningExample.Designer.cs">
+      <DependentUpon>ZomingAndPanningExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Gauge\360\Gauge360Example.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Gauge\360\Gauge360Example.Designer.cs">
+      <DependentUpon>Gauge360Example.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Gauge\AngularGauge\AngularGugeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Gauge\AngularGauge\AngularGugeForm.Designer.cs">
+      <DependentUpon>AngularGugeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Maps\GeoMapExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\Maps\GeoMapExample.Designer.cs">
+      <DependentUpon>GeoMapExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\PieChart\DoughnutExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\PieChart\DoughnutExample.Designer.cs">
+      <DependentUpon>DoughnutExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\PieChart\PieChartExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\WinForms\PieChart\PieChartExample.Designer.cs">
+      <DependentUpon>PieChartExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WinForms\Program.cs" />
+    <Compile Include="Examples\WinForms\Properties\AssemblyInfo.cs" />
+    <Compile Include="Examples\WinForms\Properties\Resources.Designer.cs" />
+    <Compile Include="Examples\WinForms\Properties\Settings.Designer.cs" />
+    <Compile Include="Examples\Wpf\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\Basic Bars\BasicColumn.xaml.cs">
+      <DependentUpon>BasicColumn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\Basic Bars\BasicRowExample.xaml.cs">
+      <DependentUpon>BasicRowExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\Basic Stacked Bar\BasicStackedColumnExample.xaml.cs">
+      <DependentUpon>BasicStackedColumnExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\Basic Stacked Bar\BasicStackedRowPercentageExample.xaml.cs">
+      <DependentUpon>BasicStackedRowPercentageExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\BasicLine\BasicLineExample.xaml.cs">
+      <DependentUpon>BasicLineExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\Bubbles\BubblesExample.xaml.cs">
+      <DependentUpon>BubblesExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\Chart to Image\ChartToImageSample.xaml.cs">
+      <DependentUpon>ChartToImageSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\ConstantChanges\ConstantChangesChart.xaml.cs">
+      <DependentUpon>ConstantChangesChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\ConstantChanges\MeasureModel.cs" />
+    <Compile Include="Examples\Wpf\CartesianChart\Customized Series\CustomizedLineSeries.xaml.cs">
+      <DependentUpon>CustomizedLineSeries.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\CustomTooltipAndLegend\CustomersLegend.xaml.cs">
+      <DependentUpon>CustomersLegend.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\CustomTooltipAndLegend\CustomersTooltip.xaml.cs">
+      <DependentUpon>CustomersTooltip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\CustomTooltipAndLegend\CustomerVM.cs" />
+    <Compile Include="Examples\Wpf\CartesianChart\CustomTooltipAndLegend\CustomTooltipAndLegendExample.xaml.cs">
+      <DependentUpon>CustomTooltipAndLegendExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\CustomZoomingAndPanning\MoveMe.xaml.cs">
+      <DependentUpon>MoveMe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\DataLabelTemplate\DataLabelTemplateSample.xaml.cs">
+      <DependentUpon>DataLabelTemplateSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\DateAxis\DateAxisExample.xaml.cs">
+      <DependentUpon>DateAxisExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\DynamicVisibility\DynamicVisibilityExample.xaml.cs">
+      <DependentUpon>DynamicVisibilityExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\Energy Predictions\EnergyPredictionExample.xaml.cs">
+      <DependentUpon>EnergyPredictionExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\Energy Predictions\OpacityConverter.cs" />
+    <Compile Include="Examples\Wpf\CartesianChart\Energy Predictions\ReverseConverter.cs" />
+    <Compile Include="Examples\Wpf\CartesianChart\Events\ChartPointCommandHandler.cs" />
+    <Compile Include="Examples\Wpf\CartesianChart\Events\EventsExample.xaml.cs">
+      <DependentUpon>EventsExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\Events\ViewModel.cs" />
+    <Compile Include="Examples\Wpf\CartesianChart\Financial\CandleStickExample.xaml.cs">
+      <DependentUpon>CandleStickExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\Financial\OhclExample.xaml.cs">
+      <DependentUpon>OhclExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\FullyResponsive\FullyResponsiveExample.xaml.cs">
+      <DependentUpon>FullyResponsiveExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\Funnel Chart\FunnelExample.xaml.cs">
+      <DependentUpon>FunnelExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\GanttChart\GanttExample.xaml.cs">
+      <DependentUpon>GanttExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\HeatChart\HeatSeriesExample.xaml.cs">
+      <DependentUpon>HeatSeriesExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\InLineSyntax\InLineSyntaxTest.xaml.cs">
+      <DependentUpon>InLineSyntaxTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\Inverted Series\Inverted Example.xaml.cs">
+      <DependentUpon>Inverted Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\Irregular Intervals\IrregularIntervalsExample.xaml.cs">
+      <DependentUpon>IrregularIntervalsExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\Labels\LabelsExample.xaml.cs">
+      <DependentUpon>LabelsExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\Labels\LabelsHorizontalExample.xaml.cs">
+      <DependentUpon>LabelsHorizontalExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\LineExample\LineExample.xaml.cs">
+      <DependentUpon>LineExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\Linq\City.cs" />
+    <Compile Include="Examples\Wpf\CartesianChart\Linq\DataBase.cs" />
+    <Compile Include="Examples\Wpf\CartesianChart\Linq\LinqExample.xaml.cs">
+      <DependentUpon>LinqExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\LogarithmScale\LogarithmScaleExample.xaml.cs">
+      <DependentUpon>LogarithmScaleExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\ManualZAndP\ManualZAndPExample.xaml.cs">
+      <DependentUpon>ManualZAndPExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\MaterialCards\MaterialCards.xaml.cs">
+      <DependentUpon>MaterialCards.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\Missing Line Points\MissingPointsExample.xaml.cs">
+      <DependentUpon>MissingPointsExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\MixingSeries\MixingSeries.xaml.cs">
+      <DependentUpon>MixingSeries.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\MultiAxes\MultiAxesChart.xaml.cs">
+      <DependentUpon>MultiAxesChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\NegativeStackedRow\NEgativeStackedRowExample.xaml.cs">
+      <DependentUpon>NEgativeStackedRowExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\PointShapeLine\PointShapeLineExample.cs" />
+    <Compile Include="Examples\Wpf\CartesianChart\PointState\PointStateExample.xaml.cs">
+      <DependentUpon>PointStateExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\Scatter With Pies\Scatter With Pies.xaml.cs">
+      <DependentUpon>Scatter With Pies.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\ScatterPlot\ScatterExample.xaml.cs">
+      <DependentUpon>ScatterExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\SectionsDragable\DragableSections.xaml.cs">
+      <DependentUpon>DragableSections.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\SectionsMouseMove\SectionMouseMoveSample.xaml.cs">
+      <DependentUpon>SectionMouseMoveSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\SectionsMouseMove\ViewModel.cs" />
+    <Compile Include="Examples\Wpf\CartesianChart\Sections\SectionsExample.xaml.cs">
+      <DependentUpon>SectionsExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\SharedTooltip\SharedTooltipExample.xaml.cs">
+      <DependentUpon>SharedTooltipExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\SolidColorChart\SolidColorExample.xaml.cs">
+      <DependentUpon>SolidColorExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\StackedArea\StackedAreaExample.xaml.cs">
+      <DependentUpon>StackedAreaExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\StackedArea\VerticalStackedAreaExample.xaml.cs">
+      <DependentUpon>VerticalStackedAreaExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\StackedBar\StackedColumnExample.xaml.cs">
+      <DependentUpon>StackedColumnExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\StackedBar\StackedRowExample.xaml.cs">
+      <DependentUpon>StackedRowExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\StepLine\StepLineExample.xaml.cs">
+      <DependentUpon>StepLineExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\ThreadSafe\RelyCommand.cs" />
+    <Compile Include="Examples\Wpf\CartesianChart\ThreadSafe\ThreadSafeExample.xaml.cs">
+      <DependentUpon>ThreadSafeExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\ThreadSafe\ThreadSafeViewModel.cs" />
+    <Compile Include="Examples\Wpf\CartesianChart\TypesSupport\TypesPlotting.xaml.cs">
+      <DependentUpon>TypesPlotting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\UIElements\DataGenerator.cs" />
+    <Compile Include="Examples\Wpf\CartesianChart\UIElements\EventAControl.xaml.cs">
+      <DependentUpon>EventAControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\UIElements\EventBControl.xaml.cs">
+      <DependentUpon>EventBControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\UIElements\SelectedItemControl.xaml.cs">
+      <DependentUpon>SelectedItemControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\UIElements\UiElementsAndEventsExample.xaml.cs" />
+    <Compile Include="Examples\Wpf\CartesianChart\UIElements\UiElementsViewModel.cs" />
+    <Compile Include="Examples\Wpf\CartesianChart\Using DateTime\DateModel.cs" />
+    <Compile Include="Examples\Wpf\CartesianChart\Using DateTime\DateTime.xaml.cs">
+      <DependentUpon>DateTime.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\WindowAxis\WindowAxisExample.xaml.cs">
+      <DependentUpon>WindowAxisExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\ZoomingAndPanning\ZoomingAndPanning.xaml.cs">
+      <DependentUpon>ZoomingAndPanning.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\CartesianChart\zzIssues\Issue179.xaml.cs">
+      <DependentUpon>Issue179.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\Gauges\AngularGaugeExmple.xaml.cs">
+      <DependentUpon>AngularGaugeExmple.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\Gauges\Gauge360.xaml.cs">
+      <DependentUpon>Gauge360.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\Home\HomeView.xaml.cs">
+      <DependentUpon>HomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\Home\HomeViewModel.cs" />
+    <Compile Include="Examples\Wpf\Home\SampleGroupVm.cs" />
+    <Compile Include="Examples\Wpf\Home\SampleVm.cs" />
+    <Compile Include="Examples\Wpf\Maps\GeoMapExample.xaml.cs">
+      <DependentUpon>GeoMapExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\PanelExample.xaml.cs">
+      <DependentUpon>PanelExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\PieChart\DoughnutChartExample.xaml.cs">
+      <DependentUpon>DoughnutChartExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\PieChart\DropDowns\DataProvider.cs" />
+    <Compile Include="Examples\Wpf\PieChart\DropDowns\DropDownCommand.cs" />
+    <Compile Include="Examples\Wpf\PieChart\DropDowns\DropDownViewModel.cs" />
+    <Compile Include="Examples\Wpf\PieChart\DropDowns\PieDropDownSample.xaml.cs">
+      <DependentUpon>PieDropDownSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\PieChart\DropDowns\PiePoint.cs" />
+    <Compile Include="Examples\Wpf\PieChart\DropDowns\RelayCommand.cs" />
+    <Compile Include="Examples\Wpf\PieChart\PieChartExample.xaml.cs">
+      <DependentUpon>PieChartExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Wpf\Properties\Annotations.cs" />
+    <Compile Include="Examples\Wpf\Properties\AssemblyInfo.cs" />
+    <Compile Include="Examples\Wpf\Properties\Resources.Designer.cs" />
+    <Compile Include="Examples\Wpf\Properties\Settings.Designer.cs" />
+    <Compile Include="UwpView\AngularGauge.cs" />
+    <Compile Include="UwpView\AngularSection.cs" />
+    <Compile Include="UwpView\AxesCollection.cs" />
+    <Compile Include="UwpView\Axis.cs" />
+    <Compile Include="UwpView\AxisSection.cs" />
+    <Compile Include="UwpView\CandleSeries.cs" />
+    <Compile Include="UwpView\CartesianChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UwpView\Charts\Base\Chart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UwpView\ColorsCollection.cs" />
+    <Compile Include="UwpView\ColumnSeries.cs" />
+    <Compile Include="UwpView\Components\AnimationsHelper.cs" />
+    <Compile Include="UwpView\Components\AxisSeparatorElement.cs" />
+    <Compile Include="UwpView\Components\BrushCloner.cs" />
+    <Compile Include="UwpView\Components\ChartUpdater.cs" />
+    <Compile Include="UwpView\Components\Converters.cs" />
+    <Compile Include="UwpView\Components\DefaultXamlReader.cs" />
+    <Compile Include="UwpView\Components\DependencyObjectExtensions.cs" />
+    <Compile Include="UwpView\Components\GeometryHelper.cs" />
+    <Compile Include="UwpView\Components\GeometryParser.cs" />
+    <Compile Include="UwpView\Components\IFondeable.cs" />
+    <Compile Include="UwpView\Components\MultiBinding\DependencyObjectCollection.cs" />
+    <Compile Include="UwpView\Components\MultiBinding\MultiBindingBehavior.cs" />
+    <Compile Include="UwpView\Components\MultiBinding\MultiBindingItem.cs" />
+    <Compile Include="UwpView\Components\MultiBinding\MultiBindingItemCollection.cs" />
+    <Compile Include="UwpView\Components\MultiBinding\MultiValueConverterBase.cs" />
+    <Compile Include="UwpView\Components\TooltipDto.cs" />
+    <Compile Include="UwpView\Converters\StringFormatConverter.cs" />
+    <Compile Include="UwpView\Converters\TypeConverters.cs" />
+    <Compile Include="UwpView\DefaultAxes.cs" />
+    <Compile Include="UwpView\DefaultGeoMapTooltip.xaml.cs">
+      <DependentUpon>DefaultGeoMapTooltip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UwpView\DefaultGeometry.cs" />
+    <Compile Include="UwpView\DefaultLegend.xaml.cs">
+      <DependentUpon>DefaultLegend.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UwpView\DefaultTooltip.xaml.cs">
+      <DependentUpon>DefaultTooltip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UwpView\Extentions.cs" />
+    <Compile Include="UwpView\Gauge.cs" />
+    <Compile Include="UwpView\GeoMap.cs" />
+    <Compile Include="UwpView\HeatColorRange.xaml.cs">
+      <DependentUpon>HeatColorRange.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UwpView\HeatSeries.cs" />
+    <Compile Include="UwpView\IChartLegend.cs" />
+    <Compile Include="UwpView\IChartTooltip.cs" />
+    <Compile Include="UwpView\LineSegmentSplitter.cs" />
+    <Compile Include="UwpView\LineSeries.cs" />
+    <Compile Include="UwpView\LogarithmicAxis.cs" />
+    <Compile Include="UwpView\Maps\MapResolver.cs" />
+    <Compile Include="UwpView\OhlcSeries.cs" />
+    <Compile Include="UwpView\PieChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UwpView\PieSeries.cs" />
+    <Compile Include="UwpView\PointGeometry.cs" />
+    <Compile Include="UwpView\Points\CandlePointView.cs" />
+    <Compile Include="UwpView\Points\ColumnPointView.cs" />
+    <Compile Include="UwpView\Points\HeatPoint.cs" />
+    <Compile Include="UwpView\Points\HorizontalBezierPointView.cs" />
+    <Compile Include="UwpView\Points\OhlcPointView.cs" />
+    <Compile Include="UwpView\Points\PiePointView.cs" />
+    <Compile Include="UwpView\Points\PieSlice.cs" />
+    <Compile Include="UwpView\Points\PointExtensions.cs" />
+    <Compile Include="UwpView\Points\PointView.cs" />
+    <Compile Include="UwpView\Points\RowPointView.cs" />
+    <Compile Include="UwpView\Points\ScatterPointView.cs" />
+    <Compile Include="UwpView\Points\StepLinePointView.cs" />
+    <Compile Include="UwpView\Points\VerticalBezierPointView.cs" />
+    <Compile Include="UwpView\Properties\AssemblyInfo.cs" />
+    <Compile Include="UwpView\RowSeries.cs" />
+    <Compile Include="UwpView\ScatterSeries.cs" />
+    <Compile Include="UwpView\SectionsCollection.cs" />
+    <Compile Include="UwpView\Separator.cs" />
+    <Compile Include="UwpView\Series.cs" />
+    <Compile Include="UwpView\StackedAreaSeries.cs" />
+    <Compile Include="UwpView\StackedColumnSeries.cs" />
+    <Compile Include="UwpView\StackedRowSeries.cs" />
+    <Compile Include="UwpView\StepLineSeries.cs" />
+    <Compile Include="UwpView\VerticalLineSeries.cs" />
+    <Compile Include="UwpView\VerticalStackedAreaSeries.cs" />
+    <Compile Include="UwpView\VisualElement.cs" />
+    <Compile Include="WinFormsView\AngularGauge.cs" />
+    <Compile Include="WinFormsView\CartesianChart.cs" />
+    <Compile Include="WinFormsView\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinFormsView\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinFormsView\Gauge.cs" />
+    <Compile Include="WinFormsView\GeoMap.cs" />
+    <Compile Include="WinFormsView\PieChart.cs" />
+    <Compile Include="WinFormsView\Properties\AssemblyInfo.cs" />
+    <Compile Include="WpfView\AngularGauge.cs" />
+    <Compile Include="WpfView\AngularSection.cs" />
+    <Compile Include="WpfView\AxesCollection.cs" />
+    <Compile Include="WpfView\Axis.cs" />
+    <Compile Include="WpfView\AxisSection.cs" />
+    <Compile Include="WpfView\AxisWindowCollection.cs" />
+    <Compile Include="WpfView\CandleSeries.cs" />
+    <Compile Include="WpfView\CartesianChart.cs" />
+    <Compile Include="WpfView\Charts\Base\Chart.cs" />
+    <Compile Include="WpfView\ColorsCollection.cs" />
+    <Compile Include="WpfView\ColumnSeries.cs" />
+    <Compile Include="WpfView\Components\AxisSeparatorElement.cs" />
+    <Compile Include="WpfView\Components\ChartUpdater.cs" />
+    <Compile Include="WpfView\Components\Converters.cs" />
+    <Compile Include="WpfView\Components\DefaultXamlReader.cs" />
+    <Compile Include="WpfView\Components\IFondeable.cs" />
+    <Compile Include="WpfView\Components\ThreadAccess.cs" />
+    <Compile Include="WpfView\Components\TooltipDto.cs" />
+    <Compile Include="WpfView\Converters\TypeConverters.cs" />
+    <Compile Include="WpfView\DateAxis.cs" />
+    <Compile Include="WpfView\DefaultAxes.cs" />
+    <Compile Include="WpfView\DefaultGeoMapTooltip.xaml.cs">
+      <DependentUpon>DefaultGeoMapTooltip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WpfView\DefaultGeometry.cs" />
+    <Compile Include="WpfView\DefaultLegend.xaml.cs">
+      <DependentUpon>DefaultLegend.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WpfView\DefaultTooltip.xaml.cs">
+      <DependentUpon>DefaultTooltip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WpfView\Extentions.cs" />
+    <Compile Include="WpfView\FinancialColoringRule.cs" />
+    <Compile Include="WpfView\Gauge.cs" />
+    <Compile Include="WpfView\GeoMap.cs" />
+    <Compile Include="WpfView\HeatColorRange.xaml.cs">
+      <DependentUpon>HeatColorRange.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WpfView\HeatSeries.cs" />
+    <Compile Include="WpfView\IChartLegend.cs" />
+    <Compile Include="WpfView\IChartTooltip.cs" />
+    <Compile Include="WpfView\LineSegmentSplitter.cs" />
+    <Compile Include="WpfView\LineSeries.cs" />
+    <Compile Include="WpfView\LogarithmicAxis.cs" />
+    <Compile Include="WpfView\Maps\MapResolver.cs" />
+    <Compile Include="WpfView\OhlcSeries.cs" />
+    <Compile Include="WpfView\PieChart.cs" />
+    <Compile Include="WpfView\PieSeries.cs" />
+    <Compile Include="WpfView\Points\CandlePointView.cs" />
+    <Compile Include="WpfView\Points\ColumnPointView.cs" />
+    <Compile Include="WpfView\Points\HeatPoint.cs" />
+    <Compile Include="WpfView\Points\HorizontalBezierPointView.cs" />
+    <Compile Include="WpfView\Points\OhlcPointView.cs" />
+    <Compile Include="WpfView\Points\PiePointView.cs" />
+    <Compile Include="WpfView\Points\PieSlice.cs" />
+    <Compile Include="WpfView\Points\PointView.cs" />
+    <Compile Include="WpfView\Points\RowPointView.cs" />
+    <Compile Include="WpfView\Points\ScatterPointView.cs" />
+    <Compile Include="WpfView\Points\StepLinePointView.cs" />
+    <Compile Include="WpfView\Points\VerticalBezierPointView.cs" />
+    <Compile Include="WpfView\Properties\AssemblyInfo.cs" />
+    <Compile Include="WpfView\Properties\Resources.Designer.cs" />
+    <Compile Include="WpfView\Properties\Settings.Designer.cs" />
+    <Compile Include="WpfView\RowSeries.cs" />
+    <Compile Include="WpfView\ScatterSeries.cs" />
+    <Compile Include="WpfView\SectionsCollection.cs" />
+    <Compile Include="WpfView\Separator.cs" />
+    <Compile Include="WpfView\Series.cs" />
+    <Compile Include="WpfView\StackedAreaSeries.cs" />
+    <Compile Include="WpfView\StackedColumnSeries.cs" />
+    <Compile Include="WpfView\StackedRowSeries.cs" />
+    <Compile Include="WpfView\StepLineSeries.cs" />
+    <Compile Include="WpfView\VerticalLineSeries.cs" />
+    <Compile Include="WpfView\VerticalStackedAreaSeries.cs" />
+    <Compile Include="WpfView\VisualElement.cs" />
+    <Compile Include="WpfView\WindowAxis.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Examples\UWP\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\AppShell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\Basic Bars\BasicColumn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\Basic Bars\BasicRowExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\Basic Stacked Bar\BasicStackedColumnExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\Basic Stacked Bar\BasicStackedRowPercentageExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\BasicLine\BasicLineExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\Bubbles\BubblesExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\Chart to Image\ChartToImageSample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\ConstantChanges\ConstantChangesChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\Customized Series\CustomizedLineSeries.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\CustomTooltipAndLegend\CustomersLegend.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\CustomTooltipAndLegend\CustomersTooltip.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\CustomTooltipAndLegend\CustomTooltipAndLegendExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\DynamicVisibility\DynamicVisibilityExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\Energy Predictions\EnergyPredictionExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\Events\EventsExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\Financial\CandleStickExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\Financial\OhclExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\FullyResponsive\FullyResponsiveExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\Funnel Chart\FunnelExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\GanttChart\GanttExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\HeatChart\HeatSeriesExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\InLineSyntax\InLineSyntaxTest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\Inverted Series\InvertedExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\Irregular Intervals\IrregularIntervalsExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\Labels\LabelsExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\Labels\LabelsHorizontalExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\LineExample\LineExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\Linq\LinqExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\LogarithmScale\LogarithmScaleExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\ManualZAndP\ManualZAndPExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\MaterialCards\MaterialCards.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\Missing Line Points\MissingPointsExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\MixingSeries\MixingSeries.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\MultiAxes\MultiAxesChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\NegativeStackedRow\NegativeStackedRowExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\PointShapeLine\PointShapeLineExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\PointState\PointStateExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\ScatterPlot\ScatterExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\SectionsDragable\DragableSections.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\Sections\SectionsExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\SharedTooltip\SharedTooltipExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\SolidColorChart\SolidColorExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\StackedArea\StackedAreaExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\StackedArea\VerticalStackedAreaExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\StackedBar\StackedColumnExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\StackedBar\StackedRowExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\StepLine\StepLineExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\TypesSupport\TypesPlotting.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\UIElements\UIElementsExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\Using DateTime\DateTime.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\ZoomingAndPanning\ZoomingAndPanning.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\CartesianChart\zzIssues\Issue179.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\Gauges\AngularGaugeExmple.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\Gauges\Gauge360.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\PieChart\DoughnutChartExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\PieChart\PieChartExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\UWP\Views\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\Basic Bars\BasicColumn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\Basic Bars\BasicRowExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\Basic Stacked Bar\BasicStackedColumnExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\Basic Stacked Bar\BasicStackedRowPercentageExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\BasicLine\BasicLineExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\Bubbles\BubblesExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\Chart to Image\ChartToImageSample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\ConstantChanges\ConstantChangesChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\Customized Series\CustomizedLineSeries.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\CustomTooltipAndLegend\CustomersLegend.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\CustomTooltipAndLegend\CustomersTooltip.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\CustomTooltipAndLegend\CustomTooltipAndLegendExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\CustomZoomingAndPanning\MoveMe.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\DataLabelTemplate\DataLabelTemplateSample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\DateAxis\DateAxisExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\DynamicVisibility\DynamicVisibilityExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\Energy Predictions\EnergyPredictionExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\Events\EventsExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\Financial\CandleStickExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\Financial\OhclExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\FullyResponsive\FullyResponsiveExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\Funnel Chart\FunnelExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\GanttChart\GanttExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\HeatChart\HeatSeriesExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\InLineSyntax\InLineSyntaxTest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\Inverted Series\Inverted Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\Irregular Intervals\IrregularIntervalsExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\Labels\LabelsExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\Labels\LabelsHorizontalExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\LineExample\LineExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\Linq\LinqExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\LogarithmScale\LogarithmScaleExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\ManualZAndP\ManualZAndPExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\MaterialCards\MaterialCards.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\Missing Line Points\MissingPointsExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\MixingSeries\MixingSeries.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\MultiAxes\MultiAxesChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\NegativeStackedRow\NEgativeStackedRowExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\PointShapeLine\PointShapeLineExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\PointState\PointStateExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\Scatter With Pies\Scatter With Pies.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\ScatterPlot\ScatterExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\SectionsDragable\DragableSections.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\SectionsMouseMove\SectionMouseMoveSample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\Sections\SectionsExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\SharedTooltip\SharedTooltipExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\SolidColorChart\SolidColorExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\StackedArea\StackedAreaExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\StackedArea\VerticalStackedAreaExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\StackedBar\StackedColumnExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\StackedBar\StackedRowExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\StepLine\StepLineExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\ThreadSafe\ThreadSafeExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\TypesSupport\TypesPlotting.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\UIElements\EventAControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\UIElements\EventBControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\UIElements\SelectedItemControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\UIElements\UiElementsExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\Using DateTime\DateTime.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\WindowAxis\WindowAxisExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\ZoomingAndPanning\ZoomingAndPanning.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\CartesianChart\zzIssues\Issue179.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\Gauges\AngularGaugeExmple.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\Gauges\Gauge360.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\Home\HomeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\Maps\GeoMapExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\PanelExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\PieChart\DoughnutChartExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\PieChart\DropDowns\PieDropDownSample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\PieChart\PieChartExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\Resources\AppDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\Wpf\Resources\ChartResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UwpView\DefaultGeoMapTooltip.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UwpView\DefaultLegend.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UwpView\DefaultTooltip.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UwpView\HeatColorRange.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UwpView\Themes\base.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UwpView\Themes\Colors\black.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UwpView\Themes\Colors\blue.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UwpView\Themes\Colors\material.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UwpView\Themes\Colors\metro.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UwpView\Themes\Colors\white.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UwpView\Themes\Size\l.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UwpView\Themes\Size\m.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UwpView\Themes\Size\s.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UwpView\Themes\Weight\bold.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UwpView\Themes\Weight\light.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UwpView\Themes\Weight\normal.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WpfView\DefaultGeoMapTooltip.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WpfView\DefaultLegend.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WpfView\DefaultTooltip.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WpfView\HeatColorRange.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WpfView\Themes\base.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WpfView\Themes\Colors\black.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WpfView\Themes\Colors\blue.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WpfView\Themes\Colors\material.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WpfView\Themes\Colors\metro.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WpfView\Themes\Colors\white.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WpfView\Themes\Size\l.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WpfView\Themes\Size\m.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WpfView\Themes\Size\s.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WpfView\Themes\Weight\bold.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WpfView\Themes\Weight\light.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WpfView\Themes\Weight\normal.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Examples\WinForms\Cartesian\Basic Stacked Bar\BasicsStackedRowExample.resx">
+      <DependentUpon>BasicsStackedRowExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Cartesian\Basic Stacked Bar\BasicStackedColumnExample.resx">
+      <DependentUpon>BasicStackedColumnExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Cartesian\BasicBar\BasicColumnExample.resx">
+      <DependentUpon>BasicColumnExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Cartesian\BasicBar\BasicRowExample.resx">
+      <DependentUpon>BasicRowExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Cartesian\BasicBubbles\BasicBubblesExample.resx">
+      <DependentUpon>BasicBubblesExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Cartesian\BasicLine\BasicLineExample.resx">
+      <DependentUpon>BasicLineExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Cartesian\ConstantChanges\ConstantChanges.resx">
+      <DependentUpon>ConstantChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Cartesian\Customized Series\Customized Line Series.resx">
+      <DependentUpon>Customized Line Series.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Cartesian\DataPagination\DataPaginationExample.resx">
+      <DependentUpon>DataPaginationExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Cartesian\DateTime\DateTimeExample.resx">
+      <DependentUpon>DateTimeExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Cartesian\DynamicVisibility\DynamicVisibiltyExample.resx">
+      <DependentUpon>DynamicVisibiltyExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Cartesian\Events\EventsExample.resx">
+      <DependentUpon>EventsExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Cartesian\Financial\FinancialExample.resx">
+      <DependentUpon>FinancialExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Cartesian\FullyResponsive\FullyResponsive.resx">
+      <DependentUpon>FullyResponsive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Cartesian\FunnelChart\FunnelExample.resx">
+      <DependentUpon>FunnelExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Cartesian\GanttChart\GanttExample.resx">
+      <DependentUpon>GanttExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Cartesian\HeatSeriesExample\HeatSeriesExample.resx">
+      <DependentUpon>HeatSeriesExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Cartesian\Inverted Series\InvertedSeries.resx">
+      <DependentUpon>InvertedSeries.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Cartesian\Irregular Intervals\IrregularIntervalsExample.resx">
+      <DependentUpon>IrregularIntervalsExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Cartesian\Labels\Labels.resx">
+      <DependentUpon>Labels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Cartesian\Linq\LinqExample.resx">
+      <DependentUpon>LinqExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Cartesian\LogarithmScale\LogarithmSacale.resx">
+      <DependentUpon>LogarithmSacale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Cartesian\MissingPoints\MissingPoint.resx">
+      <DependentUpon>MissingPoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Cartesian\MultiAxes\MultipleAxesExample.resx">
+      <DependentUpon>MultipleAxesExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Cartesian\NegativeStackedRow\NegativeStackedRow.resx">
+      <DependentUpon>NegativeStackedRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Cartesian\PointState\PointState.resx">
+      <DependentUpon>PointState.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Cartesian\ScatterExample\ScatterForm.resx">
+      <DependentUpon>ScatterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Cartesian\Sections\SectionsExample.resx">
+      <DependentUpon>SectionsExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Cartesian\StackedArea\StackedAreaExample.resx">
+      <DependentUpon>StackedAreaExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Cartesian\StepLine\StepLineExample.resx">
+      <DependentUpon>StepLineExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Cartesian\UielementsExample\UielementsExample.resx">
+      <DependentUpon>UielementsExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Cartesian\Zooming and Panning\ZomingAndPanningExample.resx">
+      <DependentUpon>ZomingAndPanningExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Gauge\360\Gauge360Example.resx">
+      <DependentUpon>Gauge360Example.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Gauge\AngularGauge\AngularGugeForm.resx">
+      <DependentUpon>AngularGugeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Maps\GeoMapExample.resx">
+      <DependentUpon>GeoMapExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\PieChart\DoughnutExample.resx">
+      <DependentUpon>DoughnutExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\PieChart\PieChartExample.resx">
+      <DependentUpon>PieChartExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examples\WinForms\Properties\Resources.resx" />
+    <EmbeddedResource Include="Examples\Wpf\Properties\Resources.resx" />
+    <EmbeddedResource Include="WinFormsView\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WpfView\Properties\Resources.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>

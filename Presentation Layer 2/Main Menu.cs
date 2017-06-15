@@ -112,5 +112,11 @@ namespace Presentation_Layer_2
         {
             AMA.stop();
         }
+
+        private void button9_Click_1(object sender, EventArgs e)
+        {
+            Statistics_Menu sm = new Statistics_Menu();
+            sm.ShowDialog();
+        }
     }
 }

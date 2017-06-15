@@ -164,7 +164,7 @@
             this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button8.Font = new System.Drawing.Font("Cooper Black", 12.2F);
             this.button8.ForeColor = System.Drawing.Color.SteelBlue;
-            this.button8.Location = new System.Drawing.Point(446, 250);
+            this.button8.Location = new System.Drawing.Point(553, 243);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(169, 72);
             this.button8.TabIndex = 12;
@@ -263,8 +263,9 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(149, 52);
             this.button9.TabIndex = 20;
-            this.button9.Text = "Statistics";
+            this.button9.Text = "Commodity Statistics";
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click_1);
             // 
             // UserInterface
             // 
