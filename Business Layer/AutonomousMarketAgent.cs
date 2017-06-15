@@ -7,7 +7,7 @@ using DataAccessLayer;
 using MarketClient;
 using MarketClient.DataEntries;
 using System.Timers;
-
+using System.Data.SqlClient;
 
 namespace Business_Layer
 {
@@ -86,6 +86,35 @@ namespace Business_Layer
                     }
                 }
             }
+        }
+
+        public int setAverage()
+        {
+            SQLmanager myManager = new SQLmanager();
+            String prices = "";
+            String amounts = "";
+            Double calculator = 0;
+            Double sumAmounts = 0;
+            SqlDataReader reader;
+            for (int i = 0;i< 9; i++){
+                String order = @"SELECT TOP 20 * From history.dbo.items WHERE commodity = " + i;
+                reader = myManager.reader(order);
+                while (reader.Read())
+                {
+                    Double price = 0;
+                    Double amount = 0;
+                    prices = reader.GetValue(3).ToString().Trim();
+                    price = Double.Parse(prices);
+                    amounts = reader.GetValue(2).ToString().Trim();
+                    amount = Double.Parse(amounts);
+                    sumAmounts += amount;
+                    calculator += price * amount;
+                }
+                if (sumAmounts != 0)
+                    calculator = calculator / sumAmounts;
+                
+            }
+            
         }
     }
 }

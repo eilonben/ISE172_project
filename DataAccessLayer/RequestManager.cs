@@ -31,9 +31,10 @@ namespace DataAccessLayer
         RBqA5j2CGRy/yTVv6RIDB/aueJc+NaopqxJ4lHCvkxv3
         -----END RSA PRIVATE KEY-----";
         public string error;
-        private int nonce = 0;
+        private String myNonce;
         ILog logger = LogManager.GetLogger("Logger");
 
+  
 
         public bool SendCancelBuySellRequest(int id) // The cancel request function using the CancelRequest class
         {
@@ -41,9 +42,7 @@ namespace DataAccessLayer
             CancelRequest request = new CancelRequest();
             request.type = "cancelBuySell";
             request.id = id;
-            int uniqeNonce = (nonce * 2) + 1;//uniqe way to represent the specific nonce
-            String myNonce = "" + uniqeNonce;
-            nonce++;
+            myNonce = randomNonce();
             string token = SimpleCryptoLibrary.CreateToken(user + "_" + myNonce, PrivateKey);
             string response = HTTPClient.SendPostRequest(url, user, token, myNonce, PrivateKey, request);
             if (response.Equals("Ok"))
@@ -68,9 +67,7 @@ namespace DataAccessLayer
             request.price = price;
             request.commodity = commodity;
             request.amount = amount;
-            int uniqeNonce = (nonce * 2) + 1;//uniqe way to represent the specific nonce
-            String myNonce = "" + uniqeNonce;
-            nonce++;
+            myNonce = randomNonce();
             string token = SimpleCryptoLibrary.CreateToken(user + "_" + myNonce, PrivateKey);
             bool eflag=false;
             string response = "";
@@ -106,9 +103,7 @@ namespace DataAccessLayer
             request.price = price;
             request.commodity = commodity;
             request.amount = amount;
-            int uniqeNonce = (nonce * 2) + 1;//uniqe way to represent the specific nonce
-            String myNonce = "" + uniqeNonce;
-            nonce++;
+            myNonce = randomNonce();
             string token = SimpleCryptoLibrary.CreateToken(user + "_" + myNonce, PrivateKey);
             bool eflag = false;
             string response = "";
@@ -142,9 +137,7 @@ namespace DataAccessLayer
             QuerySellBuyRequest request = new QuerySellBuyRequest();
             request.type = "queryBuySell";
             request.id = id;
-            int uniqeNonce = (nonce * 2) + 1;//uniqe way to represent the specific nonce
-            String myNonce = "" + uniqeNonce;
-            nonce++;
+            myNonce = randomNonce();
             string token = SimpleCryptoLibrary.CreateToken(user + "_" + myNonce, PrivateKey);
             bool eflag = false;
             MarketItemQuery response = null;
@@ -175,9 +168,7 @@ namespace DataAccessLayer
             SimpleHTTPClient HTTPClient = new SimpleHTTPClient();
             QueryUserRequest request = new QueryUserRequest();
             request.type = "queryUser";
-            int uniqeNonce = (nonce * 2) + 1;//uniqe way to represent the specific nonce
-            String myNonce = "" + uniqeNonce;
-            nonce++;
+            myNonce = randomNonce();
             string token = SimpleCryptoLibrary.CreateToken(user + "_" + myNonce, PrivateKey);
             MarketUserData response = null;
             bool eflag = false;
@@ -209,9 +200,7 @@ namespace DataAccessLayer
             QueryMarketRequest request = new QueryMarketRequest();
             request.type = "queryMarket";
             request.commodity = commodity;
-            int uniqeNonce = (nonce * 2) + 1;//uniqe way to represent the specific nonce
-            String myNonce = "" + uniqeNonce;
-            nonce++;
+            myNonce = randomNonce();
             string token = SimpleCryptoLibrary.CreateToken(user + "_" + myNonce, PrivateKey);
             MarketCommodityOffer response = null;
             bool eflag = false;
@@ -244,9 +233,7 @@ namespace DataAccessLayer
             SimpleHTTPClient HTTPClient = new SimpleHTTPClient();
             AllMarketRequest request = new AllMarketRequest();
             request.type = "queryAllMarket";
-            int uniqeNonce = (nonce * 2) + 1;//uniqe way to represent the specific nonce
-            String myNonce = "" + uniqeNonce;
-            nonce++;
+            myNonce = randomNonce();
             string token = SimpleCryptoLibrary.CreateToken(user + "_" + myNonce, PrivateKey);
             List<AllCommodityOffer> response = new List<AllCommodityOffer>();
             bool eflag = false;
@@ -279,9 +266,7 @@ namespace DataAccessLayer
             SimpleHTTPClient HTTPClient = new SimpleHTTPClient();
             UserRequestsQuery request = new UserRequestsQuery();
             request.type = "queryUserRequests";
-            int uniqeNonce = (nonce * 2) + 1;//uniqe way to represent the specific nonce
-            String myNonce = "" + uniqeNonce;
-            nonce++;
+            myNonce = randomNonce();
             string token = SimpleCryptoLibrary.CreateToken(user + "_" + myNonce, PrivateKey);
             List<MarketUserRequests> response = new List<MarketUserRequests>();
             bool eflag = false;
@@ -306,6 +291,19 @@ namespace DataAccessLayer
                 logger.Info("The server received a SendUserRequestsQuery request.");
                 return response;
             }
+        }
+
+        private string randomNonce()//private function that random an unique nonce to each request
+        {
+            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            var random = new Random();
+            var stringChars = new char[5];
+            for (int i = 0; i < stringChars.Length; i++)
+            {
+                stringChars[i] = chars[random.Next(chars.Length)];
+            }
+            var finalString = new String(stringChars);
+            return finalString;
         }
     }
 }
