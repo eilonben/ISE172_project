@@ -52,19 +52,23 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Lavender;
             this.label1.Location = new System.Drawing.Point(68, 76);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(238, 32);
+            this.label1.Size = new System.Drawing.Size(169, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Query Requests";
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("Cooper Black", 8.2F);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F);
             this.button1.ForeColor = System.Drawing.Color.SteelBlue;
             this.button1.Location = new System.Drawing.Point(196, 228);
             this.button1.Name = "button1";
@@ -79,7 +83,7 @@
             this.button2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Font = new System.Drawing.Font("Cooper Black", 8.2F);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F);
             this.button2.ForeColor = System.Drawing.Color.SteelBlue;
             this.button2.Location = new System.Drawing.Point(99, 307);
             this.button2.Name = "button2";
@@ -93,7 +97,7 @@
             // 
             this.button4.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Font = new System.Drawing.Font("Cooper Black", 8.2F);
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F);
             this.button4.ForeColor = System.Drawing.Color.SteelBlue;
             this.button4.Location = new System.Drawing.Point(2, 143);
             this.button4.Name = "button4";
@@ -107,7 +111,7 @@
             // 
             this.button5.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Font = new System.Drawing.Font("Cooper Black", 8.2F);
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F);
             this.button5.ForeColor = System.Drawing.Color.SteelBlue;
             this.button5.Location = new System.Drawing.Point(2, 228);
             this.button5.Name = "button5";
@@ -121,7 +125,7 @@
             // 
             this.button6.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.Font = new System.Drawing.Font("Cooper Black", 8.2F);
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F);
             this.button6.ForeColor = System.Drawing.Color.SteelBlue;
             this.button6.Location = new System.Drawing.Point(196, 143);
             this.button6.Name = "button6";
@@ -135,7 +139,7 @@
             // 
             this.button7.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.Font = new System.Drawing.Font("Cooper Black", 12.2F);
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.2F);
             this.button7.ForeColor = System.Drawing.Color.SteelBlue;
             this.button7.Location = new System.Drawing.Point(647, 143);
             this.button7.Name = "button7";
@@ -149,11 +153,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Cooper Black", 22.2F);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F);
             this.label2.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.label2.Location = new System.Drawing.Point(285, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(230, 44);
+            this.label2.Size = new System.Drawing.Size(163, 36);
             this.label2.TabIndex = 10;
             this.label2.Text = "Main Menu";
             // 
@@ -161,7 +165,7 @@
             // 
             this.button8.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button8.Font = new System.Drawing.Font("Cooper Black", 12.2F);
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.2F);
             this.button8.ForeColor = System.Drawing.Color.SteelBlue;
             this.button8.Location = new System.Drawing.Point(544, 246);
             this.button8.Name = "button8";
@@ -175,7 +179,7 @@
             // 
             this.button3.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Font = new System.Drawing.Font("Cooper Black", 12.2F);
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.2F);
             this.button3.ForeColor = System.Drawing.Color.SteelBlue;
             this.button3.Location = new System.Drawing.Point(446, 143);
             this.button3.Name = "button3";
@@ -190,7 +194,7 @@
             this.button10.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button10.Font = new System.Drawing.Font("Cooper Black", 8.2F);
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F);
             this.button10.ForeColor = System.Drawing.Color.SteelBlue;
             this.button10.Location = new System.Drawing.Point(702, 20);
             this.button10.Name = "button10";
@@ -205,23 +209,23 @@
             this.button11.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button11.Font = new System.Drawing.Font("Cooper Black", 8.2F);
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F);
             this.button11.ForeColor = System.Drawing.Color.SteelBlue;
             this.button11.Location = new System.Drawing.Point(44, 20);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(75, 44);
             this.button11.TabIndex = 16;
-            this.button11.Text = "History";
+            this.button11.Text = "History by date";
             this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Cooper Black", 7.8F);
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.radioButton1.Location = new System.Drawing.Point(17, 12);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(89, 20);
+            this.radioButton1.Size = new System.Drawing.Size(65, 17);
             this.radioButton1.TabIndex = 17;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "AMA On";
@@ -231,10 +235,10 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Cooper Black", 7.8F);
+            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.radioButton2.Location = new System.Drawing.Point(17, 40);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(92, 20);
+            this.radioButton2.Size = new System.Drawing.Size(65, 17);
             this.radioButton2.TabIndex = 18;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "AMA Off";
@@ -271,7 +275,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Font = new System.Drawing.Font("Rage Italic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Maroon;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
