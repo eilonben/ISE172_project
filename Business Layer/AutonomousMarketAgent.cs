@@ -88,7 +88,7 @@ namespace Business_Layer
             }
         }
 
-        public int setAverage()
+        public void setAverage()
         {
             SQLmanager myManager = new SQLmanager();
             String prices = "";

@@ -17,6 +17,8 @@ namespace Presentation_Layer_
         public History()
         {
             InitializeComponent();
+            monthCalendar1.MaxSelectionCount = 1;
+            monthCalendar2.MaxSelectionCount = 1;
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -26,7 +28,13 @@ namespace Presentation_Layer_
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            richTextBox1.Text = "";
+            history h = new history();
+            DateTime start = monthCalendar1.SelectionStart;
+            DateTime end = monthCalendar2.SelectionStart;
+
+            string output = h.historyByDate(start, end);
+            richTextBox1.Text = output;
 
 
 
