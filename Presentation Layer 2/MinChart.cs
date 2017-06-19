@@ -22,8 +22,11 @@ namespace Presentation_Layer_
                 new ColumnSeries
                 {
                     Title = "Min Price",
-                    Values = new ChartValues<double> { 10, 50, 39, 50,10,12,12,14,15,16 }
+                    Values = new ChartValues<double> { 10, 50, 39, 50,10,12,12,14,15,16 },
+                    Stroke = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(64, 79, 86))
+
                 }
+
             };
            
 

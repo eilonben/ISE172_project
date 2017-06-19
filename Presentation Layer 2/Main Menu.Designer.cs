@@ -247,9 +247,9 @@
             this.panel1.Controls.Add(this.radioButton1);
             this.panel1.Controls.Add(this.radioButton2);
             this.panel1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.panel1.Location = new System.Drawing.Point(702, 348);
+            this.panel1.Location = new System.Drawing.Point(677, 344);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(115, 72);
+            this.panel1.Size = new System.Drawing.Size(140, 76);
             this.panel1.TabIndex = 19;
             // 
             // button9
