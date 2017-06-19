@@ -7,7 +7,7 @@ using DataAccessLayer;
 using MarketClient;
 using MarketClient.DataEntries;
 using System.Timers;
-
+using System.Data.SqlClient;
 
 namespace Business_Layer
 {
@@ -16,7 +16,7 @@ namespace Business_Layer
         private static RequestManager market = new RequestManager();
         private static Timer aTimer;
 
-        public AutonomousMarketAgent()
+        public AutonomousMarketAgent()//This function responsible on the timer, to restart him and call the necessary function
         {
             aTimer = new Timer();
             aTimer.Interval = 10000;
@@ -27,7 +27,6 @@ namespace Business_Layer
         public void start()
         {
             aTimer.Enabled = true;
-
         }
 
         public void stop()
@@ -35,22 +34,22 @@ namespace Business_Layer
             aTimer.Enabled = false;
         }
 
-        public static void OnTimedEvent(Object source, ElapsedEventArgs e)
+        public void OnTimedEvent(Object source, ElapsedEventArgs e)//this function is responsible on the connection with the server,with rules when to buy or sell stocks
         {
 
             int actionCount = 0;
-            while (actionCount < 4)
+            while (actionCount < 19)
             {
 
                 MarketUserData userInfo = (MarketUserData)market.SendQueryUserRequest();
                 actionCount++;
-                foreach (KeyValuePair<string, int> entry in userInfo.commodities)
+                foreach (KeyValuePair<string, int> entry in userInfo.commodities)//the loop run on all the commodities we have to sell/buy any of them
                 {
-                    if (actionCount < 4)
+                    if (actionCount < 19)
                     {
                         MarketCommodityOffer offer = (MarketCommodityOffer)market.SendQueryMarketRequest(Convert.ToInt32(entry.Key));
                         actionCount++;
-                        if (offer.ask < 12 && actionCount < 4)
+                        if (offer.ask < 12 && actionCount < 19)
                         {
                             float spendable = userInfo.funds / 10;
                             int count = 1;
@@ -64,7 +63,7 @@ namespace Business_Layer
                                 market.SendBuyRequest(offer.ask, Convert.ToInt32(entry.Key), count);
                             }
                         }
-                        if (offer.bid > 7 && entry.Value > 0 && actionCount < 4)
+                        if (offer.bid > 7 && entry.Value > 0 && actionCount < 19)
                         {
                             int count = 1;
                             if ((offer.bid > 14) && (count + 1 >= entry.Value))
@@ -87,6 +86,35 @@ namespace Business_Layer
                     }
                 }
             }
+        }
+
+        public int setAverage()
+        {
+            SQLmanager myManager = new SQLmanager();
+            String prices = "";
+            String amounts = "";
+            Double calculator = 0;
+            Double sumAmounts = 0;
+            SqlDataReader reader;
+            for (int i = 0;i< 9; i++){
+                String order = @"SELECT TOP 20 * From history.dbo.items WHERE commodity = " + i;
+                reader = myManager.reader(order);
+                while (reader.Read())
+                {
+                    Double price = 0;
+                    Double amount = 0;
+                    prices = reader.GetValue(3).ToString().Trim();
+                    price = Double.Parse(prices);
+                    amounts = reader.GetValue(2).ToString().Trim();
+                    amount = Double.Parse(amounts);
+                    sumAmounts += amount;
+                    calculator += price * amount;
+                }
+                if (sumAmounts != 0)
+                    calculator = calculator / sumAmounts;
+                
+            }
+            
         }
     }
 }

@@ -15,8 +15,6 @@ namespace Business_Layer
         RequestManager rm = new RequestManager();
         ILog history = LogManager.GetLogger("History");
 
-
-
         public string buyCommodities(int price, int commodity, int amount)
         {
             int response = rm.SendBuyRequest(price, commodity, amount);
