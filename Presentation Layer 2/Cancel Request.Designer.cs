@@ -89,8 +89,8 @@
             this.numericUpDown1.Font = new System.Drawing.Font("Cooper Black", 12F);
             this.numericUpDown1.Location = new System.Drawing.Point(246, 129);
             this.numericUpDown1.Maximum = new decimal(new int[] {
-            10000000,
-            0,
+            1215752192,
+            23,
             0,
             0});
             this.numericUpDown1.Minimum = new decimal(new int[] {
