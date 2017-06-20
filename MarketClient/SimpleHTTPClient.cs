@@ -48,6 +48,7 @@ namespace MarketClient
             {
                 var result = client.PostAsync(url, content).Result;
                 var responseContent = result?.Content?.ReadAsStringAsync().Result;
+
                 responseContent = SimpleCryptoLibrary.decrypt(responseContent, privateKey);
                 return responseContent;
             }

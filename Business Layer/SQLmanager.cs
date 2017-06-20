@@ -36,7 +36,6 @@ namespace Business_Layer
             SqlCommand myOrder = new SqlCommand(order, myConnection);
             SqlDataReader reader = myOrder.ExecuteReader();
             return reader;
-
         }
     }
 }

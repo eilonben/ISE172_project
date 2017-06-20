@@ -34,7 +34,7 @@ namespace DataAccessLayer
         private String myNonce;
         ILog logger = LogManager.GetLogger("Logger");
 
-  
+
 
         public bool SendCancelBuySellRequest(int id) // The cancel request function using the CancelRequest class
         {
@@ -47,14 +47,14 @@ namespace DataAccessLayer
             string response = HTTPClient.SendPostRequest(url, user, token, myNonce, PrivateKey, request);
             if (response.Equals("Ok"))
             {
-                logger.Info("A cancel request was sent to the server for ID "+id+ ". Successfully canceled.");
+                logger.Info("A cancel request was sent to the server for ID " + id + ". Successfully canceled.");
                 return true;
             }
-                
+
             else
             {
                 error = response;
-                logger.Error("A cancel request was sent to the server for ID " + id + ". An error occurred: "+error);
+                logger.Error("A cancel request was sent to the server for ID " + id + ". An error occurred: " + error);
                 return false;
             }
         }
@@ -69,12 +69,25 @@ namespace DataAccessLayer
             request.amount = amount;
             myNonce = randomNonce();
             string token = SimpleCryptoLibrary.CreateToken(user + "_" + myNonce, PrivateKey);
-            bool eflag=false;
+            bool eflag = false;
             string response = "";
             try
             {
-               response = HTTPClient.SendPostRequest(url, user, token, myNonce, PrivateKey, request);
-               Convert.ToInt32(response);
+                String s = SimpleCryptoLibrary.decrypt(myNonce, PrivateKey);
+                Convert.ToInt32(s);
+            }
+            catch (Exception d)
+            {
+                if (d.ToString().Equals("non unique nonce"))
+                {
+                    myNonce = randomNonce();
+                    String s = SimpleCryptoLibrary.decrypt(myNonce, PrivateKey);
+                }
+            }
+            try
+            {
+                response = HTTPClient.SendPostRequest(url, user, token, myNonce, PrivateKey, request);
+                Convert.ToInt32(response);
             }
             catch (Exception e)
             {
@@ -87,7 +100,7 @@ namespace DataAccessLayer
                 logger.Info("A buy request was sent to the server for commodity id " + commodity + ", amount " + amount + ", in the price of " + price + ". The buy was succesful, the request ID was " + output);
                 return output;
             }
-                
+
             else
             {
                 logger.Error("A buy request was sent to the server for commodity id " + commodity + ", amount " + amount + ", in the price of " + price + ". An error occurred: " + error);
@@ -109,6 +122,19 @@ namespace DataAccessLayer
             string response = "";
             try
             {
+                String s = SimpleCryptoLibrary.decrypt(myNonce, PrivateKey);
+                Convert.ToInt32(s);
+            }
+            catch (Exception d)
+            {
+                if (d.ToString().Equals("non unique nonce"))
+                {
+                    myNonce = randomNonce();
+                    String s = SimpleCryptoLibrary.decrypt(myNonce, PrivateKey);
+                }
+            }
+            try
+            {
                 response = HTTPClient.SendPostRequest(url, user, token, myNonce, PrivateKey, request);
                 Convert.ToInt32(response);
             }
@@ -123,7 +149,7 @@ namespace DataAccessLayer
                 logger.Info("A sell request was sent to the server for commodity ID " + commodity + ", amount " + amount + ", in the price of" + price + ". The sell was succesful, the sell ID was " + output);
                 return output;
             }
-                
+
             else
             {
                 logger.Error("A sell request was sent to the server for commodity ID " + commodity + ", amount " + amount + ", in the price of" + price + ". An error occurred.");
@@ -143,23 +169,36 @@ namespace DataAccessLayer
             MarketItemQuery response = null;
             try
             {
-               response = HTTPClient.SendPostRequest<QuerySellBuyRequest, MarketItemQuery>(url, user, token, myNonce,PrivateKey, request);
-                
+                String s = SimpleCryptoLibrary.decrypt(myNonce, PrivateKey);
+                Convert.ToInt32(s);
             }
-            catch(Exception e)
+            catch (Exception d)
+            {
+                if (d.ToString().Equals("non unique nonce"))
+                {
+                    myNonce = randomNonce();
+                    String s = SimpleCryptoLibrary.decrypt(myNonce, PrivateKey);
+                }
+            }
+            try
+            {
+                response = HTTPClient.SendPostRequest<QuerySellBuyRequest, MarketItemQuery>(url, user, token, myNonce, PrivateKey, request);
+
+            }
+            catch (Exception e)
             {
                 error = e.Message;
                 eflag = true;
             }
             if (eflag)
             {
-                logger.Error("A query buy/sell request was sent to the server for commodity ID " + id + ". An error occurred: "+error);
+                logger.Error("A query buy/sell request was sent to the server for commodity ID " + id + ". An error occurred: " + error);
                 return null;
             }
-                
+
             else
             {
-                logger.Info("A query buy/sell request was sent to the server for commodity ID " + id + ". The response from the server was: "+response);
+                logger.Info("A query buy/sell request was sent to the server for commodity ID " + id + ". The response from the server was: " + response);
                 return response;
             }
         }
@@ -174,10 +213,23 @@ namespace DataAccessLayer
             bool eflag = false;
             try
             {
+                String s = SimpleCryptoLibrary.decrypt(myNonce, PrivateKey);
+                Convert.ToInt32(s);
+            }
+            catch (Exception d)
+            {
+                if (d.ToString().Equals("non unique nonce"))
+                {
+                    myNonce = randomNonce();
+                    String s = SimpleCryptoLibrary.decrypt(myNonce, PrivateKey);
+                }
+            }
+            try
+            {
                 response = HTTPClient.SendPostRequest<QueryUserRequest, MarketUserData>(url, user, token, myNonce, PrivateKey, request);
             }
             catch (Exception e)
-            { 
+            {
                 error = e.Message;
                 eflag = true;
             }
@@ -186,7 +238,7 @@ namespace DataAccessLayer
                 logger.Error("A query user request was sent to the server. An error occurred: " + error);
                 return null;
             }
-                
+
             else
             {
                 logger.Info("A query user request was sent to the server. The response from the server was: " + response);
@@ -204,7 +256,19 @@ namespace DataAccessLayer
             string token = SimpleCryptoLibrary.CreateToken(user + "_" + myNonce, PrivateKey);
             MarketCommodityOffer response = null;
             bool eflag = false;
-            
+            try
+            {
+                String s = SimpleCryptoLibrary.decrypt(myNonce, PrivateKey);
+                Convert.ToInt32(s);
+            }
+            catch (Exception d)
+            {
+                if (d.ToString().Equals("non unique nonce"))
+                {
+                    myNonce = randomNonce();
+                    String s = SimpleCryptoLibrary.decrypt(myNonce, PrivateKey);
+                }
+            }
             try
             {
                 response = HTTPClient.SendPostRequest<QueryMarketRequest, MarketCommodityOffer>(url, user, token, myNonce, PrivateKey, request);
@@ -219,7 +283,7 @@ namespace DataAccessLayer
                 logger.Error("A query market request was sent to the server for commodity ID " + commodity + ". An error occurred: " + error);
                 return null;
             }
-                
+
             else
             {
                 logger.Info("A query market request was sent to the server for commodity ID " + commodity + ". The response from the server was: " + response);
@@ -237,7 +301,19 @@ namespace DataAccessLayer
             string token = SimpleCryptoLibrary.CreateToken(user + "_" + myNonce, PrivateKey);
             List<AllCommodityOffer> response = new List<AllCommodityOffer>();
             bool eflag = false;
-            
+            try
+            {
+                String s = SimpleCryptoLibrary.decrypt(myNonce, PrivateKey);
+                Convert.ToInt32(s);
+            }
+            catch (Exception d)
+            {
+                if (d.ToString().Equals("non unique nonce"))
+                {
+                    myNonce = randomNonce();
+                    String s = SimpleCryptoLibrary.decrypt(myNonce, PrivateKey);
+                }
+            }
             try
             {
                 response = HTTPClient.SendPostRequest<AllMarketRequest, List<AllCommodityOffer>>(url, user, token, myNonce, PrivateKey, request);
@@ -249,10 +325,10 @@ namespace DataAccessLayer
             }
             if (eflag)
             {
-                logger.Error("The server received a SendAllMarketQuery request. An error occurred: "+error);
+                logger.Error("The server received a SendAllMarketQuery request. An error occurred: " + error);
                 return null;
             }
-                
+
             else
             {
                 logger.Info("The server received a SendAllMarketQuery request.");
@@ -270,7 +346,19 @@ namespace DataAccessLayer
             string token = SimpleCryptoLibrary.CreateToken(user + "_" + myNonce, PrivateKey);
             List<MarketUserRequests> response = new List<MarketUserRequests>();
             bool eflag = false;
-
+            try
+            {
+                String s = SimpleCryptoLibrary.decrypt(myNonce, PrivateKey);
+                Convert.ToInt32(s);
+            }
+            catch (Exception d)
+            {
+                if (d.ToString().Equals("non unique nonce"))
+                {
+                    myNonce = randomNonce();
+                    String s = SimpleCryptoLibrary.decrypt(myNonce, PrivateKey);
+                }
+            }
             try
             {
                 response = HTTPClient.SendPostRequest<UserRequestsQuery, List<MarketUserRequests>>(url, user, token, myNonce, PrivateKey, request);
@@ -285,7 +373,7 @@ namespace DataAccessLayer
                 logger.Error("The server received a SendUserRequestsQuery request. An error occurred: " + error);
                 return null;
             }
-                
+
             else
             {
                 logger.Info("The server received a SendUserRequestsQuery request.");
@@ -295,7 +383,7 @@ namespace DataAccessLayer
 
         private string randomNonce()//private function that random an unique nonce to each request
         {
-            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            var chars = "0123456789";
             var random = new Random();
             var stringChars = new char[5];
             for (int i = 0; i < stringChars.Length; i++)
