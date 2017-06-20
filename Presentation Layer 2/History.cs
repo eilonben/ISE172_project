@@ -28,13 +28,14 @@ namespace Presentation_Layer_
 
         private void button1_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text = "";
+            richTextBox1.Clear();
             history h = new history();
             DateTime start = monthCalendar1.SelectionStart;
             DateTime end = monthCalendar2.SelectionStart;
-
-            string output = h.historyByDate(start, end);
+            string output = "";
+            output += h.historyByDate(start, end);
             richTextBox1.Text = output;
+        
 
 
 
@@ -47,12 +48,17 @@ namespace Presentation_Layer_
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Clear();
         }
     }
 }
