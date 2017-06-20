@@ -48,13 +48,13 @@ namespace Business_Layer
             DateTime dt = DateTime.Today.AddDays(-7);
             for (int i = 0; i < 10; i++) {
                 string order;
-                order = @"SELECT TOP 100 * FROM history.dbo.items WHERE commodity = " + i + " AND timestamp >= " + Convert.ToDateTime(dt).ToString("yyyy - MM - dd HH: mm:ss");
+                order = @"SELECT * FROM history.dbo.items WHERE commodity = " + i + " and timestamp >= " +"'" +Convert.ToDateTime(dt).ToString("yyyy-MM-dd HH:mm:ss")+"'";
                 reader = SM.reader(order);
                 double sum = 0;
                 double count = 0;
                 while (reader.Read()) {
                     count++;
-                    sum = +Double.Parse(reader.GetValue(3).ToString().Trim());
+                    sum +=Double.Parse(reader.GetValue(3).ToString().Trim());
                 }
                 prices[i] = sum / count;
                 reader.Close();

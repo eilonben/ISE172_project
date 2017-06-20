@@ -27,7 +27,7 @@ namespace Presentation_Layer_
             {
                 new ColumnSeries
                 {
-                    Title = "Average Prices",
+                    Title = "Average Price",
                     Values = new ChartValues<double> { prices[0],prices[1],prices[2],prices[3],prices[4],prices[5],prices[6],prices[7],prices[8],prices[9] },
                     Stroke = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(64, 79, 86))
 
@@ -44,7 +44,7 @@ namespace Presentation_Layer_
 
             cartesianChart1.AxisY.Add(new Axis
             {
-                Title = "Average Price",
+                Title = "Average Prices",
                 LabelFormatter = value => value.ToString("N")
             });
 
