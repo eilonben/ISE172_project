@@ -22,8 +22,14 @@ namespace Business_Layer
                     string date = words[0];
                     DateTime dt = Convert.ToDateTime(date);
                     if (dt.CompareTo(start) >= 0 && dt.CompareTo(end) <= 0)
-                        s += lines[i] + "\n";
+                        s += lines[i];
                 }
+                if (!lines[i][0].Equals('2'))
+                {
+                    s += lines[i];
+                }
+                s += "/n";
+
             }
             return s;
         }
