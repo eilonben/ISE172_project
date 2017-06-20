@@ -1,6 +1,6 @@
 ﻿namespace Presentation_Layer_
 {
-    partial class MaxChart
+    partial class AverageChart
     {
         /// <summary>
         /// Required designer variable.
@@ -33,23 +33,20 @@
             // 
             // cartesianChart1
             // 
-            this.cartesianChart1.Font = new System.Drawing.Font("Cooper Black", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cartesianChart1.Location = new System.Drawing.Point(4, 19);
+            this.cartesianChart1.Location = new System.Drawing.Point(4, 1);
             this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(574, 415);
-            this.cartesianChart1.TabIndex = 1;
+            this.cartesianChart1.Size = new System.Drawing.Size(577, 450);
+            this.cartesianChart1.TabIndex = 0;
             this.cartesianChart1.Text = "cartesianChart1";
-            this.cartesianChart1.ChildChanged += new System.EventHandler<System.Windows.Forms.Integration.ChildChangedEventArgs>(this.cartesianChart1_ChildChanged);
             // 
-            // MaxChart
+            // AverageChart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(582, 453);
             this.Controls.Add(this.cartesianChart1);
-            this.MaximizeBox = false;
-            this.Name = "MaxChart";
-            this.Text = "MaxChart";
+            this.Name = "AverageChart";
+            this.Text = "AverageChart";
             this.ResumeLayout(false);
 
         }

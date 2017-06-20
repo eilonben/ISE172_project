@@ -103,6 +103,7 @@
             this.Controls.Add(this.radioButton4);
             this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.radioButton2);
+            this.MaximizeBox = false;
             this.Name = "Statistics_Menu";
             this.Text = "Statistics Menu";
             this.Load += new System.EventHandler(this.Statistics_Menu_Load);

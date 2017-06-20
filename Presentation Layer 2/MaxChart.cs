@@ -9,20 +9,25 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LiveCharts;
 using LiveCharts.Wpf;
+using Business_Layer;
 
 namespace Presentation_Layer_
 {
     public partial class MaxChart : Form
     {
+        StatsManager SM;
+        double[] prices;
         public MaxChart()
         {
+            SM = new StatsManager();
             InitializeComponent();
+            prices = SM.MaxMinPrices(true);
             cartesianChart1.Series = new SeriesCollection
             {
                 new ColumnSeries
                 {
                     Title = "Max Price",
-                    Values = new ChartValues<double> { 10, 50, 39, 50,10,200,12,14,15,16 }
+                    Values = new ChartValues<double> { prices[0],prices[1],prices[2],prices[3],prices[4],prices[5],prices[6],prices[7],prices[8],prices[9] }
                 }
             };
 
@@ -38,6 +43,11 @@ namespace Presentation_Layer_
                 Title = "Price",
                 LabelFormatter = value => value.ToString("N")
             });
+        }
+
+        private void cartesianChart1_ChildChanged(object sender, System.Windows.Forms.Integration.ChildChangedEventArgs e)
+        {
+
         }
     }
 }

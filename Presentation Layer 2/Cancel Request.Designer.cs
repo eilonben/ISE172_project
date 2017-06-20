@@ -121,6 +121,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MaximizeBox = false;
             this.Name = "Cancel_Request";
             this.Text = "Cancel Request";
             this.Load += new System.EventHandler(this.Cancel_Request_Load);

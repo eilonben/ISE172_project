@@ -47,11 +47,11 @@ namespace Presentation_Layer_
                 MaxChart mac = new MaxChart();
                 mac.ShowDialog();
             }
-           /* if (radioButton4.Checked)
+           if (radioButton4.Checked)
             {
-                MinChart mc = new MinChart();
-                mc.ShowDialog();
-            }*/
+                AverageChart ac = new AverageChart();
+                ac.ShowDialog();
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

@@ -108,6 +108,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
+            this.MaximizeBox = false;
             this.Name = "Commodity_Query";
             this.Text = "Commodity_Query";
             this.Load += new System.EventHandler(this.Commodity_Query_Load);

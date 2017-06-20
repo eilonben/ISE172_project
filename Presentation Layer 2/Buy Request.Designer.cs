@@ -184,6 +184,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "Buy_Request";
             this.RightToLeftLayout = true;
             this.Text = "Buy Request";

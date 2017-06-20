@@ -119,6 +119,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.MaximizeBox = false;
             this.Name = "Query";
             this.Text = "BuySellQuery Request";
             this.Load += new System.EventHandler(this.Query_Load);

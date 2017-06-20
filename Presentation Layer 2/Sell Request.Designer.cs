@@ -205,6 +205,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.MaximizeBox = false;
             this.Name = "SellRequest";
             this.Text = "SellRequest";
             this.Load += new System.EventHandler(this.SellRequest_Load);

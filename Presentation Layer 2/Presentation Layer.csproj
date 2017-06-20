@@ -72,6 +72,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AverageChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AverageChart.Designer.cs">
+      <DependentUpon>AverageChart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Buy Request.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,12 +89,6 @@
     </Compile>
     <Compile Include="BuySellQuery.Designer.cs">
       <DependentUpon>BuySellQuery.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Calendars.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Calendars.Designer.cs">
-      <DependentUpon>Calendars.cs</DependentUpon>
     </Compile>
     <Compile Include="Cancel Request.cs">
       <SubType>Form</SubType>
@@ -146,14 +146,14 @@
     <Compile Include="Statistics Menu.Designer.cs">
       <DependentUpon>Statistics Menu.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AverageChart.resx">
+      <DependentUpon>AverageChart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Buy Request.resx">
       <DependentUpon>Buy Request.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BuySellQuery.resx">
       <DependentUpon>BuySellQuery.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Calendars.resx">
-      <DependentUpon>Calendars.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cancel Request.resx">
       <DependentUpon>Cancel Request.cs</DependentUpon>

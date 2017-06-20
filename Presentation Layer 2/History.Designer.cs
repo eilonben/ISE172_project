@@ -157,6 +157,7 @@
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.richTextBox1);
+            this.MaximizeBox = false;
             this.Name = "History";
             this.Text = "History";
             this.ResumeLayout(false);

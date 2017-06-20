@@ -263,7 +263,7 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(149, 52);
             this.button9.TabIndex = 20;
-            this.button9.Text = "Commodity Statistics";
+            this.button9.Text = "Market Statistics";
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click_1);
             // 
@@ -292,6 +292,7 @@
             this.ForeColor = System.Drawing.Color.Maroon;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "UserInterface";
             this.Text = "        Algo Trading App";
             this.Load += new System.EventHandler(this.Form1_Load);
