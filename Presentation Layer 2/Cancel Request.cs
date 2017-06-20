@@ -34,7 +34,6 @@ namespace Presentation_Layer_
             int id = (int)numericUpDown1.Value;
             string msg = rs.cancelRequest(id);
             MessageBox.Show(msg);
-            this.Close();
         }
 
         private void label3_Click(object sender, EventArgs e)
