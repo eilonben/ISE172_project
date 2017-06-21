@@ -17,12 +17,12 @@ namespace Presentation_Layer_
     {
         StatsManager SM;
         double[] prices;
-        public MinChart()
+        public MinChart(DateTime start, DateTime end)
         {
 
             SM = new StatsManager();
             InitializeComponent();
-            prices = SM.MaxMinPrices(false);
+            prices = SM.MaxMinPrices(false,start,end);
             cartesianChart1.Series = new SeriesCollection
             {
                 new ColumnSeries

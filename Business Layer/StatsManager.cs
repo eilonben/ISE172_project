@@ -18,7 +18,7 @@ namespace Business_Layer
             SM = new SQLmanager();
         }
 
-        public Double[] MaxMinPrices(Boolean max)
+        public Double[] MaxMinPrices(Boolean max, DateTime start, DateTime end)
         {
             Double[] prices = new Double[10];
             SqlDataReader reader;
@@ -27,9 +27,9 @@ namespace Business_Layer
                 string order;
                 if (max)
                 {
-                    order = @"SELECT MAX(price) FROM history.dbo.items WHERE commodity = " + i;
+                    order = @"SELECT MAX(price) FROM history.dbo.items WHERE commodity = " + i+ " AND timestamp>= " + "'" + Convert.ToDateTime(start).ToString("yyyy-MM-dd HH:mm:ss") + "' AND timestamp<= " + "'" + Convert.ToDateTime(end).ToString("yyyy-MM-dd HH:mm:ss") + "'";
                 } else {
-                    order = @"SELECT MIN(price) FROM history.dbo.items WHERE commodity = " + i;
+                    order = @"SELECT MIN(price) FROM history.dbo.items WHERE commodity = " + i + " AND timestamp>= " + "'" + Convert.ToDateTime(start).ToString("yyyy-MM-dd HH:mm:ss") + "' AND timestamp<= " + "'" + Convert.ToDateTime(end).ToString("yyyy-MM-dd HH:mm:ss") + "'";
                 }
                 reader = SM.reader(order);
                 while (reader.Read())
@@ -42,13 +42,13 @@ namespace Business_Layer
 
         }
 
-        public Double[] AvgPrices() {
+        public Double[] AvgPrices(DateTime start, DateTime end) {
             Double[] prices = new Double[10];
             SqlDataReader reader;
             DateTime dt = DateTime.Today.AddDays(-7);
             for (int i = 0; i < 10; i++) {
                 string order;
-                order = @"SELECT * FROM history.dbo.items WHERE commodity = " + i + " and timestamp >= " +"'" +Convert.ToDateTime(dt).ToString("yyyy-MM-dd HH:mm:ss")+"'";
+                order = @"SELECT * FROM history.dbo.items WHERE commodity = " + i + " AND timestamp>= " + "'" + Convert.ToDateTime(start).ToString("yyyy-MM-dd HH:mm:ss") + "' AND timestamp<= " + "'" + Convert.ToDateTime(end).ToString("yyyy-MM-dd HH:mm:ss") + "'";
                 reader = SM.reader(order);
                 double sum = 0;
                 double count = 0;

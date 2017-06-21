@@ -17,12 +17,12 @@ namespace Presentation_Layer_
     {
         StatsManager SM;
         double[] prices;
-        public AverageChart()
+        public AverageChart(DateTime start, DateTime end)
         {
 
             SM = new StatsManager();
             InitializeComponent();
-            prices = SM.AvgPrices();
+            prices = SM.AvgPrices(start,end);
             cartesianChart1.Series = new SeriesCollection
             {
                 new ColumnSeries
@@ -47,6 +47,11 @@ namespace Presentation_Layer_
                 Title = "Average Prices",
                 LabelFormatter = value => value.ToString("N")
             });
+
+        }
+
+        private void cartesianChart1_ChildChanged(object sender, System.Windows.Forms.Integration.ChildChangedEventArgs e)
+        {
 
         }
     }

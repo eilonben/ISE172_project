@@ -38,6 +38,7 @@
             this.cartesianChart1.Size = new System.Drawing.Size(577, 450);
             this.cartesianChart1.TabIndex = 0;
             this.cartesianChart1.Text = "cartesianChart1";
+            this.cartesianChart1.ChildChanged += new System.EventHandler<System.Windows.Forms.Integration.ChildChangedEventArgs>(this.cartesianChart1_ChildChanged);
             // 
             // AverageChart
             // 
@@ -45,6 +46,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(582, 453);
             this.Controls.Add(this.cartesianChart1);
+            this.MaximizeBox = false;
             this.Name = "AverageChart";
             this.Text = "AverageChart";
             this.ResumeLayout(false);

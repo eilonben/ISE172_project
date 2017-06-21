@@ -19,6 +19,8 @@ namespace Presentation_Layer_
         public Statistics_Menu()
         {
             InitializeComponent();
+            monthCalendar1.MaxSelectionCount = 1;
+            monthCalendar2.MaxSelectionCount = 1;
         }
 
         private void chart1_Click(object sender, EventArgs e)
@@ -38,19 +40,30 @@ namespace Presentation_Layer_
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (radioButton3.Checked) {
-                MinChart mic = new MinChart();
-                mic.ShowDialog();
-            }
-            if (radioButton2.Checked)
+            DateTime start = monthCalendar1.SelectionStart;
+            DateTime end = monthCalendar2.SelectionStart;
+
+            if (end <= start)
             {
-                MaxChart mac = new MaxChart();
-                mac.ShowDialog();
+                MessageBox.Show("please choose a valid start and end date ( start > end )");
             }
-           if (radioButton4.Checked)
+            else
             {
-                AverageChart ac = new AverageChart();
-                ac.ShowDialog();
+                if (radioButton3.Checked)
+                {
+                    MinChart mic = new MinChart(start, end);
+                    mic.ShowDialog();
+                }
+                if (radioButton2.Checked)
+                {
+                    MaxChart mac = new MaxChart(start, end);
+                    mac.ShowDialog();
+                }
+                if (radioButton4.Checked)
+                {
+                    AverageChart ac = new AverageChart(start,end);
+                    ac.ShowDialog();
+                }
             }
         }
 
