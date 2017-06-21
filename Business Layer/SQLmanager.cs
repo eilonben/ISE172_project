@@ -14,9 +14,7 @@ namespace Business_Layer
     public class SQLmanager
     {
         private static string connect = @"Data Source=ise172.ise.bgu.ac.il;Initial Catalog=history;User ID=labuser;Password=wonsawheightfly";
-        private SqlConnection myConnection;
-        private int amountOfValues;
-        
+        private SqlConnection myConnection;        
 
         public SQLmanager()
         {
