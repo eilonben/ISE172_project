@@ -104,7 +104,7 @@
             this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.radioButton2);
             this.Name = "Statistics_Menu";
-            this.Text = "Statistics_Menu";
+            this.Text = "Statistics Menu";
             this.Load += new System.EventHandler(this.Statistics_Menu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
