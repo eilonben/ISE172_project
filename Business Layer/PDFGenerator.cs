@@ -10,7 +10,7 @@ using iTextSharp.text.pdf;
 namespace Business_Layer
 {
     public class PDFGenerator
-    {
+    {// this class creates a pdf with a given string
         
         public PDFGenerator(string toSave) {
             FileStream fs = new FileStream("../../../Reports/UserReport.pdf", FileMode.Create, FileAccess.Write, FileShare.None);

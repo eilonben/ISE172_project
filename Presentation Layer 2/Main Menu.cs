@@ -112,7 +112,7 @@ namespace Presentation_Layer_2
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            AMA.stop();
+           AMA.stop();
         }
 
         private void button9_Click_1(object sender, EventArgs e)
