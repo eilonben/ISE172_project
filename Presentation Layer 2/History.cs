@@ -17,6 +17,7 @@ namespace Presentation_Layer_
         public History()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -26,6 +27,7 @@ namespace Presentation_Layer_
 
         private void button1_Click(object sender, EventArgs e)
         {
+           
             string[] output = File.ReadAllLines("../../../history/history.log");
             string s = "";
             for (int i = 0; i < output.Length; i++)

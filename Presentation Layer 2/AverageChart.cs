@@ -19,7 +19,7 @@ namespace Presentation_Layer_
         double[] prices;
         public AverageChart(DateTime start, DateTime end)
         {
-
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
             SM = new StatsManager();
             InitializeComponent();
             prices = SM.AvgPrices(start,end);

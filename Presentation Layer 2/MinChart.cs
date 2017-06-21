@@ -22,6 +22,7 @@ namespace Presentation_Layer_
 
             SM = new StatsManager();
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
             prices = SM.MaxMinPrices(false,start,end);
             cartesianChart1.Series = new SeriesCollection
             {

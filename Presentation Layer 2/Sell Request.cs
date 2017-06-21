@@ -16,6 +16,7 @@ namespace Presentation_Layer_
         public SellRequest()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
         RequestAgent ra = new RequestAgent();
         private void SellRequest_Load(object sender, EventArgs e)
