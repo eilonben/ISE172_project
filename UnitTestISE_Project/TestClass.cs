@@ -15,12 +15,12 @@ namespace UnitTestISE_Project
     [TestClass]
     public class TestClass
     {
+        
         private static RequestManager market;
         private static RequestAgent rq;
         private int[] testing;
         private static MarketUserData userInfo;
         private SQLmanager sql;
-        ILog history = LogManager.GetLogger("History");
 
         [TestMethod]
         public void initial()
@@ -125,10 +125,6 @@ namespace UnitTestISE_Project
             string output= rq.AllMarketQuery();           
             Assert.IsTrue(output.Length > 26);
         }
-
-
-
-
 
     }
 }
