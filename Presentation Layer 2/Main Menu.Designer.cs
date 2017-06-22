@@ -46,6 +46,7 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -267,6 +268,21 @@
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click_1);
             // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button12.Font = new System.Drawing.Font("Cooper Black", 8.2F);
+            this.button12.ForeColor = System.Drawing.Color.SteelBlue;
+            this.button12.Location = new System.Drawing.Point(100, 368);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(149, 52);
+            this.button12.TabIndex = 21;
+            this.button12.Text = "Generate PDF Report";
+            this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click_1);
+            // 
             // UserInterface
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -274,6 +290,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(837, 432);
+            this.Controls.Add(this.button12);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button11);
@@ -322,6 +339,7 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button12;
     }
 }
 

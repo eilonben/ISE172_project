@@ -17,6 +17,7 @@ namespace Presentation_Layer_
         public Commodity_Query()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         private void label3_Click(object sender, EventArgs e)

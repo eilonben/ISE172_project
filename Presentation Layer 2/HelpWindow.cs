@@ -15,6 +15,7 @@ namespace Presentation_Layer_
         public HelpWindow()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         private void tabPage2_Click(object sender, EventArgs e)

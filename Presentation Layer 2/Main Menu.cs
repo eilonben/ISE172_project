@@ -21,6 +21,7 @@ namespace Presentation_Layer_2
         public UserInterface()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -67,6 +68,7 @@ namespace Presentation_Layer_2
         {
             string msg = ra.UserQuery();
             MessageBox.Show(msg);
+           
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -105,18 +107,25 @@ namespace Presentation_Layer_2
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            AMA.start();
+           AMA.start();
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            AMA.stop();
+           AMA.stop();
         }
 
         private void button9_Click_1(object sender, EventArgs e)
         {
             Statistics_Menu sm = new Statistics_Menu();
             sm.ShowDialog();
+        }
+
+        private void button12_Click_1(object sender, EventArgs e)
+        {
+            string msg = ra.UserQuery();
+            PDFGenerator pg = new PDFGenerator(DateTime.Now.ToString() + " User Report: \n "+ msg);
+            MessageBox.Show("A report has been generated. you can see the PDF file in Reports directory.");
         }
     }
 }

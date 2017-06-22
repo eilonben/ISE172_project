@@ -19,6 +19,7 @@ namespace Presentation_Layer_
         public Statistics_Menu()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
             monthCalendar1.MaxSelectionCount = 1;
             monthCalendar2.MaxSelectionCount = 1;
         }

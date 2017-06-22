@@ -18,7 +18,7 @@ namespace Business_Layer
             SM = new SQLmanager();
         }
 
-        public Double[] MaxMinPrices(Boolean max, DateTime start, DateTime end)
+        public Double[] MaxMinPrices(Boolean max, DateTime start, DateTime end)// a function to find the max or min prices of all commodities in a certain date range, using the SQL server
         {
             Double[] prices = new Double[10];
             SqlDataReader reader;
@@ -42,7 +42,8 @@ namespace Business_Layer
 
         }
 
-        public Double[] AvgPrices(DateTime start, DateTime end) {
+        public Double[] AvgPrices(DateTime start, DateTime end)
+        {// a function to find the average prices of all commodities in a certain date range, using the SQL server
             Double[] prices = new Double[10];
             SqlDataReader reader;
             DateTime dt = DateTime.Today.AddDays(-7);

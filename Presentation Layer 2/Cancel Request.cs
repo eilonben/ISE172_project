@@ -16,6 +16,7 @@ namespace Presentation_Layer_
         public Cancel_Request()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         private void button2_Click(object sender, EventArgs e)
