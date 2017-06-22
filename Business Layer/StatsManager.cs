@@ -48,7 +48,7 @@ namespace Business_Layer
             DateTime dt = DateTime.Today.AddDays(-7);
             for (int i = 0; i < 10; i++) {
                 string order;
-                order = @"SELECT * FROM history.dbo.items WHERE commodity = " + i + " AND timestamp>= " + "'" + Convert.ToDateTime(start).ToString("yyyy-MM-dd HH:mm:ss") + "' AND timestamp<= " + "'" + Convert.ToDateTime(end).ToString("yyyy-MM-dd HH:mm:ss") + "'";
+                order = @"SELECT * FROM history.dbo.items WHERE commodity = " + i+ " AND timestamp>= " + "'" + Convert.ToDateTime(start).ToString("yyyy-MM-dd HH:mm:ss") + "' AND timestamp<= " + "'" + Convert.ToDateTime(end).ToString("yyyy-MM-dd HH:mm:ss") + "'";
                 reader = SM.reader(order);
                 double sum = 0;
                 double count = 0;

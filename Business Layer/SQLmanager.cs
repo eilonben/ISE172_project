@@ -23,14 +23,15 @@ namespace Business_Layer
             {
                 myConnection.Open();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show(e.ToString());
             }
         }
 
-        public SqlDataReader reader(String order)
+        public SqlDataReader reader(String order)//the function make the connection with the sql server with any order we get
         {
+
             SqlCommand myOrder = new SqlCommand(order, myConnection);
             SqlDataReader reader = myOrder.ExecuteReader();
             return reader;
