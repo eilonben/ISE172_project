@@ -21,6 +21,7 @@ namespace UnitTestISE_Project
         private int[] testing;
         private static MarketUserData userInfo;
         private SQLmanager sql;
+        public AutonomousMarketAgent ama;
 
         [TestMethod]
         public void initial()
@@ -29,6 +30,7 @@ namespace UnitTestISE_Project
             rq = new RequestAgent();
             userInfo = (MarketUserData)market.SendQueryUserRequest();
             sql = new SQLmanager();
+            ama = new AutonomousMarketAgent();
         }
 
         [TestMethod]
@@ -92,7 +94,7 @@ namespace UnitTestISE_Project
         }
 
         [TestMethod]
-        public void TestSendQueryUserReques()
+        public void TestSendQueryUserRequest()
         {
             MarketUserData info = (MarketUserData)market.SendQueryUserRequest();
             Assert.IsNotNull(info);
@@ -109,8 +111,8 @@ namespace UnitTestISE_Project
         public void testSQL()
         {
             SqlDataReader reader;
-            /*String order = @"SELECT TOP 20 * From history.dbo.items WHERE commodity = " + 0;
-            reader = sql.reader(order);*/
+            String order = @"SELECT TOP 20 * From history.dbo.items WHERE commodity = " + 0;
+            reader = sql.reader(order);
             
             String order2 = @"SELECT TOP 20 * From history.dbo.items WHERE commodity = " + "-7";
             reader = sql.reader(order2);
@@ -119,12 +121,23 @@ namespace UnitTestISE_Project
         }
 
         [TestMethod]
-        public void testAllMArkertQuery()
+        public void testAverageSQL()
         {
-
-            string output= rq.AllMarketQuery();           
-            Assert.IsTrue(output.Length > 26);
+            int output = ama.setAverage(1);
+            Assert.IsTrue(output > 0);
         }
+
+        [TestMethod]
+        public void testHistoryLog()
+        {
+            string[] output = File.ReadAllLines("../../../history/history.log");
+            string s = "";
+            for (int i = 0; i < output.Length; i++)
+                s += output[i] + "\n";
+            Assert.IsTrue(s.Length > 0);
+        }
+
+
 
     }
 }
